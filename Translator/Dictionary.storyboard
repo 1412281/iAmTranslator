@@ -12,7 +12,7 @@
         <!--Dictionary-->
         <scene sceneID="BmH-sV-PmV">
             <objects>
-                <viewController id="EGY-Pp-EBn" sceneMemberID="viewController">
+                <viewController id="EGY-Pp-EBn" customClass="DictionaryViewController" customModule="Translator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K5O-Pz-VS2"/>
                         <viewControllerLayoutGuide type="bottom" id="Yok-IK-4qH"/>
@@ -26,18 +26,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MGP-e9-1bz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="dictCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="dictCell" id="MGP-e9-1bz" customClass="DictionaryTableViewCell" customModule="Translator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MGP-e9-1bz" id="VKo-OU-kkv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKX-oJ-J4f">
+                                                    <rect key="frame" x="8" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="key" destination="mKX-oJ-J4f" id="Ufc-97-FlY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="EGY-Pp-EBn" id="ykh-ky-Xbx"/>
-                                    <outlet property="delegate" destination="EGY-Pp-EBn" id="2Mm-ul-I0M"/>
+                                    <outlet property="dataSource" destination="EGY-Pp-EBn" id="iah-pl-8R6"/>
+                                    <outlet property="delegate" destination="EGY-Pp-EBn" id="KJF-F4-sWi"/>
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4Q-ZO-QBg">

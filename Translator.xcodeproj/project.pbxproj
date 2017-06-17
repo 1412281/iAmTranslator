@@ -12,6 +12,7 @@
 		E098F23F1ECB581500F574A0 /* Translator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E098F23D1ECB581500F574A0 /* Translator.xcdatamodeld */; };
 		E098F2411ECB581500F574A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E098F2401ECB581500F574A0 /* Assets.xcassets */; };
 		E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F2421ECB581500F574A0 /* LaunchScreen.storyboard */; };
+		E0AA8D861EF583FC006DC8AB /* DictionaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AA8D851EF583FC006DC8AB /* DictionaryTableViewCell.swift */; };
 		E0C1C2611EDEBBB40063B88A /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C1C2601EDEBBB40063B88A /* Play.storyboard */; };
 		E0C1C2631EDEBBC20063B88A /* Dictionary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C1C2621EDEBBC20063B88A /* Dictionary.storyboard */; };
 		E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C1C2641EDEBBCB0063B88A /* Setting.storyboard */; };
@@ -28,6 +29,7 @@
 		E098F2401ECB581500F574A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		E098F2431ECB581500F574A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E098F2451ECB581500F574A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0AA8D851EF583FC006DC8AB /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryTableViewCell.swift; path = Dictionary/DictionaryTableViewCell.swift; sourceTree = "<group>"; };
 		E0C1C2601EDEBBB40063B88A /* Play.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
 		E0C1C2621EDEBBC20063B88A /* Dictionary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dictionary.storyboard; sourceTree = "<group>"; };
 		E0C1C2641EDEBBCB0063B88A /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				E0C1C2621EDEBBC20063B88A /* Dictionary.storyboard */,
 				E0C1C26D1EDECF2F0063B88A /* DictionaryViewController.swift */,
+				E0AA8D851EF583FC006DC8AB /* DictionaryTableViewCell.swift */,
 			);
 			name = Dictionary;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				E0C1C26C1EDECF130063B88A /* PlayViewController.swift in Sources */,
 				E0C1C26E1EDECF2F0063B88A /* DictionaryViewController.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
+				E0AA8D861EF583FC006DC8AB /* DictionaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
