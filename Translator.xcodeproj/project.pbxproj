@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5632E0AD1EF6623A008BCD23 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632E0AC1EF6623A008BCD23 /* LoginViewController.swift */; };
+		5632E0AF1EF669C4008BCD23 /* CustomLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632E0AE1EF669C4008BCD23 /* CustomLoginTextField.swift */; };
+		5632E0B11EF67179008BCD23 /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632E0B01EF67179008BCD23 /* CustomLoginButton.swift */; };
+		5632E0B31EF68215008BCD23 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5632E0B21EF68215008BCD23 /* RegisterViewController.swift */; };
 		56612E061EF63DB300815664 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56612E051EF63DB300815664 /* Login.storyboard */; };
 		E020D06A1EF623650039E5CB /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D0691EF623650039E5CB /* Video.storyboard */; };
 		E020D06C1EF623850039E5CB /* Audio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D06B1EF623850039E5CB /* Audio.storyboard */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5632E0AC1EF6623A008BCD23 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5632E0AE1EF669C4008BCD23 /* CustomLoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoginTextField.swift; sourceTree = "<group>"; };
+		5632E0B01EF67179008BCD23 /* CustomLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
+		5632E0B21EF68215008BCD23 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		56612E051EF63DB300815664 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E020D0691EF623650039E5CB /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Video.storyboard; path = Screens/Video.storyboard; sourceTree = "<group>"; };
 		E020D06B1EF623850039E5CB /* Audio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Audio.storyboard; path = Screens/Audio.storyboard; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				56612E051EF63DB300815664 /* Login.storyboard */,
+				5632E0AC1EF6623A008BCD23 /* LoginViewController.swift */,
+				5632E0AE1EF669C4008BCD23 /* CustomLoginTextField.swift */,
+				5632E0B01EF67179008BCD23 /* CustomLoginButton.swift */,
+				5632E0B21EF68215008BCD23 /* RegisterViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -277,12 +289,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E020D0701EF625B10039E5CB /* PlayTableViewCell.swift in Sources */,
+				5632E0B31EF68215008BCD23 /* RegisterViewController.swift in Sources */,
 				E0C1C2701EDECF3B0063B88A /* SettingViewController.swift in Sources */,
 				E0C1C26C1EDECF130063B88A /* PlayViewController.swift in Sources */,
 				E020D0791EF628AF0039E5CB /* Translator.xcdatamodeld in Sources */,
+				5632E0AD1EF6623A008BCD23 /* LoginViewController.swift in Sources */,
 				E0C1C26E1EDECF2F0063B88A /* DictionaryViewController.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
 				E0AA8D861EF583FC006DC8AB /* DictionaryTableViewCell.swift in Sources */,
+				5632E0B11EF67179008BCD23 /* CustomLoginButton.swift in Sources */,
+				5632E0AF1EF669C4008BCD23 /* CustomLoginTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
