@@ -12,7 +12,7 @@
         <!--Play-->
         <scene sceneID="4sG-vV-Nlb">
             <objects>
-                <viewController id="lGG-Xv-RCL" sceneMemberID="viewController">
+                <viewController id="lGG-Xv-RCL" customClass="PlayViewController" customModule="Translator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w6W-Aa-bOR"/>
                         <viewControllerLayoutGuide type="bottom" id="u9n-lf-O3m"/>
@@ -25,6 +25,28 @@
                                 <rect key="frame" x="0.0" y="46" width="375" height="532"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="playCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="playCell" id="oPO-Qq-7Dm" customClass="PlayTableViewCell" customModule="Translator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oPO-Qq-7Dm" id="0jK-le-ocU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAU-R4-FDl">
+                                                    <rect key="frame" x="29" y="8" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="PAU-R4-FDl" id="qwf-CB-qHx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="lGG-Xv-RCL" id="jgs-Bb-luR"/>
                                     <outlet property="delegate" destination="lGG-Xv-RCL" id="kXu-1o-zsq"/>
