@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AVS-zR-gTV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,26 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="f1W-iz-W1X">
-            <objects>
-                <navigationController id="AVS-zR-gTV" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fCj-ub-zTh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BXz-fZ-Tb6" kind="relationship" relationship="rootViewController" id="qP8-Y3-98X"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E64-Qo-OIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="270" y="-89"/>
-        </scene>
-        <!--View Controller-->
+        <!--Audio View Controller-->
         <scene sceneID="y0e-E5-h08">
             <objects>
-                <viewController id="BXz-fZ-Tb6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AudioView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BXz-fZ-Tb6" customClass="AudioViewController" customModule="Translator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XAd-S7-tQl"/>
                         <viewControllerLayoutGuide type="bottom" id="Lkp-k0-l3Q"/>

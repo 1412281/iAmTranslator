@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jx2-jk-1gt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,23 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="buu-vS-JSp">
-            <objects>
-                <navigationController id="jx2-jk-1gt" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="si9-qm-Eu7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ivb-Cr-Mao" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1410" y="78"/>
-        </scene>
-        <!--View Controller-->
+        <!--Video View Controller-->
         <scene sceneID="mej-vM-Qzv">
             <objects>
-                <viewController id="4gp-Ts-bUP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4gp-Ts-bUP" customClass="VideoViewController" customModule="Translator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fql-YI-1ye"/>
                         <viewControllerLayoutGuide type="bottom" id="lHb-t0-Twt"/>
@@ -102,10 +89,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="afD-cT-TMg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1l-he-ojH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-500" y="77.811094452773617"/>
+            <point key="canvasLocation" x="-1633" y="65"/>
         </scene>
     </scenes>
     <resources>

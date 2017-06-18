@@ -1,5 +1,5 @@
 //
-//  PlayTableViewCell.swift
+//  VideoPlayTableViewCell.swift
 //  Translator
 //
 //  Created by LamTran on 6/18/17.
@@ -8,10 +8,14 @@
 
 import UIKit
 
-class PlayTableViewCell: UITableViewCell {
+class VideoPlayTableViewCell: UITableViewCell {
 
- 
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var img: UIImageView!
+    
+    @IBOutlet weak var des: UILabel!
+    @IBOutlet weak var length: UILabel!
+    @IBOutlet weak var name: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
