@@ -1,5 +1,5 @@
 //
-//  PlayTableViewCell.swift
+//  TextPlayTableViewCell.swift
 //  Translator
 //
 //  Created by LamTran on 6/18/17.
@@ -8,10 +8,8 @@
 
 import UIKit
 
-class PlayTableViewCell: UITableViewCell {
+class TextPlayTableViewCell: UITableViewCell {
 
- 
-    @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
