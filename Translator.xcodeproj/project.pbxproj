@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56612E061EF63DB300815664 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56612E051EF63DB300815664 /* Login.storyboard */; };
 		E020D06A1EF623650039E5CB /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D0691EF623650039E5CB /* Video.storyboard */; };
 		E020D06C1EF623850039E5CB /* Audio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D06B1EF623850039E5CB /* Audio.storyboard */; };
 		E020D06E1EF623900039E5CB /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D06D1EF623900039E5CB /* Text.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56612E051EF63DB300815664 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E020D0691EF623650039E5CB /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Video.storyboard; path = Screens/Video.storyboard; sourceTree = "<group>"; };
 		E020D06B1EF623850039E5CB /* Audio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Audio.storyboard; path = Screens/Audio.storyboard; sourceTree = "<group>"; };
 		E020D06D1EF623900039E5CB /* Text.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Text.storyboard; path = Screens/Text.storyboard; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56612E041EF63D9500815664 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				56612E051EF63DB300815664 /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		E020D0661EF623300039E5CB /* Text */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		E0C1C2671EDECE160063B88A /* Sreens */ = {
 			isa = PBXGroup;
 			children = (
+				56612E041EF63D9500815664 /* Login */,
 				E0C1C2681EDECE2C0063B88A /* Play */,
 				E0C1C2691EDECE360063B88A /* Dictionary */,
 				E0C1C26A1EDECE610063B88A /* Setting */,
@@ -253,6 +264,7 @@
 				E020D06E1EF623900039E5CB /* Text.storyboard in Resources */,
 				E020D06A1EF623650039E5CB /* Video.storyboard in Resources */,
 				E020D0721EF628670039E5CB /* Assets.xcassets in Resources */,
+				56612E061EF63DB300815664 /* Login.storyboard in Resources */,
 				E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
