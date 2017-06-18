@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		56612E061EF63DB300815664 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56612E051EF63DB300815664 /* Login.storyboard */; };
+		E019A7011EF678C300FC697F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019A7001EF678C300FC697F /* VideoViewController.swift */; };
+		E019A7031EF678D000FC697F /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019A7021EF678D000FC697F /* AudioViewController.swift */; };
+		E019A7051EF678DF00FC697F /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019A7041EF678DF00FC697F /* TextViewController.swift */; };
 		E020D06A1EF623650039E5CB /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D0691EF623650039E5CB /* Video.storyboard */; };
 		E020D06C1EF623850039E5CB /* Audio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D06B1EF623850039E5CB /* Audio.storyboard */; };
 		E020D06E1EF623900039E5CB /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D06D1EF623900039E5CB /* Text.storyboard */; };
@@ -30,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		56612E051EF63DB300815664 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E019A7001EF678C300FC697F /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ViewController/VideoViewController.swift; sourceTree = "<group>"; };
+		E019A7021EF678D000FC697F /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioViewController.swift; path = ViewController/AudioViewController.swift; sourceTree = "<group>"; };
+		E019A7041EF678DF00FC697F /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewController.swift; path = ViewController/TextViewController.swift; sourceTree = "<group>"; };
 		E020D0691EF623650039E5CB /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Video.storyboard; path = Screens/Video.storyboard; sourceTree = "<group>"; };
 		E020D06B1EF623850039E5CB /* Audio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Audio.storyboard; path = Screens/Audio.storyboard; sourceTree = "<group>"; };
 		E020D06D1EF623900039E5CB /* Text.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Text.storyboard; path = Screens/Text.storyboard; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				E020D06D1EF623900039E5CB /* Text.storyboard */,
+				E019A7041EF678DF00FC697F /* TextViewController.swift */,
 			);
 			name = Text;
 			sourceTree = "<group>";
@@ -83,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				E020D06B1EF623850039E5CB /* Audio.storyboard */,
+				E019A7021EF678D000FC697F /* AudioViewController.swift */,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -91,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				E020D0691EF623650039E5CB /* Video.storyboard */,
+				E019A7001EF678C300FC697F /* VideoViewController.swift */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -290,7 +299,10 @@
 				E0C1C26E1EDECF2F0063B88A /* DictionaryViewController.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
 				E0AA8D861EF583FC006DC8AB /* DictionaryTableViewCell.swift in Sources */,
+				E019A7031EF678D000FC697F /* AudioViewController.swift in Sources */,
+				E019A7011EF678C300FC697F /* VideoViewController.swift in Sources */,
 				E020D07F1EF6423A0039E5CB /* AudioPlayTableViewCell.swift in Sources */,
+				E019A7051EF678DF00FC697F /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,12 @@ import UIKit
 
 class VideoPlayTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var img: UIImageView!
+    
+    @IBOutlet weak var des: UILabel!
+    @IBOutlet weak var length: UILabel!
+    @IBOutlet weak var name: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

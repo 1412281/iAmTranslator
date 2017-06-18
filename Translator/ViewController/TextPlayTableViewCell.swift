@@ -10,6 +10,9 @@ import UIKit
 
 class TextPlayTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var des: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
