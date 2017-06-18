@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E020D06A1EF623650039E5CB /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D0691EF623650039E5CB /* Video.storyboard */; };
+		E020D06C1EF623850039E5CB /* Audio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D06B1EF623850039E5CB /* Audio.storyboard */; };
+		E020D06E1EF623900039E5CB /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E020D06D1EF623900039E5CB /* Text.storyboard */; };
 		E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F2361ECB581500F574A0 /* AppDelegate.swift */; };
 		E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F23A1ECB581500F574A0 /* Main.storyboard */; };
 		E098F23F1ECB581500F574A0 /* Translator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E098F23D1ECB581500F574A0 /* Translator.xcdatamodeld */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E020D0691EF623650039E5CB /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Video.storyboard; path = Screens/Video.storyboard; sourceTree = "<group>"; };
+		E020D06B1EF623850039E5CB /* Audio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Audio.storyboard; path = Screens/Audio.storyboard; sourceTree = "<group>"; };
+		E020D06D1EF623900039E5CB /* Text.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Text.storyboard; path = Screens/Text.storyboard; sourceTree = "<group>"; };
 		E098F2331ECB581500F574A0 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E098F2361ECB581500F574A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E098F23B1ECB581500F574A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E020D0661EF623300039E5CB /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				E020D06D1EF623900039E5CB /* Text.storyboard */,
+			);
+			name = Text;
+			sourceTree = "<group>";
+		};
+		E020D0671EF6233D0039E5CB /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				E020D06B1EF623850039E5CB /* Audio.storyboard */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
+		E020D0681EF623420039E5CB /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				E020D0691EF623650039E5CB /* Video.storyboard */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
 		E098F22A1ECB581500F574A0 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +156,9 @@
 			children = (
 				E0C1C2601EDEBBB40063B88A /* Play.storyboard */,
 				E0C1C26B1EDECF130063B88A /* PlayViewController.swift */,
+				E020D0681EF623420039E5CB /* Video */,
+				E020D0671EF6233D0039E5CB /* Audio */,
+				E020D0661EF623300039E5CB /* Text */,
 			);
 			name = Play;
 			sourceTree = "<group>";
@@ -210,10 +243,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0C1C2611EDEBBB40063B88A /* Play.storyboard in Resources */,
+				E020D06C1EF623850039E5CB /* Audio.storyboard in Resources */,
 				E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */,
 				E098F2411ECB581500F574A0 /* Assets.xcassets in Resources */,
 				E0C1C2631EDEBBC20063B88A /* Dictionary.storyboard in Resources */,
 				E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */,
+				E020D06E1EF623900039E5CB /* Text.storyboard in Resources */,
+				E020D06A1EF623650039E5CB /* Video.storyboard in Resources */,
 				E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
