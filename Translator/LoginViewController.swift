@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         error.isHidden=true
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
                
         // Do any additional setup after loading the view.
@@ -58,9 +59,10 @@ class LoginViewController: UIViewController {
                 return
             }
             else{
-                let storyboard=UIStoryboard(name:"Play", bundle: nil)
-                let vc=storyboard.instantiateViewController(withIdentifier: "playNavi") as UIViewController
-                self.present(vc, animated: true, completion: nil)
+                let storyboard=UIStoryboard(name:"Main", bundle: nil)
+                let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+            
+                self.navigationController?.pushViewController(vc, animated: true)
                 return
             }
         })

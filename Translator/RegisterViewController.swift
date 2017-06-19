@@ -48,7 +48,7 @@ class RegisterViewController: UIViewController {
     func Register(){
         if (pass.text?.characters.count)! < 7 {
             error.isHidden=false;
-            self.error.text="Password must be greater than 6 characters"
+            self.error.text="Password must be greater than 6"
             return
         }
         else {
@@ -77,9 +77,10 @@ class RegisterViewController: UIViewController {
                         return
                     }
                     else {
-                        let storyboard=UIStoryboard(name:"Play", bundle: nil)
-                        let vc=storyboard.instantiateViewController(withIdentifier: "playNavi") as UIViewController
-                        self.present(vc, animated: true, completion: nil)
+                        let storyboard=UIStoryboard(name:"Main", bundle: nil)
+                        let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+                        
+                        self.navigationController?.pushViewController(vc, animated: true)
                         return
                     }
                 })

@@ -51,5 +51,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Translator/LoginViewController.swift"
+            timestampString = "519550502.951246"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "LogIn()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Translator.LoginViewController.LogIn () -&gt; ()"
+                  moduleName = "Translator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoanglam/Desktop/IOS/iAmTranslator/Translator/LoginViewController.swift"
+                  timestampString = "519550504.064596"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1421">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Translator.LoginViewController.(LogIn () -&gt; ()).(closure #1)"
+                  moduleName = "Translator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoanglam/Desktop/IOS/iAmTranslator/Translator/LoginViewController.swift"
+                  timestampString = "519550504.069692"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
