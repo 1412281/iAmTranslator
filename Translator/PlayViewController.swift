@@ -14,12 +14,12 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: *** Local variables
 
     
-    enum type {
-        case Text
-        case Video
-        case Audio
+    enum `Type` {
+        case text
+        case video
+        case audio
     }
-    var currentChoice = type.Text
+    var currentChoice = Type.text
       // MARK: *** UI Elements
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,17 +30,17 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: *** UI events
     
     @IBAction func textButton(_ sender: Any) {
-        currentChoice = type.Text
+        currentChoice = Type.text
         reloadTable()
     }
     
     @IBAction func videoButton(_ sender: Any) {
-        currentChoice = type.Video
+        currentChoice = Type.video
         reloadTable()
     }
     
     @IBAction func audioButton(_ sender: Any) {
-        currentChoice = type.Audio
+        currentChoice = Type.audio
         reloadTable()
     }
     
@@ -49,11 +49,19 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeButton()
+        //TEST
+        let storyB = UIStoryboard(name: "Text", bundle: nil)
+        let vc = storyB.instantiateViewController(withIdentifier: "TextView") as! TextViewController
+        navigationController?.pushViewController(vc, animated: true)
 
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        changeButton()
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -67,9 +75,9 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var cell : UITableViewCell
         switch currentChoice {
             
-        case .Video:
+        case .video:
             cell = tableView.dequeueReusableCell(withIdentifier: "VideoPlayCell") as! VideoPlayTableViewCell
-        case .Audio:
+        case .audio:
             cell = tableView.dequeueReusableCell(withIdentifier: "AudioPlayCell") as! AudioPlayTableViewCell
         default:
             cell = tableView.dequeueReusableCell(withIdentifier: "TextPlayCell") as! TextPlayTableViewCell
@@ -81,16 +89,16 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch currentChoice {
-        case .Text:
+        case .text:
             let storyB = UIStoryboard(name: "Text", bundle: nil)
             let vc = storyB.instantiateViewController(withIdentifier: "TextView") as! TextViewController
             navigationController?.pushViewController(vc, animated: true)
-        case .Video:
+        case .video:
             let storyB = UIStoryboard(name: "Video", bundle: nil)
             let vc = storyB.instantiateViewController(withIdentifier: "VideoView") as! VideoViewController
             navigationController?.pushViewController(vc, animated: true)
 
-        case .Audio:
+        case .audio:
             let storyB = UIStoryboard(name: "Audio", bundle: nil)
             let vc = storyB.instantiateViewController(withIdentifier: "AudioView") as! AudioViewController
             navigationController?.pushViewController(vc, animated: true)
@@ -105,9 +113,9 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         videoButton.backgroundColor = nil
         audioButton.backgroundColor = nil
         switch currentChoice {
-        case .Video:
+        case .video:
             videoButton.backgroundColor = UIColor.black
-        case .Audio:
+        case .audio:
             audioButton.backgroundColor = UIColor.black
         default:
             textButton.backgroundColor = UIColor.black

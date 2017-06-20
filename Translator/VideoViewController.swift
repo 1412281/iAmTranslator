@@ -1,5 +1,5 @@
 //
-//  TextViewController.swift
+//  VideoViewController.swift
 //  Translator
 //
 //  Created by LamTran on 6/18/17.
@@ -8,11 +8,24 @@
 
 import UIKit
 
-class TextViewController: UIViewController {
+class VideoViewController: UIViewController {
 
+    // MARK: *** Data model
+    
+    // MARK: *** UI Elements
+    
+    @IBOutlet weak var buttonView: UIView!
+    // MARK: *** UI events
+    
+    // MARK: *** Local variables
+    
+    // MARK: *** UIViewController
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
 
         // Do any additional setup after loading the view.
     }

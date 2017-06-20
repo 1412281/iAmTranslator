@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="57B-It-THs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="57B-It-THs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Play-->
         <scene sceneID="4sG-vV-Nlb">
             <objects>
-                <viewController storyboardIdentifier="playViewController" id="lGG-Xv-RCL" customClass="PlayViewController" customModule="Translator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lGG-Xv-RCL" customClass="PlayViewController" customModule="Translator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w6W-Aa-bOR"/>
                         <viewControllerLayoutGuide type="bottom" id="u9n-lf-O3m"/>
@@ -78,45 +78,41 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxo-Pq-yhB">
-                                                    <rect key="frame" x="5" y="5" width="310" height="20"/>
+                                                    <rect key="frame" x="13" y="13" width="250" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="cxo-Pq-yhB" secondAttribute="height" multiplier="31:2" id="JNF-Xy-CaX"/>
-                                                        <constraint firstAttribute="height" constant="20" id="ylI-nG-8X2"/>
+                                                        <constraint firstAttribute="width" constant="250" id="Ge3-5I-YRq"/>
+                                                        <constraint firstAttribute="height" constant="20" id="SSl-c4-PDa"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z9-bU-LHJ">
-                                                    <rect key="frame" x="320" y="5.5" width="50" height="21"/>
+                                                    <rect key="frame" x="273" y="5" width="97" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="6Z9-bU-LHJ" secondAttribute="height" multiplier="50:21" id="MUg-eQ-fBL"/>
-                                                        <constraint firstAttribute="height" constant="21" id="ecF-O8-dJv"/>
+                                                        <constraint firstAttribute="height" constant="20" id="DaF-ht-A6e"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="des" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyH-70-sla">
-                                                    <rect key="frame" x="5" y="32" width="365" height="70"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="70" id="dmK-ED-HOi"/>
-                                                        <constraint firstAttribute="width" secondItem="dyH-70-sla" secondAttribute="height" multiplier="73:14" id="rc4-HP-y0g"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="5" y="38" width="365" height="61.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6Z9-bU-LHJ" firstAttribute="leading" secondItem="cxo-Pq-yhB" secondAttribute="trailing" constant="5" id="0Id-gg-tbK"/>
-                                                <constraint firstAttribute="trailing" secondItem="dyH-70-sla" secondAttribute="trailing" constant="5" id="9Mi-IN-fzp"/>
-                                                <constraint firstItem="cxo-Pq-yhB" firstAttribute="leading" secondItem="zRU-9L-wmC" secondAttribute="leading" constant="5" id="9cL-JF-NGW"/>
-                                                <constraint firstItem="6Z9-bU-LHJ" firstAttribute="top" secondItem="zRU-9L-wmC" secondAttribute="top" constant="5" id="Dj9-Rm-qFM"/>
-                                                <constraint firstAttribute="trailing" secondItem="6Z9-bU-LHJ" secondAttribute="trailing" constant="5" id="HGY-yt-zhT"/>
-                                                <constraint firstItem="dyH-70-sla" firstAttribute="leading" secondItem="zRU-9L-wmC" secondAttribute="leading" constant="5" id="HxM-pT-QRP"/>
-                                                <constraint firstItem="dyH-70-sla" firstAttribute="top" secondItem="6Z9-bU-LHJ" secondAttribute="bottom" constant="5" id="kKb-XC-w7B"/>
-                                                <constraint firstItem="cxo-Pq-yhB" firstAttribute="top" secondItem="zRU-9L-wmC" secondAttribute="top" constant="5" id="piM-Mq-8DG"/>
+                                                <constraint firstItem="dyH-70-sla" firstAttribute="leading" secondItem="zRU-9L-wmC" secondAttribute="leading" constant="5" id="7Fq-ZK-GAN"/>
+                                                <constraint firstItem="cxo-Pq-yhB" firstAttribute="leading" secondItem="zRU-9L-wmC" secondAttribute="leadingMargin" constant="5" id="7Ze-YF-l44"/>
+                                                <constraint firstAttribute="bottom" secondItem="dyH-70-sla" secondAttribute="bottom" constant="5" id="8tN-iI-9XV"/>
+                                                <constraint firstItem="cxo-Pq-yhB" firstAttribute="top" secondItem="zRU-9L-wmC" secondAttribute="topMargin" constant="5" id="R7L-gD-mMX"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Z9-bU-LHJ" secondAttribute="trailing" constant="5" id="TkJ-4D-cmG"/>
+                                                <constraint firstItem="6Z9-bU-LHJ" firstAttribute="top" secondItem="zRU-9L-wmC" secondAttribute="top" constant="5" id="a4q-g1-CLF"/>
+                                                <constraint firstItem="6Z9-bU-LHJ" firstAttribute="leading" secondItem="cxo-Pq-yhB" secondAttribute="trailing" constant="10" id="cdZ-G7-5ax"/>
+                                                <constraint firstItem="dyH-70-sla" firstAttribute="top" secondItem="cxo-Pq-yhB" secondAttribute="bottom" constant="5" id="dHK-Q2-IhX"/>
+                                                <constraint firstAttribute="trailing" secondItem="dyH-70-sla" secondAttribute="trailing" constant="5" id="fbn-iG-kxt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -257,7 +253,7 @@
         <!--Play-->
         <scene sceneID="wzW-Ia-4EM">
             <objects>
-                <navigationController storyboardIdentifier="playNavi" automaticallyAdjustsScrollViewInsets="NO" id="57B-It-THs" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="57B-It-THs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Play" image="play" id="uEZ-mO-aHz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jTl-ZP-h29">

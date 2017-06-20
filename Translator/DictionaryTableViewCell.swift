@@ -10,7 +10,7 @@ import UIKit
 
 class DictionaryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var key: UILabel!
+    @IBOutlet weak var word: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
