@@ -38,6 +38,8 @@
 		E0DC79361EF9780F007AEF1A /* AddVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */; };
 		E0F6822A1EFA195D00DDF0BC /* testFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0F682291EFA195D00DDF0BC /* testFile.txt */; };
 		E0F6822C1EFA2AEC00DDF0BC /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F6822B1EFA2AEC00DDF0BC /* Decode.swift */; };
+		E0F6822E1EFA3BDA00DDF0BC /* anhviet109K.index in Resources */ = {isa = PBXBuildFile; fileRef = E0F6822D1EFA3BDA00DDF0BC /* anhviet109K.index */; };
+		E0F682301EFA3C8C00DDF0BC /* db.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0F6822F1EFA3C8C00DDF0BC /* db.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddVideoViewController.swift; path = ViewController/AddVideoViewController.swift; sourceTree = "<group>"; };
 		E0F682291EFA195D00DDF0BC /* testFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testFile.txt; path = Translator/testFile.txt; sourceTree = SOURCE_ROOT; };
 		E0F6822B1EFA2AEC00DDF0BC /* Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Decode.swift; path = Translator/Decode.swift; sourceTree = SOURCE_ROOT; };
+		E0F6822D1EFA3BDA00DDF0BC /* anhviet109K.index */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = anhviet109K.index; path = Translator/anhviet109K.index; sourceTree = SOURCE_ROOT; };
+		E0F6822F1EFA3C8C00DDF0BC /* db.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = db.txt; path = Translator/db.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,8 @@
 		E0C1C25D1EDEBB320063B88A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E0F6822F1EFA3C8C00DDF0BC /* db.txt */,
+				E0F6822D1EFA3BDA00DDF0BC /* anhviet109K.index */,
 				E0F682291EFA195D00DDF0BC /* testFile.txt */,
 				E020D0711EF628670039E5CB /* Assets.xcassets */,
 			);
@@ -322,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0F682301EFA3C8C00DDF0BC /* db.txt in Resources */,
 				E0F6822A1EFA195D00DDF0BC /* testFile.txt in Resources */,
 				E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */,
 				E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */,
@@ -329,6 +336,7 @@
 				56958D601EF6F7DE0062CE1A /* GoogleService-Info.plist in Resources */,
 				E02A5DD61EF8C54600B921B8 /* Play.storyboard in Resources */,
 				56612E061EF63DB300815664 /* Login.storyboard in Resources */,
+				E0F6822E1EFA3BDA00DDF0BC /* anhviet109K.index in Resources */,
 				E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */,
 				E02A5DE81EF8C59700B921B8 /* Text.storyboard in Resources */,
 				E02A5DCD1EF8C52300B921B8 /* Dictionary.storyboard in Resources */,

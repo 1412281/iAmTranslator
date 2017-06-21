@@ -8,14 +8,14 @@
 
 import UIKit
 
-class Decode: NSObject {
-    let gValue:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+class Decode {
+    static let gValue:String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
     
     
-    func from(st: String) -> Int {
+    static func from(st: String) -> Int {
        
         var chars = Array(st.characters)
-        print(chars)
+        //print(chars)
         
         var decValue:Int = 0
         var charValue: Int?
@@ -23,7 +23,7 @@ class Decode: NSObject {
         let dec = Decimal(64)
         
         for i in 0..<len{
-            print(chars[i])
+            //print(chars[i])
             if let idx = gValue.characters.index(of: chars[i]) {
                 charValue = gValue.characters.distance(from: gValue.startIndex, to: idx)
                 //print("Found \(chars[i]) at position \(pos)")

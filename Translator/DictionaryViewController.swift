@@ -11,8 +11,9 @@ import UIKit
 class DictionaryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: *** Data model
-    var dict: [String?] = []
-    var mean: [String?] = []
+    var words: [String] = []
+    var offsets: [Int] = []
+    var lengths: [Int] = []
     // MARK: *** UI Elements
     
     // MARK: *** UI events
@@ -41,10 +42,17 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
             // do something with Error
             print(err)
         }
+        
         for line in raws {
-            let ar: [String?] = (line?.components(separatedBy: "\t"))!
-            dict.append(ar[0])
-            
+            if (!(line?.isEmpty)!) {
+                let ar: [String] = (line?.components(separatedBy: "\t"))!
+                words.append(ar[0])
+                offsets.append(Decode.from(st: ar[1]))
+                lengths.append(Decode.from(st: ar[2]))
+            }
+        }
+        for i in 0..<words.count {
+            print(words[i] + String(offsets[i]) + String(lengths[i]))
         }
         
     }
@@ -57,19 +65,19 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dict.count
+        return words.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dictCell") as! DictionaryTableViewCell
-        cell.word.text = dict[indexPath.row]
+        cell.word.text = words[indexPath.row]
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyB = UIStoryboard(name: "Dictionary", bundle: nil)
         let vc = storyB.instantiateViewController(withIdentifier: "wordDictVC") as! WordDictViewController
-        vc.setWord(word: dict[indexPath.row]!, mean: mean[indexPath.row]!)
+        vc.setWord(word: words[indexPath.row], mean: words[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
 }
