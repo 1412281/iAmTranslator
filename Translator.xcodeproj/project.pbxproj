@@ -24,11 +24,8 @@
 		E02A5DD71EF8C54600B921B8 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DD21EF8C54600B921B8 /* PlayViewController.swift */; };
 		E02A5DD81EF8C54600B921B8 /* VideoPlayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DD31EF8C54600B921B8 /* VideoPlayTableViewCell.swift */; };
 		E02A5DD91EF8C54600B921B8 /* TextPlayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DD41EF8C54600B921B8 /* TextPlayTableViewCell.swift */; };
-		E02A5DDA1EF8C54600B921B8 /* AudioPlayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DD51EF8C54600B921B8 /* AudioPlayTableViewCell.swift */; };
 		E02A5DE01EF8C58700B921B8 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02A5DDE1EF8C58700B921B8 /* Video.storyboard */; };
 		E02A5DE11EF8C58700B921B8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DDF1EF8C58700B921B8 /* VideoViewController.swift */; };
-		E02A5DE41EF8C58F00B921B8 /* Audio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02A5DE21EF8C58F00B921B8 /* Audio.storyboard */; };
-		E02A5DE51EF8C58F00B921B8 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DE31EF8C58F00B921B8 /* AudioViewController.swift */; };
 		E02A5DE81EF8C59700B921B8 /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02A5DE61EF8C59700B921B8 /* Text.storyboard */; };
 		E02A5DE91EF8C59700B921B8 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DE71EF8C59700B921B8 /* TextViewController.swift */; };
 		E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F2361ECB581500F574A0 /* AppDelegate.swift */; };
@@ -36,6 +33,9 @@
 		E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F2421ECB581500F574A0 /* LaunchScreen.storyboard */; };
 		E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C1C2641EDEBBCB0063B88A /* Setting.storyboard */; };
 		E0C1C2701EDECF3B0063B88A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C1C26F1EDECF3B0063B88A /* SettingViewController.swift */; };
+		E0DC79321EF96C06007AEF1A /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DC79311EF96C06007AEF1A /* Add.storyboard */; };
+		E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79331EF97800007AEF1A /* AddTextViewController.swift */; };
+		E0DC79361EF9780F007AEF1A /* AddVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,11 +58,8 @@
 		E02A5DD21EF8C54600B921B8 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		E02A5DD31EF8C54600B921B8 /* VideoPlayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayTableViewCell.swift; sourceTree = "<group>"; };
 		E02A5DD41EF8C54600B921B8 /* TextPlayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPlayTableViewCell.swift; sourceTree = "<group>"; };
-		E02A5DD51EF8C54600B921B8 /* AudioPlayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayTableViewCell.swift; sourceTree = "<group>"; };
 		E02A5DDE1EF8C58700B921B8 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
 		E02A5DDF1EF8C58700B921B8 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		E02A5DE21EF8C58F00B921B8 /* Audio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Audio.storyboard; sourceTree = "<group>"; };
-		E02A5DE31EF8C58F00B921B8 /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		E02A5DE61EF8C59700B921B8 /* Text.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Text.storyboard; sourceTree = "<group>"; };
 		E02A5DE71EF8C59700B921B8 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		E098F2331ECB581500F574A0 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +69,9 @@
 		E098F2451ECB581500F574A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0C1C2641EDEBBCB0063B88A /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		E0C1C26F1EDECF3B0063B88A /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ViewController/SettingViewController.swift; sourceTree = "<group>"; };
+		E0DC79311EF96C06007AEF1A /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		E0DC79331EF97800007AEF1A /* AddTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTextViewController.swift; path = ViewController/AddTextViewController.swift; sourceTree = "<group>"; };
+		E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddVideoViewController.swift; path = ViewController/AddVideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				E02A5DC91EF8C52300B921B8 /* Dictionary.storyboard */,
-				E02A5DCA1EF8C52300B921B8 /* DictionaryTableViewCell.swift */,
 				E02A5DCB1EF8C52300B921B8 /* DictionaryViewController.swift */,
+				E02A5DCA1EF8C52300B921B8 /* DictionaryTableViewCell.swift */,
 				E02A5DCC1EF8C52300B921B8 /* WordDictViewController.swift */,
 			);
 			name = Dictionary;
@@ -133,8 +133,6 @@
 				E02A5DD21EF8C54600B921B8 /* PlayViewController.swift */,
 				E02A5DD31EF8C54600B921B8 /* VideoPlayTableViewCell.swift */,
 				E02A5DD41EF8C54600B921B8 /* TextPlayTableViewCell.swift */,
-				E02A5DD51EF8C54600B921B8 /* AudioPlayTableViewCell.swift */,
-				E02A5DDD1EF8C57B00B921B8 /* Audio */,
 				E02A5DDC1EF8C57700B921B8 /* Video */,
 				E02A5DDB1EF8C57200B921B8 /* Text */,
 			);
@@ -157,15 +155,6 @@
 				E02A5DDF1EF8C58700B921B8 /* VideoViewController.swift */,
 			);
 			name = Video;
-			sourceTree = "<group>";
-		};
-		E02A5DDD1EF8C57B00B921B8 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				E02A5DE21EF8C58F00B921B8 /* Audio.storyboard */,
-				E02A5DE31EF8C58F00B921B8 /* AudioViewController.swift */,
-			);
-			name = Audio;
 			sourceTree = "<group>";
 		};
 		E098F22A1ECB581500F574A0 = {
@@ -236,6 +225,7 @@
 		E0C1C2671EDECE160063B88A /* Sreens */ = {
 			isa = PBXGroup;
 			children = (
+				E0DC79301EF96BDF007AEF1A /* Add */,
 				E02A5DC81EF8C50900B921B8 /* Play */,
 				E02A5DC71EF8C4FA00B921B8 /* Dictionary */,
 				56612E041EF63D9500815664 /* Login */,
@@ -251,6 +241,16 @@
 				E0C1C26F1EDECF3B0063B88A /* SettingViewController.swift */,
 			);
 			name = Setting;
+			sourceTree = "<group>";
+		};
+		E0DC79301EF96BDF007AEF1A /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				E0DC79311EF96C06007AEF1A /* Add.storyboard */,
+				E0DC79331EF97800007AEF1A /* AddTextViewController.swift */,
+				E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */,
+			);
+			name = Add;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,8 +324,8 @@
 				56612E061EF63DB300815664 /* Login.storyboard in Resources */,
 				E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */,
 				E02A5DE81EF8C59700B921B8 /* Text.storyboard in Resources */,
-				E02A5DE41EF8C58F00B921B8 /* Audio.storyboard in Resources */,
 				E02A5DCD1EF8C52300B921B8 /* Dictionary.storyboard in Resources */,
+				E0DC79321EF96C06007AEF1A /* Add.storyboard in Resources */,
 				E02A5DE01EF8C58700B921B8 /* Video.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,17 +385,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E02A5DDA1EF8C54600B921B8 /* AudioPlayTableViewCell.swift in Sources */,
 				E02A5DCF1EF8C52300B921B8 /* DictionaryViewController.swift in Sources */,
 				E0C1C2701EDECF3B0063B88A /* SettingViewController.swift in Sources */,
 				E02A5DCE1EF8C52300B921B8 /* DictionaryTableViewCell.swift in Sources */,
+				E0DC79361EF9780F007AEF1A /* AddVideoViewController.swift in Sources */,
 				E020D0791EF628AF0039E5CB /* Translator.xcdatamodeld in Sources */,
-				E02A5DE51EF8C58F00B921B8 /* AudioViewController.swift in Sources */,
 				E02A5DD71EF8C54600B921B8 /* PlayViewController.swift in Sources */,
 				56958D591EF6F5F30062CE1A /* CustomLoginButton.swift in Sources */,
 				56958D5C1EF6F6D40062CE1A /* RegisterViewController.swift in Sources */,
 				E02A5DE11EF8C58700B921B8 /* VideoViewController.swift in Sources */,
 				E02A5DD01EF8C52300B921B8 /* WordDictViewController.swift in Sources */,
+				E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */,
 				E02A5DD91EF8C54600B921B8 /* TextPlayTableViewCell.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
 				56958D5E1EF6F70F0062CE1A /* LoginViewController.swift in Sources */,

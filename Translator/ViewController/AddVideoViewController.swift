@@ -1,18 +1,17 @@
 //
-//  AudioViewController.swift
+//  AddVideoViewController.swift
 //  Translator
 //
-//  Created by LamTran on 6/18/17.
+//  Created by LamTran on 6/20/17.
 //  Copyright © 2017 LamTran. All rights reserved.
 //
 
 import UIKit
 
-class AudioViewController: UIViewController {
+class AddVideoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(false, animated: false)
 
         // Do any additional setup after loading the view.
     }

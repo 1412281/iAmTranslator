@@ -14,7 +14,8 @@ class VideoViewController: UIViewController {
     
     // MARK: *** UI Elements
     
-    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var transView: UIView!
     // MARK: *** UI events
     
     // MARK: *** Local variables
@@ -27,7 +28,8 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
 
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,14 +38,21 @@ class VideoViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                let less = view.frame.height - (keyboardSize.height - transView.frame.origin.y)
+                videoView.frame.origin.y -= less
+            }
+        }
     }
-    */
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.transView.frame.origin.y += (keyboardSize.height - 40)
+            }
+        }
+    }
 
 }

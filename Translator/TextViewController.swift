@@ -44,4 +44,5 @@ class TextViewController: UIViewController {
                 self.view.frame.origin.y += (keyboardSize.height - 40)
             }
         }
-    }}
+    }
+}
