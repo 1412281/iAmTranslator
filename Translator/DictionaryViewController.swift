@@ -11,9 +11,7 @@ import UIKit
 class DictionaryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: *** Data model
-    var words: [String] = []
-    var offsets: [Int] = []
-    var lengths: [Int] = []
+    
     // MARK: *** UI Elements
     
     // MARK: *** UI events
@@ -36,7 +34,7 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
                 print(raws)
             }
             else {
-                print("file not found")
+                print("file index not found")
             }
         } catch let err as NSError {
             // do something with Error
@@ -46,14 +44,14 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
         for line in raws {
             if (!(line?.isEmpty)!) {
                 let ar: [String] = (line?.components(separatedBy: "\t"))!
-                words.append(ar[0])
-                offsets.append(Decode.from(st: ar[1]))
-                lengths.append(Decode.from(st: ar[2]))
+                Dictionary.words.append(ar[0])
+                Dictionary.offsets.append(Decode.from(st: ar[1]))
+                Dictionary.lengths.append(Decode.from(st: ar[2]))
             }
         }
-        for i in 0..<words.count {
-            print(words[i] + String(offsets[i]) + String(lengths[i]))
-        }
+//        for i in 0..<Dictionary.words.count {
+//            print(Dictionary.words[i] + String(Dictionary.offsets[i]) + String(Dictionary.lengths[i]))
+//        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -65,19 +63,41 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return words.count
+        return Dictionary.words.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dictCell") as! DictionaryTableViewCell
-        cell.word.text = words[indexPath.row]
+        cell.word.text = Dictionary.words[indexPath.row]
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyB = UIStoryboard(name: "Dictionary", bundle: nil)
         let vc = storyB.instantiateViewController(withIdentifier: "wordDictVC") as! WordDictViewController
-        vc.setWord(word: words[indexPath.row], mean: words[indexPath.row])
+        let word = Dictionary.words[indexPath.row]
+//        let offset = Dictionary.offsets[indexPath.row]
+//        let lengt = Dictionary.lengths[indexPath.row]
+//        
+//        let start = Dictionary.dict?.index(Dictionary.dict, offsetBy: Dictionary.)
+////        let mean = Dictionary.dict[Dictionary.offsets[indexPath.row]..< 1]
+        
+        let dict = Dictionary.dict
+        var mean:String? = ""
+        if dict == nil {
+            print("File open failed")
+        } else {
+            dict?.seek(toFileOffset: UInt64(Dictionary.offsets[indexPath.row]))
+            let data = dict?.readData(ofLength: Dictionary.lengths[indexPath.row])
+            if let dat = data {
+                if let me = String(data: dat, encoding: String.Encoding.utf8) as String! {
+                    mean = me
+                }
+            }
+                
+//            dict?.closeFile()
+        }
+        vc.setWord(word: word, mean: mean!)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

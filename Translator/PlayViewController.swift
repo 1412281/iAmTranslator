@@ -66,6 +66,9 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let touchToHiddenSelectAdd = UITapGestureRecognizer(target: self, action: #selector(PlayViewController.hiddenAdd))
         self.backgroundView.addGestureRecognizer(touchToHiddenSelectAdd)
         
+        
+        
+
     }
     
     func hiddenAdd() {

@@ -14,7 +14,6 @@ class VideoViewController: UIViewController {
     
     // MARK: *** UI Elements
     
-    @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var transView: UIView!
     
     @IBOutlet weak var secondLoop: UILabel!
@@ -129,10 +128,11 @@ class VideoViewController: UIViewController {
 
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0{
-                let less = view.frame.height - (keyboardSize.height - transView.frame.origin.y)
-                videoView.frame.origin.y -= less
-            }
+            let sizeC = transView.frame.height + videoViewYT.frame.height
+            let less = keyboardSize.height - (view.frame.height - sizeC)
+                videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y, width: videoViewYT.frame.width, height: videoViewYT.frame.height - less - 40)
+                transView.frame.origin.y -= less + 40
+            
         }
     }
     
