@@ -28,10 +28,14 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - youtube-ios-player-helper (0.1.6)
+  - YouTubePlayer-Swift (1.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
+  - youtube-ios-player-helper (~> 0.1.1)
+  - YouTubePlayer-Swift (~> 1.0)
 
 SPEC CHECKSUMS:
   Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
@@ -41,7 +45,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
+  YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: c513cbf9ff4ef4685bce8eff39fbbef608755454
+PODFILE CHECKSUM: ce737f25e45d70f811383c9c567adb4f588146fc
 
 COCOAPODS: 1.2.1

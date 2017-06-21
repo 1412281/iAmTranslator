@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C6ECE8A9E7CBD6529D52C2AD61B1F57"
-               BuildableName = "Pods_Translator.framework"
-               BlueprintName = "Pods-Translator"
+               BlueprintIdentifier = "3377C4D77BD3BA24A0D27F37DFA01D25"
+               BuildableName = "YouTubePlayer_Swift.framework"
+               BlueprintName = "YouTubePlayer-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C6ECE8A9E7CBD6529D52C2AD61B1F57"
-            BuildableName = "Pods_Translator.framework"
-            BlueprintName = "Pods-Translator"
+            BlueprintIdentifier = "3377C4D77BD3BA24A0D27F37DFA01D25"
+            BuildableName = "YouTubePlayer_Swift.framework"
+            BlueprintName = "YouTubePlayer-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
