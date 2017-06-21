@@ -29,7 +29,7 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     func readFile() {
         var raws: [String?] = []
         do {
-            // This solution assumes  you've got the file in your bundle
+            // read file index
             if let path = Bundle.main.path(forResource: "testFile", ofType: "txt"){
                 let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
                 raws = data.components(separatedBy: "\n")
