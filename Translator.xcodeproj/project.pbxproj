@@ -36,6 +36,8 @@
 		E0DC79321EF96C06007AEF1A /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DC79311EF96C06007AEF1A /* Add.storyboard */; };
 		E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79331EF97800007AEF1A /* AddTextViewController.swift */; };
 		E0DC79361EF9780F007AEF1A /* AddVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */; };
+		E0F6822A1EFA195D00DDF0BC /* testFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0F682291EFA195D00DDF0BC /* testFile.txt */; };
+		E0F6822C1EFA2AEC00DDF0BC /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F6822B1EFA2AEC00DDF0BC /* Decode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		E0DC79311EF96C06007AEF1A /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		E0DC79331EF97800007AEF1A /* AddTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTextViewController.swift; path = ViewController/AddTextViewController.swift; sourceTree = "<group>"; };
 		E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddVideoViewController.swift; path = ViewController/AddVideoViewController.swift; sourceTree = "<group>"; };
+		E0F682291EFA195D00DDF0BC /* testFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testFile.txt; path = Translator/testFile.txt; sourceTree = SOURCE_ROOT; };
+		E0F6822B1EFA2AEC00DDF0BC /* Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Decode.swift; path = Translator/Decode.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		E0C1C25B1EDEBB320063B88A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E0F6822B1EFA2AEC00DDF0BC /* Decode.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 		E0C1C25D1EDEBB320063B88A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E0F682291EFA195D00DDF0BC /* testFile.txt */,
 				E020D0711EF628670039E5CB /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -316,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0F6822A1EFA195D00DDF0BC /* testFile.txt in Resources */,
 				E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */,
 				E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */,
 				E020D0721EF628670039E5CB /* Assets.xcassets in Resources */,
@@ -398,6 +405,7 @@
 				E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */,
 				E02A5DD91EF8C54600B921B8 /* TextPlayTableViewCell.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
+				E0F6822C1EFA2AEC00DDF0BC /* Decode.swift in Sources */,
 				56958D5E1EF6F70F0062CE1A /* LoginViewController.swift in Sources */,
 				E02A5DE91EF8C59700B921B8 /* TextViewController.swift in Sources */,
 				56958D5A1EF6F5F30062CE1A /* CustomLoginTextField.swift in Sources */,

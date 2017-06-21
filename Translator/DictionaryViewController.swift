@@ -11,8 +11,8 @@ import UIKit
 class DictionaryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: *** Data model
-    let dict: [String?] = ["hello", "code", "debug"]
-    let mean: [String?] = ["xin chào", "tạo hành", "ăn hành"]
+    var dict: [String?] = []
+    var mean: [String?] = []
     // MARK: *** UI Elements
     
     // MARK: *** UI events
@@ -22,7 +22,31 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: *** UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        readFile()
+    }
+    
+    func readFile() {
+        var raws: [String?] = []
+        do {
+            // This solution assumes  you've got the file in your bundle
+            if let path = Bundle.main.path(forResource: "testFile", ofType: "txt"){
+                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+                raws = data.components(separatedBy: "\n")
+                print(raws)
+            }
+            else {
+                print("file not found")
+            }
+        } catch let err as NSError {
+            // do something with Error
+            print(err)
+        }
+        for line in raws {
+            let ar: [String?] = (line?.components(separatedBy: "\t"))!
+            dict.append(ar[0])
+            
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
