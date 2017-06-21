@@ -8,5 +8,5 @@ target 'Translator' do
   # Pods for Translator
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-
+pod "youtube-ios-player-helper", "~> 0.1.1"
 end
