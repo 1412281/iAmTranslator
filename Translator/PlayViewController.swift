@@ -66,7 +66,9 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let touchToHiddenSelectAdd = UITapGestureRecognizer(target: self, action: #selector(PlayViewController.hiddenAdd))
         self.backgroundView.addGestureRecognizer(touchToHiddenSelectAdd)
         
-        
+        let storyB = UIStoryboard(name: "Text", bundle: nil)
+        let vc = storyB.instantiateViewController(withIdentifier: "TextView") as! TextViewController
+        navigationController?.pushViewController(vc, animated: true)
         
 
     }
