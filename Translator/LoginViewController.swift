@@ -8,7 +8,8 @@
 
 import UIKit
 import Firebase
-class LoginViewController: UIViewController {
+import FBSDKLoginKit
+class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     
     
     @IBOutlet weak var email: CustomLoginTextField!
@@ -32,13 +33,29 @@ class LoginViewController: UIViewController {
         error.isHidden=true
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-               
-        // Do any additional setup after loading the view.
+        if FBSDKAccessToken.current() != nil{
+            let storyboard=UIStoryboard(name:"Main", bundle: nil)
+            let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            return
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
+        let storyboard=UIStoryboard(name:"Main", bundle: nil)
+        let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        return
+    }
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
+        print("Logout");
     }
     
     func LogIn(){
@@ -70,5 +87,7 @@ class LoginViewController: UIViewController {
        // self.error.text="Email's format was wrong"
 
     }
-
+    
+    
+    
 }

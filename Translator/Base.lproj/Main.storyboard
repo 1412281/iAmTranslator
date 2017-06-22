@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vbV-dN-oh3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F3b-Yo-QJg">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -75,6 +75,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurBg" translatesAutoresizingMaskIntoConstraints="NO" id="OH5-A0-P5q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDD-7W-ljh" userLabel="ViewChild">
                                 <rect key="frame" x="0.0" y="64" width="320" height="280"/>
@@ -105,24 +106,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abk-OG-lnc" customClass="CustomLoginButton" customModule="Translator" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="250" width="300" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="abk-OG-lnc" secondAttribute="height" multiplier="10:1" id="wNF-gA-ePR"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Facebook">
-                                            <color key="titleColor" red="0.0" green="0.038580112780000002" blue="0.89019608500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0014557590849999999" green="0.081544086040000005" blue="0.89019608500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45c-m9-WdH">
                                         <rect key="frame" x="10" y="165" width="300" height="15"/>
                                         <constraints>
@@ -175,6 +158,13 @@
                                             <action selector="login:" destination="hJ3-9J-Sch" eventType="touchUpInside" id="eAb-I2-1Cd"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjE-mo-AYN" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="40" y="256" width="240" height="38"/>
+                                        <color key="backgroundColor" white="1" alpha="0.38115368150684931" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DjE-mo-AYN" secondAttribute="height" multiplier="120:19" id="RVf-wm-FT5"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -184,14 +174,14 @@
                                     <constraint firstItem="OJb-dA-tYd" firstAttribute="top" secondItem="dcP-fZ-wHd" secondAttribute="bottom" constant="5" id="J03-p8-np7"/>
                                     <constraint firstItem="sv6-aK-wzY" firstAttribute="leading" secondItem="cDD-7W-ljh" secondAttribute="leading" constant="10" id="ND5-k8-X7l"/>
                                     <constraint firstAttribute="width" secondItem="cDD-7W-ljh" secondAttribute="height" multiplier="8:7" id="NeU-1S-Pbn"/>
+                                    <constraint firstAttribute="trailing" secondItem="DjE-mo-AYN" secondAttribute="trailing" constant="40" id="Nna-Am-pSP"/>
                                     <constraint firstItem="OOX-VH-gdp" firstAttribute="centerX" secondItem="cDD-7W-ljh" secondAttribute="centerX" id="QkB-Y8-ckm"/>
                                     <constraint firstItem="45c-m9-WdH" firstAttribute="leading" secondItem="cDD-7W-ljh" secondAttribute="leading" constant="10" id="W9d-Ie-9iP"/>
+                                    <constraint firstItem="DjE-mo-AYN" firstAttribute="top" secondItem="OOX-VH-gdp" secondAttribute="bottom" constant="8" id="YiT-e8-2JI"/>
                                     <constraint firstItem="dkr-WR-O5z" firstAttribute="top" secondItem="cDD-7W-ljh" secondAttribute="top" constant="10" id="Zbw-3H-60d"/>
                                     <constraint firstAttribute="trailing" secondItem="OJb-dA-tYd" secondAttribute="trailing" constant="10" id="Zts-4t-lGI"/>
-                                    <constraint firstAttribute="bottom" secondItem="abk-OG-lnc" secondAttribute="bottom" id="eDQ-ET-vx2"/>
+                                    <constraint firstItem="DjE-mo-AYN" firstAttribute="leading" secondItem="cDD-7W-ljh" secondAttribute="leading" constant="40" id="go2-H5-ceu"/>
                                     <constraint firstAttribute="trailing" secondItem="dkr-WR-O5z" secondAttribute="trailing" constant="10" id="kvE-3t-zi8"/>
-                                    <constraint firstAttribute="trailing" secondItem="abk-OG-lnc" secondAttribute="trailing" constant="10" id="o6q-bF-uIC"/>
-                                    <constraint firstItem="abk-OG-lnc" firstAttribute="leading" secondItem="cDD-7W-ljh" secondAttribute="leading" constant="10" id="pVn-24-5md"/>
                                     <constraint firstItem="OJb-dA-tYd" firstAttribute="leading" secondItem="cDD-7W-ljh" secondAttribute="leading" constant="10" id="qGm-bN-5W0"/>
                                     <constraint firstAttribute="trailing" secondItem="dcP-fZ-wHd" secondAttribute="trailing" constant="10" id="s8P-8f-xb8"/>
                                     <constraint firstAttribute="trailing" secondItem="45c-m9-WdH" secondAttribute="trailing" constant="10" id="t88-Fn-rF6"/>
@@ -247,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGb-Sa-y1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282.60869565217394" y="56.250000000000007"/>
+            <point key="canvasLocation" x="281.25" y="55.985915492957744"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="uso-ZD-59o">
