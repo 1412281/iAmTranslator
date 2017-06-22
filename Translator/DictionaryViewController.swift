@@ -74,12 +74,7 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
         let storyB = UIStoryboard(name: "Dictionary", bundle: nil)
         let vc = storyB.instantiateViewController(withIdentifier: "wordDictVC") as! WordDictViewController
         let word = Dictionary.words[indexPath.row]
-//        let offset = Dictionary.offsets[indexPath.row]
-//        let lengt = Dictionary.lengths[indexPath.row]
-//        
-//        let start = Dictionary.dict?.index(Dictionary.dict, offsetBy: Dictionary.)
-////        let mean = Dictionary.dict[Dictionary.offsets[indexPath.row]..< 1]
-        
+
         let dict = Dictionary.dict
         var mean:String? = ""
         if dict == nil {
