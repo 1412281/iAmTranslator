@@ -22,8 +22,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Dn7-cy-tRb" kind="relationship" relationship="viewControllers" id="XyE-b9-oC4"/>
                         <segue destination="IZc-Y7-PEF" kind="relationship" relationship="viewControllers" id="lLs-Uy-Wmc"/>
+                        <segue destination="Dn7-cy-tRb" kind="relationship" relationship="viewControllers" id="XyE-b9-oC4"/>
                         <segue destination="kfJ-9B-cvV" kind="relationship" relationship="viewControllers" id="POm-Xn-Xx0"/>
                     </connections>
                 </tabBarController>

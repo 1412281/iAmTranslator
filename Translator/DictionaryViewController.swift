@@ -21,17 +21,17 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: *** UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        readFile()
+        if Dictionary.words.count == 0 { readFile() }
     }
     
     func readFile() {
         var raws: [String?] = []
         do {
             // read file index
-            if let path = Bundle.main.path(forResource: "testFile", ofType: "txt"){
+            if let path = Bundle.main.path(forResource: "index", ofType: "txt"){
                 let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
                 raws = data.components(separatedBy: "\n")
-                print(raws)
+                //print(raws)
             }
             else {
                 print("file index not found")
@@ -45,13 +45,11 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
             if (!(line?.isEmpty)!) {
                 let ar: [String] = (line?.components(separatedBy: "\t"))!
                 Dictionary.words.append(ar[0])
-                Dictionary.offsets.append(Decode.from(st: ar[1]))
-                Dictionary.lengths.append(Decode.from(st: ar[2]))
+                Dictionary.offsets.append(Int(ar[1])!)
+                Dictionary.lengths.append(Int(ar[2])!)
             }
         }
-//        for i in 0..<Dictionary.words.count {
-//            print(Dictionary.words[i] + String(Dictionary.offsets[i]) + String(Dictionary.lengths[i]))
-//        }
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {

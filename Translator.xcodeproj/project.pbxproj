@@ -34,15 +34,12 @@
 		E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F2361ECB581500F574A0 /* AppDelegate.swift */; };
 		E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F23A1ECB581500F574A0 /* Main.storyboard */; };
 		E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F2421ECB581500F574A0 /* LaunchScreen.storyboard */; };
+		E0B186E51EFB952800BDB2DF /* index.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0B186E41EFB952800BDB2DF /* index.txt */; };
 		E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C1C2641EDEBBCB0063B88A /* Setting.storyboard */; };
 		E0C1C2701EDECF3B0063B88A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C1C26F1EDECF3B0063B88A /* SettingViewController.swift */; };
 		E0DC79321EF96C06007AEF1A /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DC79311EF96C06007AEF1A /* Add.storyboard */; };
 		E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79331EF97800007AEF1A /* AddTextViewController.swift */; };
 		E0DC79361EF9780F007AEF1A /* AddVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */; };
-		E0F6822A1EFA195D00DDF0BC /* testFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0F682291EFA195D00DDF0BC /* testFile.txt */; };
-		E0F6822C1EFA2AEC00DDF0BC /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F6822B1EFA2AEC00DDF0BC /* Decode.swift */; };
-		E0F6822E1EFA3BDA00DDF0BC /* anhviet109K.index in Resources */ = {isa = PBXBuildFile; fileRef = E0F6822D1EFA3BDA00DDF0BC /* anhviet109K.index */; };
-		E0F682301EFA3C8C00DDF0BC /* db.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0F6822F1EFA3C8C00DDF0BC /* db.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,15 +74,12 @@
 		E098F23B1ECB581500F574A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E098F2431ECB581500F574A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E098F2451ECB581500F574A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0B186E41EFB952800BDB2DF /* index.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = index.txt; path = Translator/index.txt; sourceTree = SOURCE_ROOT; };
 		E0C1C2641EDEBBCB0063B88A /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		E0C1C26F1EDECF3B0063B88A /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ViewController/SettingViewController.swift; sourceTree = "<group>"; };
 		E0DC79311EF96C06007AEF1A /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		E0DC79331EF97800007AEF1A /* AddTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTextViewController.swift; path = ViewController/AddTextViewController.swift; sourceTree = "<group>"; };
 		E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddVideoViewController.swift; path = ViewController/AddVideoViewController.swift; sourceTree = "<group>"; };
-		E0F682291EFA195D00DDF0BC /* testFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = testFile.txt; path = Translator/testFile.txt; sourceTree = SOURCE_ROOT; };
-		E0F6822B1EFA2AEC00DDF0BC /* Decode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Decode.swift; path = Translator/Decode.swift; sourceTree = SOURCE_ROOT; };
-		E0F6822D1EFA3BDA00DDF0BC /* anhviet109K.index */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = anhviet109K.index; path = Translator/anhviet109K.index; sourceTree = SOURCE_ROOT; };
-		E0F6822F1EFA3C8C00DDF0BC /* db.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = db.txt; path = Translator/db.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,8 +194,8 @@
 		E098F2351ECB581500F574A0 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
-				56958D5F1EF6F7DE0062CE1A /* GoogleService-Info.plist */,
 				E098F2361ECB581500F574A0 /* AppDelegate.swift */,
+				56958D5F1EF6F7DE0062CE1A /* GoogleService-Info.plist */,
 				E098F2451ECB581500F574A0 /* Info.plist */,
 				E0C1C25B1EDEBB320063B88A /* Helper */,
 				E0C1C25C1EDEBB320063B88A /* Model */,
@@ -224,7 +218,6 @@
 		E0C1C25B1EDEBB320063B88A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				E0F6822B1EFA2AEC00DDF0BC /* Decode.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -242,9 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				E018753C1EFAE5B200ABF12F /* anhviet109K.txt */,
-				E0F6822F1EFA3C8C00DDF0BC /* db.txt */,
-				E0F6822D1EFA3BDA00DDF0BC /* anhviet109K.index */,
-				E0F682291EFA195D00DDF0BC /* testFile.txt */,
+				E0B186E41EFB952800BDB2DF /* index.txt */,
 				E020D0711EF628670039E5CB /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -345,8 +336,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0F682301EFA3C8C00DDF0BC /* db.txt in Resources */,
-				E0F6822A1EFA195D00DDF0BC /* testFile.txt in Resources */,
 				E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */,
 				E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */,
 				E018753D1EFAE5B200ABF12F /* anhviet109K.txt in Resources */,
@@ -354,12 +343,12 @@
 				56958D601EF6F7DE0062CE1A /* GoogleService-Info.plist in Resources */,
 				E02A5DD61EF8C54600B921B8 /* Play.storyboard in Resources */,
 				56612E061EF63DB300815664 /* Login.storyboard in Resources */,
-				E0F6822E1EFA3BDA00DDF0BC /* anhviet109K.index in Resources */,
 				E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */,
 				E02A5DE81EF8C59700B921B8 /* Text.storyboard in Resources */,
 				E02A5DCD1EF8C52300B921B8 /* Dictionary.storyboard in Resources */,
 				E0DC79321EF96C06007AEF1A /* Add.storyboard in Resources */,
 				E02A5DE01EF8C58700B921B8 /* Video.storyboard in Resources */,
+				E0B186E51EFB952800BDB2DF /* index.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +421,6 @@
 				E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */,
 				E02A5DD91EF8C54600B921B8 /* TextPlayTableViewCell.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
-				E0F6822C1EFA2AEC00DDF0BC /* Decode.swift in Sources */,
 				56958D5E1EF6F70F0062CE1A /* LoginViewController.swift in Sources */,
 				E02A5DE91EF8C59700B921B8 /* TextViewController.swift in Sources */,
 				56958D5A1EF6F5F30062CE1A /* CustomLoginTextField.swift in Sources */,
