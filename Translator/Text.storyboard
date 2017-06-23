@@ -28,29 +28,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sx-Xf-w8L">
-                                <rect key="frame" x="260" y="302" width="60" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Bz0-1g-Bsm"/>
-                                    <constraint firstAttribute="height" constant="21" id="pdC-80-Qqw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="more..."/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iy-8M-Z8D" userLabel="workView">
                                 <rect key="frame" x="0.0" y="328" width="320" height="240"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aNm-G4-TdP" userLabel="origin text">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
-                                        <color key="backgroundColor" red="0.74145519339444266" green="0.98927231702079055" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="4SH-Bd-O0N"/>
-                                            <constraint firstAttribute="height" constant="100" id="noS-ob-JQN"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXV-x5-XmV" userLabel="trans text">
                                         <rect key="frame" x="0.0" y="105" width="320" height="100"/>
                                         <color key="backgroundColor" red="1" green="0.97794165" blue="0.75419799160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,6 +38,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="95t-M7-KSe"/>
                                             <constraint firstAttribute="height" constant="100" id="jBa-uC-oku"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSA-m2-TgN" userLabel="4 Button View">
@@ -94,27 +75,63 @@
                                             <constraint firstItem="2nL-MY-cPE" firstAttribute="top" secondItem="aSA-m2-TgN" secondAttribute="top" constant="3" id="sQn-Bb-cs5"/>
                                         </constraints>
                                     </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vgw-Pz-USe">
+                                        <rect key="frame" x="0.0" y="5" width="320" height="95"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="FoU-QO-s9K"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pP4-nF-iYL">
+                                            <size key="itemSize" width="44" height="13"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="wordCell" id="7qd-RM-a0M" customClass="WordCollectionViewCell" customModule="Translator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-y8-G2j">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="13"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <connections>
+                                                    <outlet property="word" destination="q0V-y8-G2j" id="Rnc-TM-g5Q"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9pp-N1-2Fa" id="r16-mn-Thm"/>
+                                            <outlet property="delegate" destination="9pp-N1-2Fa" id="Frd-lO-kLE"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="aNm-G4-TdP" firstAttribute="leading" secondItem="1iy-8M-Z8D" secondAttribute="leading" id="CnP-Ec-pD6"/>
-                                    <constraint firstItem="aNm-G4-TdP" firstAttribute="centerX" secondItem="1iy-8M-Z8D" secondAttribute="centerX" id="H2W-sz-PoX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vgw-Pz-USe" secondAttribute="trailing" id="9ZP-Pu-lfy"/>
                                     <constraint firstItem="aSA-m2-TgN" firstAttribute="centerX" secondItem="1iy-8M-Z8D" secondAttribute="centerX" id="HZq-lZ-g6m"/>
+                                    <constraint firstItem="HXV-x5-XmV" firstAttribute="top" secondItem="Vgw-Pz-USe" secondAttribute="bottom" constant="5" id="Jp0-Q3-Xc2"/>
                                     <constraint firstItem="aSA-m2-TgN" firstAttribute="top" secondItem="HXV-x5-XmV" secondAttribute="bottom" constant="5" id="NLQ-zu-BsJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="aNm-G4-TdP" secondAttribute="trailing" id="Twc-W2-Cgm"/>
                                     <constraint firstAttribute="height" constant="240" id="VQ9-lR-gQ9"/>
+                                    <constraint firstItem="Vgw-Pz-USe" firstAttribute="leading" secondItem="1iy-8M-Z8D" secondAttribute="leading" id="Wkr-Pd-5Lv"/>
                                     <constraint firstItem="HXV-x5-XmV" firstAttribute="leading" secondItem="1iy-8M-Z8D" secondAttribute="leading" id="Y3A-TA-fHp"/>
                                     <constraint firstAttribute="trailing" secondItem="HXV-x5-XmV" secondAttribute="trailing" id="YfH-40-c2O"/>
                                     <constraint firstAttribute="bottom" secondItem="aSA-m2-TgN" secondAttribute="bottom" id="b3l-VZ-MOe"/>
                                     <constraint firstItem="HXV-x5-XmV" firstAttribute="centerX" secondItem="1iy-8M-Z8D" secondAttribute="centerX" id="jZD-Tz-j7p"/>
-                                    <constraint firstItem="HXV-x5-XmV" firstAttribute="top" secondItem="aNm-G4-TdP" secondAttribute="bottom" constant="5" id="yg1-Ws-17n"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.59570013590000004" green="0.65966245109999999" blue="0.7355286593" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1sx-Xf-w8L" secondAttribute="trailing" id="9Eh-cA-T4y"/>
-                            <constraint firstItem="1iy-8M-Z8D" firstAttribute="top" secondItem="1sx-Xf-w8L" secondAttribute="bottom" constant="5" id="Eow-4F-ZW4"/>
                             <constraint firstItem="1B8-TM-oIg" firstAttribute="top" secondItem="1iy-8M-Z8D" secondAttribute="bottom" id="FEt-YF-Jem"/>
                             <constraint firstItem="xn2-uV-IrR" firstAttribute="top" secondItem="2Ae-pt-zVl" secondAttribute="top" constant="10" id="LbM-a9-alF"/>
                             <constraint firstItem="xn2-uV-IrR" firstAttribute="leading" secondItem="2Ae-pt-zVl" secondAttribute="leading" id="MCV-Mx-8fO"/>
@@ -128,6 +145,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="QVM-Pw-VCT"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="Vgw-Pz-USe" id="tRO-vM-li8"/>
                         <outlet property="textDict" destination="xn2-uV-IrR" id="qMq-nJ-chT"/>
                         <outlet property="tranText" destination="HXV-x5-XmV" id="dda-1E-aqj"/>
                         <outlet property="workView" destination="1iy-8M-Z8D" id="lL4-jm-jlm"/>

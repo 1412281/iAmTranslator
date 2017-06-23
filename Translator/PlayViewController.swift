@@ -70,6 +70,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let vc = storyB.instantiateViewController(withIdentifier: "TextView") as! TextViewController
         navigationController?.pushViewController(vc, animated: true)
         
+        Dictionary.init()
 
     }
     

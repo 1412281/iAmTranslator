@@ -15,7 +15,6 @@
 		56958D601EF6F7DE0062CE1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56958D5F1EF6F7DE0062CE1A /* GoogleService-Info.plist */; };
 		ACD386CF40960318A81CCDA8 /* Pods_Translator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBED3C4A267A2438E5DDD97 /* Pods_Translator.framework */; };
 		E01875361EFAC88400ABF12F /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01875351EFAC88400ABF12F /* Dictionary.swift */; };
-		E018753B1EFAC9E000ABF12F /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E018753A1EFAC9E000ABF12F /* LaunchScreenViewController.swift */; };
 		E018753D1EFAE5B200ABF12F /* anhviet109K.txt in Resources */ = {isa = PBXBuildFile; fileRef = E018753C1EFAE5B200ABF12F /* anhviet109K.txt */; };
 		E020D0721EF628670039E5CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E020D0711EF628670039E5CB /* Assets.xcassets */; };
 		E020D0791EF628AF0039E5CB /* Translator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E020D0771EF628AF0039E5CB /* Translator.xcdatamodeld */; };
@@ -31,6 +30,7 @@
 		E02A5DE11EF8C58700B921B8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DDF1EF8C58700B921B8 /* VideoViewController.swift */; };
 		E02A5DE81EF8C59700B921B8 /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02A5DE61EF8C59700B921B8 /* Text.storyboard */; };
 		E02A5DE91EF8C59700B921B8 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DE71EF8C59700B921B8 /* TextViewController.swift */; };
+		E07D15571EFCBD9900DDCC81 /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07D15561EFCBD9900DDCC81 /* WordCollectionViewCell.swift */; };
 		E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F2361ECB581500F574A0 /* AppDelegate.swift */; };
 		E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F23A1ECB581500F574A0 /* Main.storyboard */; };
 		E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F2421ECB581500F574A0 /* LaunchScreen.storyboard */; };
@@ -53,7 +53,6 @@
 		BFBED3C4A267A2438E5DDD97 /* Pods_Translator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Translator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4343BEA0A765221B196EEC /* Pods-Translator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Translator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Translator/Pods-Translator.debug.xcconfig"; sourceTree = "<group>"; };
 		E01875351EFAC88400ABF12F /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dictionary.swift; path = Translator/Dictionary.swift; sourceTree = SOURCE_ROOT; };
-		E018753A1EFAC9E000ABF12F /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchScreenViewController.swift; path = ViewController/LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		E018753C1EFAE5B200ABF12F /* anhviet109K.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = anhviet109K.txt; path = Translator/anhviet109K.txt; sourceTree = SOURCE_ROOT; };
 		E020D0711EF628670039E5CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Translator/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		E020D0781EF628AF0039E5CB /* Translator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Translator.xcdatamodel; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		E02A5DDF1EF8C58700B921B8 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		E02A5DE61EF8C59700B921B8 /* Text.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Text.storyboard; sourceTree = "<group>"; };
 		E02A5DE71EF8C59700B921B8 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		E07D15561EFCBD9900DDCC81 /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordCollectionViewCell.swift; path = ViewController/WordCollectionViewCell.swift; sourceTree = "<group>"; };
 		E098F2331ECB581500F574A0 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E098F2361ECB581500F574A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E098F23B1ECB581500F574A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,14 +123,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E01875371EFAC8D600ABF12F /* LaunchScreenController */ = {
-			isa = PBXGroup;
-			children = (
-				E018753A1EFAC9E000ABF12F /* LaunchScreenViewController.swift */,
-			);
-			name = LaunchScreenController;
-			sourceTree = "<group>";
-		};
 		E02A5DC71EF8C4FA00B921B8 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +152,7 @@
 			children = (
 				E02A5DE61EF8C59700B921B8 /* Text.storyboard */,
 				E02A5DE71EF8C59700B921B8 /* TextViewController.swift */,
+				E07D15561EFCBD9900DDCC81 /* WordCollectionViewCell.swift */,
 			);
 			name = Text;
 			sourceTree = "<group>";
@@ -244,7 +237,6 @@
 		E0C1C2671EDECE160063B88A /* Sreens */ = {
 			isa = PBXGroup;
 			children = (
-				E01875371EFAC8D600ABF12F /* LaunchScreenController */,
 				E0DC79301EF96BDF007AEF1A /* Add */,
 				E02A5DC81EF8C50900B921B8 /* Play */,
 				E02A5DC71EF8C4FA00B921B8 /* Dictionary */,
@@ -421,10 +413,10 @@
 				E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */,
 				E02A5DD91EF8C54600B921B8 /* TextPlayTableViewCell.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
+				E07D15571EFCBD9900DDCC81 /* WordCollectionViewCell.swift in Sources */,
 				56958D5E1EF6F70F0062CE1A /* LoginViewController.swift in Sources */,
 				E02A5DE91EF8C59700B921B8 /* TextViewController.swift in Sources */,
 				56958D5A1EF6F5F30062CE1A /* CustomLoginTextField.swift in Sources */,
-				E018753B1EFAC9E000ABF12F /* LaunchScreenViewController.swift in Sources */,
 				E02A5DD81EF8C54600B921B8 /* VideoPlayTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

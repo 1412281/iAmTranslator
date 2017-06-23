@@ -21,37 +21,37 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: *** UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Dictionary.words.count == 0 { readFile() }
+        //if Dictionary.words.count == 0 { readFile() }
     }
     
-    func readFile() {
-        var raws: [String?] = []
-        do {
-            // read file index
-            if let path = Bundle.main.path(forResource: "index", ofType: "txt"){
-                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
-                raws = data.components(separatedBy: "\n")
-                //print(raws)
-            }
-            else {
-                print("file index not found")
-            }
-        } catch let err as NSError {
-            // do something with Error
-            print(err)
-        }
-        
-        for line in raws {
-            if (!(line?.isEmpty)!) {
-                let ar: [String] = (line?.components(separatedBy: "\t"))!
-                Dictionary.words.append(ar[0])
-                Dictionary.offsets.append(Int(ar[1])!)
-                Dictionary.lengths.append(Int(ar[2])!)
-            }
-        }
-        
-        
-    }
+//    func readFile() {
+//        var raws: [String?] = []
+//        do {
+//            // read file index
+//            if let path = Bundle.main.path(forResource: "index", ofType: "txt"){
+//                let data = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
+//                raws = data.components(separatedBy: "\n")
+//                //print(raws)
+//            }
+//            else {
+//                print("file index not found")
+//            }
+//        } catch let err as NSError {
+//            // do something with Error
+//            print(err)
+//        }
+//        
+//        for line in raws {
+//            if (!(line?.isEmpty)!) {
+//                let ar: [String] = (line?.components(separatedBy: "\t"))!
+//                Dictionary.words.append(ar[0])
+//                Dictionary.offsets.append(Int(ar[1])!)
+//                Dictionary.lengths.append(Int(ar[2])!)
+//            }
+//        }
+//        
+    
+//    }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
 
@@ -75,22 +75,9 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
         let vc = storyB.instantiateViewController(withIdentifier: "wordDictVC") as! WordDictViewController
         let word = Dictionary.words[indexPath.row]
 
-        let dict = Dictionary.dict
-        var mean:String? = ""
-        if dict == nil {
-            print("File open failed")
-        } else {
-            dict?.seek(toFileOffset: UInt64(Dictionary.offsets[indexPath.row]))
-            let data = dict?.readData(ofLength: Dictionary.lengths[indexPath.row])
-            if let dat = data {
-                if let me = String(data: dat, encoding: String.Encoding.utf8) as String! {
-                    mean = me
-                }
-            }
-                
-//            dict?.closeFile()
-        }
-        vc.setWord(word: word, mean: mean!)
+        let mean:String = Dictionary.getMean(word: word)
+        
+        vc.setWord(word: word, mean: mean)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
