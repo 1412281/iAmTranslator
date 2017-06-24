@@ -77,11 +77,12 @@ class RegisterViewController: UIViewController {
                         return
                     }
                     else {
+                        UserDefaults.standard.setValue(true, forKey: "isLogin")
                         let storyboard=UIStoryboard(name:"Main", bundle: nil)
                         let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
                         
-                        self.navigationController?.pushViewController(vc, animated: true)
-                        return
+                       self.present(vc, animated: true, completion: nil)
+                    return
                     }
                 })
             }
