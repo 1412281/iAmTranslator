@@ -8,8 +8,14 @@
 
 import UIKit
 
-class DictionaryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class DictionaryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
+    var data=["ab","aa","cd","cde"]
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    var filterData = [String]()
+    var isSearching = false
     // MARK: *** Data model
     
     // MARK: *** UI Elements
@@ -21,6 +27,9 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: *** UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
+        
         //if Dictionary.words.count == 0 { readFile() }
     }
     
@@ -61,11 +70,28 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if isSearching {
+            return filterData.count
+        }
+        
         return Dictionary.words.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "dictCell") as! DictionaryTableViewCell
+        
+        
+        if isSearching {
+            cell.word.text = filterData[indexPath.row]
+            return cell
+        }
+        
         cell.word.text = Dictionary.words[indexPath.row]
         return cell
     }
@@ -80,4 +106,27 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
         vc.setWord(word: word, mean: mean)
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text == nil || searchBar.text == ""{
+            isSearching = false
+            view.endEditing(true)
+            tableView.reloadData()
+        }
+        else {
+            isSearching = true
+            var index=searchText.characters.count
+            filterData = Dictionary.words.filter{item in (item.lowercased().substring(to: item.index(item.startIndex, offsetBy: (item.characters.count > searchText.characters.count) ? searchText.characters.count:item.characters.count)) == searchText.lowercased())}
+            tableView.reloadData()
+        }
+    }
+}
+extension String {
+    
+    subscript (i: Int) -> Character {
+        return self[index(startIndex, offsetBy: i)]
+    }
+    
+    
 }
