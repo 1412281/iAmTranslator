@@ -99,8 +99,13 @@ class DictionaryViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyB = UIStoryboard(name: "Dictionary", bundle: nil)
         let vc = storyB.instantiateViewController(withIdentifier: "wordDictVC") as! WordDictViewController
-        let word = Dictionary.words[indexPath.row]
-
+        var word:String
+        if isSearching {
+            word = filterData[indexPath.row]
+        }
+        else{
+            word = Dictionary.words[indexPath.row]
+        }
         let mean:String = Dictionary.getMean(word: word)
         
         vc.setWord(word: word, mean: mean)
