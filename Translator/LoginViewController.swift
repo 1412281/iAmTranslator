@@ -16,9 +16,15 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     @IBOutlet weak var pass: CustomLoginTextField!
     @IBOutlet weak var error: UILabel!
     
+  
+    @IBOutlet weak var loginFacebook: FBSDKLoginButton!
+    
     @IBAction func login(_ sender: Any) {
         LogIn()
     }
+    
+   
+    
     @IBAction func createAccount(_ sender: Any) {
         
         let storyboard=UIStoryboard(name:"Main", bundle: nil)
@@ -32,6 +38,13 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         error.isHidden=true
         navigationController?.setNavigationBarHidden(true, animated: false)
+        loginFacebook.delegate=self
+        loginFacebook.readPermissions = ["public_profile","email","user_friends"]
+         print("--------------------------------Logout");
+        
+        if CheckLogined(){
+            return
+        }
         
         if FBSDKAccessToken.current() != nil{
             let storyboard=UIStoryboard(name:"Main", bundle: nil)
@@ -47,15 +60,40 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func CheckLogined() -> Bool{
+        var isLogin:Bool = false
+        if UserDefaults.standard.object(forKey: "isLogin") != nil {
+            isLogin  = try UserDefaults.standard.value(forKey: "isLogin")! as! Bool
+        }
+        if isLogin {
+            UserDefaults.standard.setValue(true, forKey: "isLogin")
+            let storyboard=UIStoryboard(name:"Main", bundle: nil)
+            let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+            
+             self.present(vc, animated: true, completion: nil)
+            return true
+        }
+        return false
+    }
+    
+    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
-        let storyboard=UIStoryboard(name:"Main", bundle: nil)
-        let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+     
         
-        self.navigationController?.pushViewController(vc, animated: true)
-        return
+            print("000000000000000000000000000000")
+            
+            let storyboard=UIStoryboard(name:"Main", bundle: nil)
+            let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+            
+           self.present(vc, animated: true, completion: nil)
+            
+        
+        
+       
+        
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
-        print("Logout");
+        print("--------------------------------Logout");
     }
     
     func LogIn(){
@@ -76,10 +114,12 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 return
             }
             else{
+                UserDefaults.standard.setValue(true, forKey: "isLogin")
+
                 let storyboard=UIStoryboard(name:"Main", bundle: nil)
                 let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
             
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.present(vc, animated: true, completion: nil)
                 return
             }
         })

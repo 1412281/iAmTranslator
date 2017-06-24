@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+import FBSDKLoginKit
 class SettingViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -21,6 +22,21 @@ class SettingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Logout(_ sender: Any) {
+        UserDefaults.standard.setValue(false, forKey: "isLogin")
+
+        if FBSDKAccessToken.current() != nil {
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut()
+        }
+        
+        try! Auth.auth().signOut()
+        
+        let storyboard=UIStoryboard(name:"Main", bundle: nil)
+        let vc=storyboard.instantiateViewController(withIdentifier: "login") as UIViewController
+        
+        self.present(vc, animated: true, completion: nil)        
+    }
 
     /*
     // MARK: - Navigation
