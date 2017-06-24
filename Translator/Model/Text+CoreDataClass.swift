@@ -11,7 +11,7 @@ import CoreData
 
 
 public class Text: NSManagedObject {
-    static let entityName = "HistoryDict"
+    static let entityName = "Text"
     
     // Lấy tất cả danh sách
     static func all() -> [NSManagedObject] {

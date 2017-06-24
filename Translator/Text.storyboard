@@ -47,18 +47,30 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2t-zC-biV">
                                                 <rect key="frame" x="30" y="3" width="25" height="25"/>
                                                 <state key="normal" image="doubleLeft"/>
+                                                <connections>
+                                                    <action selector="skipTop:" destination="9pp-N1-2Fa" eventType="touchUpInside" id="Nd9-Zo-pup"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqM-DL-n0F">
                                                 <rect key="frame" x="102" y="3" width="25" height="25"/>
                                                 <state key="normal" image="left"/>
+                                                <connections>
+                                                    <action selector="back:" destination="9pp-N1-2Fa" eventType="touchUpInside" id="1Ge-bm-Was"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nL-MY-cPE">
                                                 <rect key="frame" x="181" y="3" width="25" height="25"/>
                                                 <state key="normal" image="current"/>
+                                                <connections>
+                                                    <action selector="playing:" destination="9pp-N1-2Fa" eventType="touchUpInside" id="hkn-k8-Imh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-rY-tUn">
                                                 <rect key="frame" x="260" y="3" width="25" height="25"/>
                                                 <state key="normal" image="right"/>
+                                                <connections>
+                                                    <action selector="next:" destination="9pp-N1-2Fa" eventType="touchUpInside" id="uSc-Q5-yha"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

@@ -11,7 +11,9 @@ import youtube_ios_player_helper
 class VideoViewController: UIViewController {
 
     // MARK: *** Data model
-    
+    var link: String = "-nnWBhKZeg0"
+    var trans: String = ""
+    var speed: Int = 1
     // MARK: *** UI Elements
     
     @IBOutlet weak var transView: UIView!
@@ -41,7 +43,7 @@ class VideoViewController: UIViewController {
         
         timeLoop=Float32(secondLoop.text!)!
         videoViewYT.setPlaybackRate(2000)
-        videoViewYT.load(withVideoId: "-nnWBhKZeg0", playerVars: ["playsinline": 1 as AnyObject])
+        videoViewYT.load(withVideoId: link, playerVars: ["playsinline": 1 as AnyObject])
         var timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
         
     }

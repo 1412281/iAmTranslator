@@ -56,6 +56,6 @@ class Dictionary {
                 
             }
         }
-        return "Not found this word"
+        return ""
     }
 }

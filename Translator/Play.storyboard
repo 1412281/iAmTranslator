@@ -146,24 +146,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bi1-tP-stA" userLabel="3 button">
                                 <rect key="frame" x="0.0" y="64" width="320" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wET-62-5V5">
-                                        <rect key="frame" x="70" y="5" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Cam-PY-ssf"/>
-                                            <constraint firstAttribute="width" constant="30" id="Gmp-8c-j0W"/>
-                                        </constraints>
-                                        <state key="normal" image="text"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="textButton:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="1uo-i8-59o"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-R5-mIE" userLabel="Add Button">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-R5-mIE" userLabel="Add Button">
                                         <rect key="frame" x="270" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="q5b-EI-ImV"/>
@@ -180,28 +163,10 @@
                                             <action selector="addButton:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="FgA-Wl-5Vz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-XK-kyM">
-                                        <rect key="frame" x="10" y="5" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="Rdj-bc-w34"/>
-                                            <constraint firstAttribute="height" constant="30" id="WTu-ZP-SON"/>
-                                        </constraints>
-                                        <state key="normal" image="all"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="allButton:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="6r5-bn-XgQ"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhx-SD-ggn">
-                                        <rect key="frame" x="130" y="5" width="30" height="30"/>
+                                        <rect key="frame" x="80" y="5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="Cqn-SP-OSp"/>
-                                            <constraint firstAttribute="height" constant="30" id="QFH-dJ-bB2"/>
+                                            <constraint firstAttribute="width" constant="30" id="wFm-ve-G93"/>
                                         </constraints>
                                         <state key="normal" image="video"/>
                                         <userDefinedRuntimeAttributes>
@@ -214,18 +179,33 @@
                                             <action selector="videoButton:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="Vdf-b4-AKn"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wET-62-5V5">
+                                        <rect key="frame" x="20" y="5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="EAf-2p-uzW"/>
+                                        </constraints>
+                                        <state key="normal" image="text"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="textButton:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="1uo-i8-59o"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.9028174908049984" blue="0.020659550924251431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="NNa-XK-kyM" firstAttribute="centerY" secondItem="4CU-R5-mIE" secondAttribute="centerY" id="13x-lx-7G5"/>
                                     <constraint firstAttribute="height" constant="40" id="6KS-yR-HRi"/>
-                                    <constraint firstItem="wET-62-5V5" firstAttribute="leading" secondItem="NNa-XK-kyM" secondAttribute="trailing" constant="30" id="8fq-KZ-aFO"/>
-                                    <constraint firstItem="NNa-XK-kyM" firstAttribute="centerY" secondItem="Bi1-tP-stA" secondAttribute="centerY" id="DLW-BB-J5L"/>
-                                    <constraint firstItem="NNa-XK-kyM" firstAttribute="top" secondItem="yhx-SD-ggn" secondAttribute="top" id="Hpu-PK-zfU"/>
-                                    <constraint firstItem="NNa-XK-kyM" firstAttribute="leading" secondItem="Bi1-tP-stA" secondAttribute="leading" constant="10" id="Kle-u5-jio"/>
-                                    <constraint firstItem="NNa-XK-kyM" firstAttribute="top" secondItem="wET-62-5V5" secondAttribute="top" id="ipt-rM-zUj"/>
+                                    <constraint firstItem="yhx-SD-ggn" firstAttribute="top" secondItem="Bi1-tP-stA" secondAttribute="top" constant="5" id="NVi-YR-lpT"/>
+                                    <constraint firstItem="wET-62-5V5" firstAttribute="top" secondItem="Bi1-tP-stA" secondAttribute="top" constant="5" id="idE-Nh-lOY"/>
+                                    <constraint firstItem="wET-62-5V5" firstAttribute="leading" secondItem="Bi1-tP-stA" secondAttribute="leading" constant="20" id="l2g-tr-LaO"/>
                                     <constraint firstAttribute="trailing" secondItem="4CU-R5-mIE" secondAttribute="trailing" constant="10" id="qE6-Iw-eYD"/>
-                                    <constraint firstItem="yhx-SD-ggn" firstAttribute="leading" secondItem="wET-62-5V5" secondAttribute="trailing" constant="30" id="xSn-Wd-b2F"/>
+                                    <constraint firstItem="yhx-SD-ggn" firstAttribute="leading" secondItem="wET-62-5V5" secondAttribute="trailing" constant="30" id="qVq-LB-7kV"/>
+                                    <constraint firstAttribute="bottom" secondItem="yhx-SD-ggn" secondAttribute="bottom" constant="5" id="tIh-so-HMa"/>
+                                    <constraint firstAttribute="bottom" secondItem="wET-62-5V5" secondAttribute="bottom" constant="5" id="yyN-za-fB0"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-uo-jm5" userLabel="select add view">
@@ -233,7 +213,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX9-rK-Lqe">
                                         <rect key="frame" x="25" y="24" width="42" height="42"/>
-                                        <color key="backgroundColor" red="0.1345055594" green="1" blue="0.12980304100000001" alpha="0.90575484149999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0023957495987999566" green="1" blue="0.92590427753614202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="sad-xy-Nx2"/>
                                             <constraint firstAttribute="width" constant="42" id="yDe-mo-xag"/>
@@ -248,7 +228,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-p2-0dB">
                                         <rect key="frame" x="72" y="68" width="44" height="42"/>
-                                        <color key="backgroundColor" red="0.1345055594" green="1" blue="0.12980304100000001" alpha="0.90575484149999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.06950727541403523" blue="0.0" alpha="0.77544564255633797" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="1kR-wU-AmT"/>
                                             <constraint firstAttribute="width" constant="44" id="yoo-iO-2dB"/>
@@ -301,7 +281,6 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="allButton" destination="NNa-XK-kyM" id="gA1-xu-jVw"/>
                         <outlet property="backgroundView" destination="fjW-dN-V8c" id="vtJ-D1-wOF"/>
                         <outlet property="menuButton" destination="Bi1-tP-stA" id="jQC-O6-lSe"/>
                         <outlet property="selectAddView" destination="Mm1-uo-jm5" id="Ign-YL-3I6"/>
@@ -336,7 +315,6 @@
     </scenes>
     <resources>
         <image name="add" width="50" height="50"/>
-        <image name="all" width="50" height="50"/>
         <image name="play" width="25" height="25"/>
         <image name="text" width="50" height="50"/>
         <image name="video" width="50" height="50"/>

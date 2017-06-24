@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: *** Data model
-
+    var listText = [Text]()
+    var listVideo = [Video]()
     // MARK: *** Local variables
     
     enum `Type` {
@@ -31,8 +33,6 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var allButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var videoButton: UIButton!
-    @IBOutlet weak var audioButton: UIButton!
-    
     // MARK: *** UI events
     @IBAction func addButton(_ sender: Any) {
         self.selectAddView.isHidden = false
@@ -44,34 +44,31 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func allButton(_ sender: Any) {
         currentChoice = Type.recent
-        reloadTable()
+        reloadView()
     }
     @IBAction func textButton(_ sender: Any) {
         currentChoice = Type.text
-        reloadTable()
+        reloadView()
     }
     
     @IBAction func videoButton(_ sender: Any) {
         currentChoice = Type.video
-        reloadTable()
+        reloadView()
     }
     
     
         // MARK: *** UIViewController
 
     override func viewDidLoad() {
+        Dictionary.init()
         super.viewDidLoad()
         self.selectAddView.isHidden = true
         
         let touchToHiddenSelectAdd = UITapGestureRecognizer(target: self, action: #selector(PlayViewController.hiddenAdd))
         self.backgroundView.addGestureRecognizer(touchToHiddenSelectAdd)
         
-        let storyB = UIStoryboard(name: "Text", bundle: nil)
-        let vc = storyB.instantiateViewController(withIdentifier: "TextView") as! TextViewController
-        navigationController?.pushViewController(vc, animated: true)
+        initData()
         
-        Dictionary.init()
-
     }
     
     func hiddenAdd() {
@@ -81,8 +78,14 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        changeButton()
         
+        listText = Text.all() as! [Text]
+        listVideo = Video.all() as! [Video]
+        
+        reloadView()
+        
+        tableView.reloadData()
+
         navigationController?.setNavigationBarHidden(true, animated: false)
 
     }
@@ -92,22 +95,30 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        switch currentChoice {
+        case .text:
+            return listText.count
+        default:
+            return listVideo.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell
+        
         switch currentChoice {
-        case .video:
-            cell = tableView.dequeueReusableCell(withIdentifier: "VideoPlayCell") as! VideoPlayTableViewCell
+        
         case .text:
-            cell = tableView.dequeueReusableCell(withIdentifier: "TextPlayCell") as! TextPlayTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextPlayCell") as! TextPlayTableViewCell
+            cell.name.text = listText[indexPath.row].name
+            cell.des.text = listText[indexPath.row].text
+            return cell
         default:
-// Temp recently is text
-            cell = tableView.dequeueReusableCell(withIdentifier: "TextPlayCell") as! TextPlayTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "VideoPlayCell") as! VideoPlayTableViewCell
+            cell.name.text = listVideo[indexPath.row].name
+            cell.des.text = listVideo[indexPath.row].link
+            return cell
         }
         
-        return cell
     }
     
     
@@ -116,10 +127,26 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         case .text, .recent:
             let storyB = UIStoryboard(name: "Text", bundle: nil)
             let vc = storyB.instantiateViewController(withIdentifier: "TextView") as! TextViewController
+            
+            let textObj = listText[indexPath.row]
+            vc.originText = textObj.text!
+            if let translated = textObj.translated{
+                vc.translated = translated
+            }
+            vc.currentTran = Int(textObj.indexCurrent)
+            
             navigationController?.pushViewController(vc, animated: true)
         case .video:
             let storyB = UIStoryboard(name: "Video", bundle: nil)
             let vc = storyB.instantiateViewController(withIdentifier: "VideoView") as! VideoViewController
+            
+            let videoObj = listVideo[indexPath.row]
+            vc.link = videoObj.link!
+            vc.currentTime = Float32(videoObj.timePlaying)
+            vc.speed = Int(videoObj.speed)
+            vc.timeLoop = Float32(videoObj.timeLoop)
+            
+            
             navigationController?.pushViewController(vc, animated: true)
 
        
@@ -131,20 +158,40 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func changeButton(){
         textButton.backgroundColor = nil
         videoButton.backgroundColor = nil
-        allButton.backgroundColor = nil
         switch currentChoice {
-        case .video:
-            videoButton.backgroundColor = UIColor.green
-      
         case .text:
             textButton.backgroundColor = UIColor.green
         default:
-                allButton.backgroundColor = UIColor.green
+            videoButton.backgroundColor = UIColor.green
+
         }
     }
 
-    func reloadTable() {
+    func reloadView() {
         changeButton()
         tableView.reloadData()
+    }
+    
+    func initData() {
+        
+        Text.deleteAllRecords()
+        Video.deleteAllRecords()
+        for i in 1...10 {
+            let newT = Text.create() as! Text
+            newT.name = "text" + String(i)
+            newT.text =  "The panel based their decisions on first impressions, unusual attributes. Personality and audience reaction, the agency added."
+            newT.translated = ""
+            newT.indexCurrent = 0
+            
+            let newV = Video.create() as! Video
+            newV.name = "video" + String(i)
+            newV.translated = ""
+            newV.link = "Llw9Q6akRo4"
+            newV.timeLoop = 5
+            newV.timePlaying = 0
+            newV.speed = 1
+        }
+        
+        DB.save()
     }
 }
