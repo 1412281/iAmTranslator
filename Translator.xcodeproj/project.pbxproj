@@ -40,6 +40,15 @@
 		E0DC79321EF96C06007AEF1A /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DC79311EF96C06007AEF1A /* Add.storyboard */; };
 		E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79331EF97800007AEF1A /* AddTextViewController.swift */; };
 		E0DC79361EF9780F007AEF1A /* AddVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */; };
+		E0E3986E1EFE486800EFC8D9 /* FavoriteWord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E398661EFE486800EFC8D9 /* FavoriteWord+CoreDataClass.swift */; };
+		E0E3986F1EFE486800EFC8D9 /* FavoriteWord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E398671EFE486800EFC8D9 /* FavoriteWord+CoreDataProperties.swift */; };
+		E0E398701EFE486800EFC8D9 /* HistoryDict+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E398681EFE486800EFC8D9 /* HistoryDict+CoreDataClass.swift */; };
+		E0E398711EFE486800EFC8D9 /* HistoryDict+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E398691EFE486800EFC8D9 /* HistoryDict+CoreDataProperties.swift */; };
+		E0E398721EFE486800EFC8D9 /* Text+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986A1EFE486800EFC8D9 /* Text+CoreDataClass.swift */; };
+		E0E398731EFE486800EFC8D9 /* Text+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986B1EFE486800EFC8D9 /* Text+CoreDataProperties.swift */; };
+		E0E398741EFE486800EFC8D9 /* Video+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986C1EFE486800EFC8D9 /* Video+CoreDataClass.swift */; };
+		E0E398751EFE486800EFC8D9 /* Video+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986D1EFE486800EFC8D9 /* Video+CoreDataProperties.swift */; };
+		E0E398791EFE492B00EFC8D9 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E398781EFE492B00EFC8D9 /* DB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +89,15 @@
 		E0DC79311EF96C06007AEF1A /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		E0DC79331EF97800007AEF1A /* AddTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTextViewController.swift; path = ViewController/AddTextViewController.swift; sourceTree = "<group>"; };
 		E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddVideoViewController.swift; path = ViewController/AddVideoViewController.swift; sourceTree = "<group>"; };
+		E0E398661EFE486800EFC8D9 /* FavoriteWord+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteWord+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0E398671EFE486800EFC8D9 /* FavoriteWord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteWord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E0E398681EFE486800EFC8D9 /* HistoryDict+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryDict+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0E398691EFE486800EFC8D9 /* HistoryDict+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HistoryDict+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E0E3986A1EFE486800EFC8D9 /* Text+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0E3986B1EFE486800EFC8D9 /* Text+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E0E3986C1EFE486800EFC8D9 /* Video+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Video+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0E3986D1EFE486800EFC8D9 /* Video+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Video+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E0E398781EFE492B00EFC8D9 /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +229,7 @@
 		E0C1C25B1EDEBB320063B88A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E01875351EFAC88400ABF12F /* Dictionary.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -218,8 +237,10 @@
 		E0C1C25C1EDEBB320063B88A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E0E398781EFE492B00EFC8D9 /* DB.swift */,
+				E0E398761EFE48B300EFC8D9 /* Properties */,
 				E020D0771EF628AF0039E5CB /* Translator.xcdatamodeld */,
-				E01875351EFAC88400ABF12F /* Dictionary.swift */,
+				E0E398771EFE48CA00EFC8D9 /* Classes */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +284,28 @@
 				E0DC79351EF9780F007AEF1A /* AddVideoViewController.swift */,
 			);
 			name = Add;
+			sourceTree = "<group>";
+		};
+		E0E398761EFE48B300EFC8D9 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				E0E398671EFE486800EFC8D9 /* FavoriteWord+CoreDataProperties.swift */,
+				E0E398691EFE486800EFC8D9 /* HistoryDict+CoreDataProperties.swift */,
+				E0E3986D1EFE486800EFC8D9 /* Video+CoreDataProperties.swift */,
+				E0E3986B1EFE486800EFC8D9 /* Text+CoreDataProperties.swift */,
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
+		E0E398771EFE48CA00EFC8D9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E0E398661EFE486800EFC8D9 /* FavoriteWord+CoreDataClass.swift */,
+				E0E398681EFE486800EFC8D9 /* HistoryDict+CoreDataClass.swift */,
+				E0E3986A1EFE486800EFC8D9 /* Text+CoreDataClass.swift */,
+				E0E3986C1EFE486800EFC8D9 /* Video+CoreDataClass.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,22 +445,31 @@
 				E02A5DCF1EF8C52300B921B8 /* DictionaryViewController.swift in Sources */,
 				E0C1C2701EDECF3B0063B88A /* SettingViewController.swift in Sources */,
 				E01875361EFAC88400ABF12F /* Dictionary.swift in Sources */,
+				E0E398711EFE486800EFC8D9 /* HistoryDict+CoreDataProperties.swift in Sources */,
 				E02A5DCE1EF8C52300B921B8 /* DictionaryTableViewCell.swift in Sources */,
 				E0DC79361EF9780F007AEF1A /* AddVideoViewController.swift in Sources */,
 				E020D0791EF628AF0039E5CB /* Translator.xcdatamodeld in Sources */,
+				E0E3986E1EFE486800EFC8D9 /* FavoriteWord+CoreDataClass.swift in Sources */,
 				E02A5DD71EF8C54600B921B8 /* PlayViewController.swift in Sources */,
 				56958D591EF6F5F30062CE1A /* CustomLoginButton.swift in Sources */,
 				56958D5C1EF6F6D40062CE1A /* RegisterViewController.swift in Sources */,
 				E02A5DE11EF8C58700B921B8 /* VideoViewController.swift in Sources */,
+				E0E398721EFE486800EFC8D9 /* Text+CoreDataClass.swift in Sources */,
+				E0E398791EFE492B00EFC8D9 /* DB.swift in Sources */,
+				E0E398731EFE486800EFC8D9 /* Text+CoreDataProperties.swift in Sources */,
 				E02A5DD01EF8C52300B921B8 /* WordDictViewController.swift in Sources */,
+				E0E3986F1EFE486800EFC8D9 /* FavoriteWord+CoreDataProperties.swift in Sources */,
 				E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */,
 				E02A5DD91EF8C54600B921B8 /* TextPlayTableViewCell.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
 				E07D15571EFCBD9900DDCC81 /* WordCollectionViewCell.swift in Sources */,
 				56958D5E1EF6F70F0062CE1A /* LoginViewController.swift in Sources */,
+				E0E398701EFE486800EFC8D9 /* HistoryDict+CoreDataClass.swift in Sources */,
 				E02A5DE91EF8C59700B921B8 /* TextViewController.swift in Sources */,
+				E0E398741EFE486800EFC8D9 /* Video+CoreDataClass.swift in Sources */,
 				56958D5A1EF6F5F30062CE1A /* CustomLoginTextField.swift in Sources */,
 				E02A5DD81EF8C54600B921B8 /* VideoPlayTableViewCell.swift in Sources */,
+				E0E398751EFE486800EFC8D9 /* Video+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
