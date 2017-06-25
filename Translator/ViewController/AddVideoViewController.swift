@@ -12,10 +12,19 @@ class AddVideoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.title = "Add Video"
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButton(sender:)))
+        navigationItem.rightBarButtonItem = saveButton
 
         // Do any additional setup after loading the view.
     }
+    func saveButton(sender: UIBarButtonItem) {
+        
+    }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

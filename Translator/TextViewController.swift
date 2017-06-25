@@ -105,7 +105,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var word = aSentence[indexPath.row].replacingOccurrences(of: ",", with: "").lowercased()
+        let word = aSentence[indexPath.row].replacingOccurrences(of: ",", with: "").lowercased()
         var mean = Dictionary.getMean(word: word)
         if mean != "" {
             textDict.text = word + "\n" + mean

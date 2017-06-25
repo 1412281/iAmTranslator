@@ -27,18 +27,21 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var menuButton: UIView!
     @IBOutlet weak var selectAddView: UIView!
+    
+    @IBOutlet weak var addText: UIButton!
+    @IBOutlet weak var addVideo: UIButton!
     @IBOutlet weak var allButton: UIButton!
     @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var videoButton: UIButton!
     // MARK: *** UI events
     @IBAction func addButton(_ sender: Any) {
         self.selectAddView.isHidden = false
-        view.bringSubview(toFront: backgroundView)
-        view.bringSubview(toFront: selectAddView)
-        backgroundView.alpha = 0.85
+        let touchToHiddenSelectAdd = UITapGestureRecognizer(target: self, action: #selector(PlayViewController.hiddenAdd))
+        self.selectAddView.addGestureRecognizer(touchToHiddenSelectAdd)
+        view.bringSubview(toFront: addText)
+        view.bringSubview(toFront: addVideo)
         
     }
     
@@ -56,16 +59,25 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         reloadView()
     }
     
+    @IBAction func addText(_ sender: Any) {
+        let storyB = UIStoryboard.init(name: "Add", bundle: nil)
+        let vc = storyB.instantiateViewController(withIdentifier: "AddTextVC")
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func addVideo(_ sender: Any) {
+        let storyB = UIStoryboard.init(name: "Add", bundle: nil)
+        let vc = storyB.instantiateViewController(withIdentifier: "AddVideoVC")
+        navigationController?.pushViewController(vc, animated: true)
+
+    }
     
         // MARK: *** UIViewController
 
     override func viewDidLoad() {
         Dictionary.init()
         super.viewDidLoad()
-        self.selectAddView.isHidden = true
         
-        let touchToHiddenSelectAdd = UITapGestureRecognizer(target: self, action: #selector(PlayViewController.hiddenAdd))
-        self.backgroundView.addGestureRecognizer(touchToHiddenSelectAdd)
         
         initData()
         
@@ -73,12 +85,13 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func hiddenAdd() {
         self.selectAddView.isHidden = true
-        view.bringSubview(toFront: menuButton)
-        view.bringSubview(toFront: tableView)
+        //view.bringSubview(toFront: menuButton)
+        //view.bringSubview(toFront: tableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.selectAddView.isHidden = true
+
         listText = Text.all() as! [Text]
         listVideo = Video.all() as! [Video]
         

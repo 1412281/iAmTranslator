@@ -22,10 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-dN-V8c" userLabel="background">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <color key="backgroundColor" red="0.57117776761275008" green="0.57158759715025909" blue="0.56269389843418649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kyT-Px-48V">
                                 <rect key="frame" x="0.0" y="109" width="320" height="410"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,11 +142,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bi1-tP-stA" userLabel="3 button">
                                 <rect key="frame" x="0.0" y="64" width="320" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-R5-mIE" userLabel="Add Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-R5-mIE" userLabel="Add Button">
                                         <rect key="frame" x="270" y="0.0" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="q5b-EI-ImV"/>
-                                            <constraint firstAttribute="height" constant="40" id="rGX-tn-idq"/>
+                                            <constraint firstAttribute="height" constant="40" id="DOR-I5-1if"/>
+                                            <constraint firstAttribute="width" constant="40" id="Gj2-x2-fOF"/>
                                         </constraints>
                                         <state key="normal" image="add"/>
                                         <userDefinedRuntimeAttributes>
@@ -198,40 +194,26 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.9028174908049984" blue="0.020659550924251431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4CU-R5-mIE" secondAttribute="trailing" constant="10" id="3tH-Zu-9M1"/>
                                     <constraint firstAttribute="height" constant="40" id="6KS-yR-HRi"/>
                                     <constraint firstItem="yhx-SD-ggn" firstAttribute="top" secondItem="Bi1-tP-stA" secondAttribute="top" constant="5" id="NVi-YR-lpT"/>
+                                    <constraint firstItem="4CU-R5-mIE" firstAttribute="top" secondItem="Bi1-tP-stA" secondAttribute="top" id="iBL-Kb-rKe"/>
                                     <constraint firstItem="wET-62-5V5" firstAttribute="top" secondItem="Bi1-tP-stA" secondAttribute="top" constant="5" id="idE-Nh-lOY"/>
                                     <constraint firstItem="wET-62-5V5" firstAttribute="leading" secondItem="Bi1-tP-stA" secondAttribute="leading" constant="20" id="l2g-tr-LaO"/>
-                                    <constraint firstAttribute="trailing" secondItem="4CU-R5-mIE" secondAttribute="trailing" constant="10" id="qE6-Iw-eYD"/>
                                     <constraint firstItem="yhx-SD-ggn" firstAttribute="leading" secondItem="wET-62-5V5" secondAttribute="trailing" constant="30" id="qVq-LB-7kV"/>
                                     <constraint firstAttribute="bottom" secondItem="yhx-SD-ggn" secondAttribute="bottom" constant="5" id="tIh-so-HMa"/>
                                     <constraint firstAttribute="bottom" secondItem="wET-62-5V5" secondAttribute="bottom" constant="5" id="yyN-za-fB0"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-uo-jm5" userLabel="select add view">
-                                <rect key="frame" x="184" y="64" width="136" height="0.0"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX9-rK-Lqe">
-                                        <rect key="frame" x="25" y="24" width="42" height="42"/>
-                                        <color key="backgroundColor" red="0.0023957495987999566" green="1" blue="0.92590427753614202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="sad-xy-Nx2"/>
-                                            <constraint firstAttribute="width" constant="42" id="yDe-mo-xag"/>
-                                        </constraints>
-                                        <state key="normal" image="text"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-p2-0dB">
-                                        <rect key="frame" x="72" y="68" width="44" height="42"/>
+                                        <rect key="frame" x="252" y="75" width="50" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.06950727541403523" blue="0.0" alpha="0.77544564255633797" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="1kR-wU-AmT"/>
-                                            <constraint firstAttribute="width" constant="44" id="yoo-iO-2dB"/>
+                                            <constraint firstAttribute="height" constant="50" id="Ciw-oZ-Sj1"/>
+                                            <constraint firstAttribute="width" constant="50" id="nL5-Vc-g6m"/>
                                         </constraints>
                                         <state key="normal" image="video"/>
                                         <userDefinedRuntimeAttributes>
@@ -240,15 +222,35 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addVideo:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="q6q-O6-VaV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX9-rK-Lqe">
+                                        <rect key="frame" x="200" y="25" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.0023957495987999566" green="1" blue="0.92590427753614202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jrf-hK-KWb"/>
+                                            <constraint firstAttribute="width" constant="50" id="yq3-LY-HE1"/>
+                                        </constraints>
+                                        <state key="normal" image="text"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addText:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="MDE-IK-xRK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.41023877640845069" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="vX9-rK-Lqe" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="top" constant="24" id="38W-r0-eGS"/>
-                                    <constraint firstAttribute="height" id="RGj-rK-3pd"/>
-                                    <constraint firstAttribute="width" constant="136" id="Y5F-Qj-shh"/>
-                                    <constraint firstItem="Hcr-p2-0dB" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="top" constant="68" id="YaQ-Sn-qkH"/>
-                                    <constraint firstItem="Hcr-p2-0dB" firstAttribute="leading" secondItem="Mm1-uo-jm5" secondAttribute="leading" constant="72" id="jM1-Hl-IXh"/>
-                                    <constraint firstItem="vX9-rK-Lqe" firstAttribute="leading" secondItem="Mm1-uo-jm5" secondAttribute="leading" constant="25" id="jPl-YY-8ee"/>
+                                    <constraint firstItem="Hcr-p2-0dB" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="top" constant="75" id="6fL-az-w3w"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hcr-p2-0dB" secondAttribute="trailing" constant="18" id="alc-kd-nMe"/>
+                                    <constraint firstItem="vX9-rK-Lqe" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="top" constant="25" id="igm-2B-mGA"/>
+                                    <constraint firstAttribute="trailing" secondItem="vX9-rK-Lqe" secondAttribute="trailing" constant="70" id="qkk-cy-t8P"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -260,19 +262,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u9n-lf-O3m" firstAttribute="top" secondItem="fjW-dN-V8c" secondAttribute="bottom" id="1rj-MW-MA8"/>
                             <constraint firstItem="u9n-lf-O3m" firstAttribute="top" secondItem="kyT-Px-48V" secondAttribute="bottom" id="4w8-tV-RHJ"/>
                             <constraint firstItem="Bi1-tP-stA" firstAttribute="top" secondItem="w6W-Aa-bOR" secondAttribute="bottom" id="94c-wE-AEO"/>
-                            <constraint firstItem="Mm1-uo-jm5" firstAttribute="top" secondItem="w6W-Aa-bOR" secondAttribute="bottom" id="Llt-sf-QYi"/>
+                            <constraint firstItem="Mm1-uo-jm5" firstAttribute="top" secondItem="w6W-Aa-bOR" secondAttribute="bottom" id="Jzi-17-fpV"/>
+                            <constraint firstItem="Mm1-uo-jm5" firstAttribute="leading" secondItem="Yhs-MM-IYK" secondAttribute="leading" id="MC0-No-lkT"/>
+                            <constraint firstItem="u9n-lf-O3m" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="bottom" id="NqB-xu-wCt"/>
                             <constraint firstItem="kyT-Px-48V" firstAttribute="leading" secondItem="Yhs-MM-IYK" secondAttribute="leading" id="Y3L-RR-qaL"/>
                             <constraint firstAttribute="trailing" secondItem="kyT-Px-48V" secondAttribute="trailing" id="ZOn-a9-N75"/>
-                            <constraint firstItem="fjW-dN-V8c" firstAttribute="leading" secondItem="Yhs-MM-IYK" secondAttribute="leading" id="aLS-dF-4Oi"/>
                             <constraint firstItem="Bi1-tP-stA" firstAttribute="leading" secondItem="Yhs-MM-IYK" secondAttribute="leading" id="h4c-Tl-d3F"/>
                             <constraint firstAttribute="trailing" secondItem="Bi1-tP-stA" secondAttribute="trailing" id="hav-xH-H63"/>
-                            <constraint firstAttribute="trailing" secondItem="Mm1-uo-jm5" secondAttribute="trailing" id="j4b-iZ-vhu"/>
-                            <constraint firstItem="fjW-dN-V8c" firstAttribute="top" secondItem="w6W-Aa-bOR" secondAttribute="bottom" id="qVl-Qg-DT4"/>
                             <constraint firstItem="kyT-Px-48V" firstAttribute="top" secondItem="Bi1-tP-stA" secondAttribute="bottom" constant="5" id="tqU-4m-Vpr"/>
-                            <constraint firstAttribute="trailing" secondItem="fjW-dN-V8c" secondAttribute="trailing" id="vT2-5j-gLQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Mm1-uo-jm5" secondAttribute="trailing" id="vvk-na-5aX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Play" image="play" id="3Jv-BI-KCQ"/>
@@ -281,7 +281,8 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="backgroundView" destination="fjW-dN-V8c" id="vtJ-D1-wOF"/>
+                        <outlet property="addText" destination="vX9-rK-Lqe" id="Qk8-aJ-qh1"/>
+                        <outlet property="addVideo" destination="Hcr-p2-0dB" id="Mkb-CK-Z4G"/>
                         <outlet property="menuButton" destination="Bi1-tP-stA" id="jQC-O6-lSe"/>
                         <outlet property="selectAddView" destination="Mm1-uo-jm5" id="Ign-YL-3I6"/>
                         <outlet property="tableView" destination="kyT-Px-48V" id="Kbh-qv-b1b"/>
