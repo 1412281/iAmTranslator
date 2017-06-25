@@ -141,14 +141,9 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let storyB = UIStoryboard(name: "Text", bundle: nil)
             let vc = storyB.instantiateViewController(withIdentifier: "TextView") as! TextViewController
             
-            let textObj = listText[indexPath.row]
-            vc.originText = textObj.text!
-            if let translated = textObj.translated{
-                vc.translated = translated
-            }
-            vc.currentTran = Int(textObj.indexCurrent)
-            
+            vc.obj = listText[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
+            
         case .video:
             let storyB = UIStoryboard(name: "Video", bundle: nil)
             let vc = storyB.instantiateViewController(withIdentifier: "VideoView") as! VideoViewController

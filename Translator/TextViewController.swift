@@ -10,43 +10,68 @@ import UIKit
 
 class TextViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    // MARK: *** Data model
-    var originText: String = ""
-    var translated: String = ""
-    var currentTran: Int = 0
-    var indexView: Int = 0
+// MARK: *** Data model
+    var obj: Text?
     
-    // MARK: *** UI Elements
+// MARK: *** UI Elements
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tranText: UITextView!
+    @IBOutlet weak var transText: UITextView!
     @IBOutlet weak var textDict: UITextView!
     @IBOutlet weak var workView: UIView!
-    // MARK: *** UI events
+    @IBOutlet weak var count: UILabel!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var currentButton: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
     
+    
+// MARK: *** UI events
     @IBAction func skipTop(_ sender: Any) {
+        saveCurrentTrans(index: indexView)
+        initCurrentSentence(index: 0)
     }
     
     @IBAction func back(_ sender: Any) {
+        
+        saveCurrentTrans(index: indexView)
+        
+        if indexView > 0 {
+            indexView -= 1
+        }
+        
+        initCurrentSentence(index: indexView)
+        
     }
     
-    @IBAction func playing(_ sender: Any) {
+    @IBAction func current(_ sender: Any) {
+        initCurrentSentence(index: Int(obj!.indexCurrent))
     }
     
     @IBAction func next(_ sender: Any) {
-        currentTran += 1
-        initCurrentSentence()
+        
+        saveCurrentTrans(index: indexView)
+        
+        if indexView < listSentences.count - 2 {
+            indexView += 1
+        }
+        
+        initCurrentSentence(index: indexView)
+
     }
     
-    // MARK: *** Local variables
-    
+// MARK: *** Local variables
+    var indexView: Int = 0
     var listSentences = [String]()
     var aSentence = [String]()
-    
     var listTrans = [String]()
-    // MARK: *** UIViewController
     
+    
+// MARK: *** UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        let back = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backNavi))
+        navigationItem.leftBarButtonItem = back
+        
         navigationController?.setNavigationBarHidden(false, animated: false)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -54,22 +79,93 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         setLayoutCollectionView()
         
-        listSentences = originText.components(separatedBy: ".")
-        for _ in 0..<listSentences.count {
-            listTrans.append("")
+        loadText()
+        
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapCurrent(sender: )))
+        currentButton.addGestureRecognizer(longTap)
+        
+        initCurrentSentence(index: Int(obj!.indexCurrent))
+        currentButton.titleLabel?.text = String(Int(obj!.indexCurrent) + 1)
+    }
+    
+    func backNavi() {
+        saveCurrentTrans(index: indexView)
+        var tempText: String = ""
+        for i in 0..<listTrans.count - 1
+        {
+            tempText +=  listTrans[i] + "."
         }
+        print(tempText)
+        obj?.translated? = tempText
+        
+    
+        DB.save()
+        navigationController?.popViewController(animated: true)
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        initCurrentSentence()
+    
+    
+//MARK: *** Process functions
+    func loadText() {
+        listSentences = (obj!.text?.components(separatedBy: "."))!
+        if obj!.translated != "" {
+            listTrans = (obj!.translated?.components(separatedBy: "."))!
+        }
+        else {
+            for _ in 0..<listSentences.count {
+                listTrans.append("")
+            }
+        }
+
+    }
+    func longTapCurrent(sender: Any?) {
+        obj!.indexCurrent = Int32(indexView)
+        currentButton.titleLabel?.text = String(Int(obj!.indexCurrent) + 1)
     }
     
-    func initCurrentSentence() {
-        aSentence = listSentences[currentTran].components(separatedBy: " ")
+    
+    func initCurrentSentence(index: Int) {
+        transText.text.removeAll()
+        transText.text = listTrans[index]
+        
+        checkRead(index: index)
+        
+        currentButton.titleLabel?.text = String(Int(obj!.indexCurrent) + 1)
+        count.text = String(index + 1) + "/" + String(listSentences.count - 1)
+        aSentence = listSentences[index].components(separatedBy: " ")
+        
         collectionView.reloadData()
+        
+        
     }
     
-    //MARK: *** ColectionView
+    func saveCurrentTrans(index: Int) {
+        if let currentText = transText.text {
+            listTrans[index] = currentText
+        }
+    }
+    
+    func checkRead(index: Int) {
+        if index == 0 {
+            backButton.isEnabled = false
+            skipButton.isEnabled = false
+        }
+        else {
+            backButton.isEnabled = true
+            skipButton.isEnabled = true
+        }
+        
+        if index == listSentences.count - 2 {
+            nextButton.isEnabled = false
+        }
+        else {
+            
+            nextButton.isEnabled = true
+        }
+
+    }
+    
+//MARK: *** ColectionView
     
     func setLayoutCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -132,7 +228,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         view.endEditing(true)
     }
     
-    //MARK: *** Keyboard show
+//MARK: *** Keyboard show
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
