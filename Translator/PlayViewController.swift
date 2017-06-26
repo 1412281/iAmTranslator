@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import youtube_ios_player_helper
 
 class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: *** Data model
@@ -77,8 +78,10 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         Dictionary.init()
         super.viewDidLoad()
-        
-        //Video.deleteAllRecords()
+
+        Text.deleteAllRecords()
+        Video.deleteAllRecords()
+
         //initData()
         
     }
@@ -102,7 +105,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         navigationController?.setNavigationBarHidden(true, animated: false)
 
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -115,7 +118,14 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return listVideo.count
         }
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch currentChoice {
+        case .text:
+            return 100
+        default:
+            return 100
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch currentChoice {
@@ -129,6 +139,13 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier: "VideoPlayCell") as! VideoPlayTableViewCell
             cell.name.text = listVideo[indexPath.row].name
             cell.des.text = listVideo[indexPath.row].link
+    
+            let url = URL(string: "https://img.youtube.com/vi/" + listVideo[indexPath.row].link! + "/mqdefault.jpg")
+            if let data = try? Data(contentsOf: url!) {
+                cell.img.image = UIImage(data: data)
+            }
+            
+            cell.length.text = "15:10"
             return cell
         }
         

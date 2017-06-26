@@ -69,11 +69,16 @@ class VideoViewController: UIViewController {
         sentences.popLast()
         indexCurrent=Int32(sentences.count)
         indexBack=indexCurrent
-        status.text=String(indexBack)+"/"+String(indexCurrent)
+       
         if sentences.count != 0{
             sentence.text=sentences[sentences.count-1]
         }
-        
+        else{
+            indexCurrent+=1
+            indexBack+=1
+            sentence.text=""
+        }
+         status.text=String(indexBack)+"/"+String(indexCurrent)
         if indexBack==1 {
             backText.isEnabled=false
             backbackText.isEnabled=false
