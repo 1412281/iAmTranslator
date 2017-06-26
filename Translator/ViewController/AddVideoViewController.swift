@@ -7,9 +7,15 @@
 //
 
 import UIKit
-
+import Foundation
+import youtube_ios_player_helper
 class AddVideoViewController: UIViewController {
-
+    
+    @IBOutlet weak var link: UITextField!
+    
+    @IBOutlet weak var name: UITextField!
+    
+    @IBOutlet weak var videoAddTest: YTPlayerView!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -21,24 +27,35 @@ class AddVideoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func saveButton(sender: UIBarButtonItem) {
-        
+        addVideo()
+        AlertSuccess()
+       
     }
-
+    func AlertSuccess(){
+        let alert = UIAlertController(title: "Notification", message: "Add video successfully ", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func addVideo() {
+        let resultLink = link.text!.components(separatedBy: ["/"])
+        
+        let newV = Video.create() as! Video
+        newV.name = name.text!
+        newV.translated = ""
+        newV.link = resultLink[resultLink.count-1]
+        newV.timeLoop = 10
+        newV.timePlaying = 0
+        newV.speed = 1
+        DB.save()
+        
+        videoAddTest.load(withVideoId: resultLink[resultLink.count-1], playerVars: ["playsinline": 1 as AnyObject])
     }
-    */
 
 }
