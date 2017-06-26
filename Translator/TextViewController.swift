@@ -28,7 +28,8 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
 // MARK: *** UI events
     @IBAction func skipTop(_ sender: Any) {
         saveCurrentTrans(index: indexView)
-        initCurrentSentence(index: 0)
+        indexView = 0
+        initCurrentSentence(index: indexView)
     }
     
     @IBAction func back(_ sender: Any) {
@@ -44,6 +45,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func current(_ sender: Any) {
+        indexView = Int(obj!.indexCurrent)
         initCurrentSentence(index: Int(obj!.indexCurrent))
     }
     
@@ -84,8 +86,12 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapCurrent(sender: )))
         currentButton.addGestureRecognizer(longTap)
         
+        indexView = Int(obj!.indexCurrent)
+        
         initCurrentSentence(index: Int(obj!.indexCurrent))
-        currentButton.titleLabel?.text = String(Int(obj!.indexCurrent) + 1)
+        
+        
+        
     }
     
     func backNavi() {
@@ -118,6 +124,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
 
     }
+    
     func longTapCurrent(sender: Any?) {
         obj!.indexCurrent = Int32(indexView)
         currentButton.titleLabel?.text = String(Int(obj!.indexCurrent) + 1)
@@ -125,18 +132,29 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     func initCurrentSentence(index: Int) {
+        
+        changeCurrentButtonText(index: index)
+        
+        collectionView.reloadData()
+        
         transText.text.removeAll()
         transText.text = listTrans[index]
         
         checkRead(index: index)
         
-        currentButton.titleLabel?.text = String(Int(obj!.indexCurrent) + 1)
         count.text = String(index + 1) + "/" + String(listSentences.count - 1)
         aSentence = listSentences[index].components(separatedBy: " ")
         
-        collectionView.reloadData()
         
-        
+    }
+    
+    func changeCurrentButtonText(index: Int) {
+        if index != Int(obj!.indexCurrent) {
+            currentButton.setTitle(String(Int(obj!.indexCurrent) + 1), for: UIControlState.normal)
+        }
+        else if index == Int(obj!.indexCurrent){
+            currentButton.setTitle("now", for: UIControlState.normal)
+        }
     }
     
     func saveCurrentTrans(index: Int) {
@@ -203,6 +221,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let word = aSentence[indexPath.row].replacingOccurrences(of: ",", with: "").lowercased()
         var mean = Dictionary.getMean(word: word)
+        
         if mean != "" {
             textDict.text = word + "\n" + mean
         }
@@ -213,13 +232,14 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 mean = Dictionary.getMean(word: tempWord)
                 idx = word.index(before: idx)
             }
+            if mean != "" {
+                textDict.text = word.substring(to: word.index(after: idx)) + "\n" + mean
+            }
+            else {
+                textDict.text = word + "\n Not found this word"
+            }
         }
-        if mean != "" {
-            textDict.text = word + "\n" + mean
-        }
-        else {
-            textDict.text = word + "\n Not found this word"
-        }
+       
         dismissKeyboard()
 
     }

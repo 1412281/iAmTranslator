@@ -78,8 +78,10 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Dictionary.init()
         super.viewDidLoad()
         
-        
-        initData()
+        //Text.deleteAllRecords()
+        //Video.deleteAllRecords()
+
+        //initData()
         
     }
     
