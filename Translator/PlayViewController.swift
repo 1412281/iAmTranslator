@@ -78,8 +78,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Dictionary.init()
         super.viewDidLoad()
         
-        
-        initData()
+        //Video.deleteAllRecords()
+        //initData()
         
     }
     
@@ -149,11 +149,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let vc = storyB.instantiateViewController(withIdentifier: "VideoView") as! VideoViewController
             
             let videoObj = listVideo[indexPath.row]
-            vc.link = videoObj.link!
-            vc.currentTime = Float32(videoObj.timePlaying)
-            vc.speed = Int(videoObj.speed)
-            vc.timeLoop = Float32(videoObj.timeLoop)
-            
+            vc.obj = videoObj
             
             navigationController?.pushViewController(vc, animated: true)
 
