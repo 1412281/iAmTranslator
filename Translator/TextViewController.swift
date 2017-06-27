@@ -79,6 +79,8 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        collectionView.delegate = self
+        
         setLayoutCollectionView()
         
         loadText()
@@ -113,9 +115,9 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 //MARK: *** Process functions
     func loadText() {
-        listSentences = (obj!.text?.components(separatedBy: "."))!
+        listSentences = (obj!.text?.components(separatedBy: ". "))!
         if obj!.translated != "" {
-            listTrans = (obj!.translated?.components(separatedBy: "."))!
+            listTrans = (obj!.translated?.components(separatedBy: "`"))!
         }
         else {
             for _ in 0..<listSentences.count {
@@ -127,7 +129,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func longTapCurrent(sender: Any?) {
         obj!.indexCurrent = Int32(indexView)
-        currentButton.titleLabel?.text = String(Int(obj!.indexCurrent) + 1)
+        currentButton.setTitle(String(Int(obj!.indexCurrent) + 1), for: UIControlState.normal)
     }
     
     
@@ -190,6 +192,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         layout.minimumLineSpacing = 6
         layout.minimumInteritemSpacing = 2
         collectionView.collectionViewLayout = layout
+        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -205,19 +208,16 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "wordCell", for: indexPath) as! WordCollectionViewCell
         let word = aSentence[indexPath.row]
         cell.word.text = word
-        let length = word.characters.count
-        
-        cell.word.frame.size.width = CGFloat(10 * length)
-        cell.word.frame.size.height = 16
+        cell.word.sizeToFit()
+        cell.word.frame.size.height = 18
+
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: CGFloat(aSentence[indexPath.row].characters.count * 10), height: 16);
-        
-    }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: CGFloat(aSentence[indexPath.row].characters.count * 10), height: CGFloat(18))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let word = aSentence[indexPath.row].replacingOccurrences(of: ",", with: "").lowercased()
         var mean = Dictionary.getMean(word: word)

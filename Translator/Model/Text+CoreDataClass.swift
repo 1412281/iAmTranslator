@@ -47,7 +47,12 @@ public class Text: NSManagedObject {
         
         return nil
     }
-    
+
+    //delete object
+    static func delete(obj: Text) {
+        DB.MOC.delete(obj)
+        DB.save()
+    }
     
     //delete all data
     static func deleteAllRecords() {

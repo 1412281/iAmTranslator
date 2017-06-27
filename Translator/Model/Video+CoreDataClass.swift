@@ -50,6 +50,11 @@ public class Video: NSManagedObject {
         return nil
     }
     
+    //delete object
+    static func delete(obj: Video) {
+        DB.MOC.delete(obj)
+        DB.save()
+    }
     
     //delete all data
     static func deleteAllRecords() {
