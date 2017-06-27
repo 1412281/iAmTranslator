@@ -41,7 +41,9 @@ class VideoViewController: UIViewController {
     // MARK: *** UI events
     
     // MARK: *** Local variables
-    
+    let temp:CGFloat = 50
+    var less:CGFloat?
+
     // MARK: *** UIViewController
 
     
@@ -50,9 +52,13 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
 
+        let viewBtn = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(viewTrans))
+        navigationItem.rightBarButtonItem = viewBtn
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        //let no = Notification.init(name: NSNotification.Name.UIKeyboardWillShow)
         
         timeLoop=Float32((obj?.timeLoop)!)
         currentTime=Float32((obj?.timePlaying)!)
@@ -86,6 +92,32 @@ class VideoViewController: UIViewController {
 
     }
     
+    func viewTrans() {
+        saveTrans()
+        
+        let storyB = UIStoryboard.init(name: "Play", bundle: nil)
+        let vc = storyB.instantiateViewController(withIdentifier: "ViewTransVC") as! ViewTransViewController
+        vc.setView(name: obj!.name!, text: obj!.translated!)
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func saveTrans() {
+        if Int(indexCurrent) != sentences.count {
+            addNew()
+        }
+        
+        var tempText: String = ""
+        for i in 0..<sentences.count {
+            tempText +=  sentences[i]+"`"
+        }
+        obj?.translated? = tempText
+        obj?.timeLoop=Int32(timeLoop)
+        obj?.timePlaying=Int32(currentTime)
+        obj?.speed=1
+        DB.save()
+
+    }
     
     func screenCurrent(){
         
@@ -103,7 +135,10 @@ class VideoViewController: UIViewController {
             backbackText.isEnabled=true
         }
         status.text=String(indexBack)+"/"+String(indexCurrent)
+        
+        
     }
+    
     func addNew(){
         sentences.append(sentence.text)
     }
@@ -111,8 +146,8 @@ class VideoViewController: UIViewController {
         sentences[Int(indexBack)-1]=sentence.text!
     }
     @IBAction func nextSecond(_ sender: Any) {
-        
-        if sentence.text=="" {
+        if sentence.text == "" {
+            
             return
         }
         
@@ -134,9 +169,10 @@ class VideoViewController: UIViewController {
         
         screenCurrent()
         
-        
+        view.endEditing(true)
     }
     
+
     
     @IBAction func backSecond(_ sender: Any) {
         if sentence.text=="" && indexBack != indexCurrent{
@@ -155,6 +191,9 @@ class VideoViewController: UIViewController {
             backText.isEnabled=false
             backbackText.isEnabled=false
         }
+        
+        view.endEditing(true)
+
     }
     
     @IBAction func sentenceCurrent(_ sender: Any) {
@@ -240,19 +279,7 @@ class VideoViewController: UIViewController {
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
         
-        if Int(indexCurrent) != sentences.count {
-            addNew()
-        }
-        
-        var tempText: String = ""
-        for i in 0..<sentences.count {
-            tempText +=  sentences[i]+"`"
-        }
-        obj?.translated? = tempText
-        obj?.timeLoop=Int32(timeLoop)
-        obj?.timePlaying=Int32(currentTime)
-        obj?.speed=1
-        DB.save()
+        saveTrans()
     }
     
     func updateDataVideo(){
@@ -269,18 +296,16 @@ class VideoViewController: UIViewController {
     }
     
 
-    let temp:CGFloat = 50
-    var less:CGFloat?
     func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let sizeC = transView.frame.height + videoViewYT.frame.height
-            less = keyboardSize.height - (view.frame.height - sizeC)
-            if less! > CGFloat(0) {
-                videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y, width: videoViewYT.frame.width, height: videoViewYT.frame.height - less! - temp)
-                transView.frame.origin.y -= less! + temp
-            }
+    if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        let sizeC = transView.frame.height + videoViewYT.frame.height
+        less = keyboardSize.height - (view.frame.height - sizeC)
+        if less! > CGFloat(0) {
+            videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y, width: videoViewYT.frame.width, height: videoViewYT.frame.height - less! - temp)
+            transView.frame.origin.y -= less! + temp
         }
     }
+}
     
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {

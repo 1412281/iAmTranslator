@@ -95,16 +95,17 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         initCurrentSentence(index: Int(obj!.indexCurrent))
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         dismissKeyboard()
     }
     func viewTrans() {
+        dismissKeyboard()
         saveTrans()
         
-        let storyB = UIStoryboard.init(name: "Text", bundle: nil)
+        let storyB = UIStoryboard.init(name: "Play", bundle: nil)
         let vc = storyB.instantiateViewController(withIdentifier: "ViewTransVC") as! ViewTransViewController
         vc.setView(name: obj!.name!, text: obj!.translated!)
         
@@ -274,6 +275,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if self.view.frame.origin.y == 0{
                 self.view.frame.origin.y -= (keyboardSize.height - temp)
                 textDict.frame = CGRect(x: textDict.frame.origin.x, y: textDict.frame.origin.y + keyboardSize.height - temp, width: textDict.frame.width, height: textDict.frame.height - keyboardSize.height + temp)
+                //navigationController?.setNavigationBarHidden(true, animated: true)
             }
         }
     }
@@ -283,6 +285,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if self.view.frame.origin.y != 0{
                 self.view.frame.origin.y = 0
                  textDict.frame = CGRect(x: textDict.frame.origin.x, y: textDict.frame.origin.y - keyboardSize.height + temp, width: textDict.frame.width, height: textDict.frame.height + keyboardSize.height - temp)
+                //navigationController?.setNavigationBarHidden(false, animated: true)
             }
         }
     }

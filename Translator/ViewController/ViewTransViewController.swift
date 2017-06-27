@@ -27,7 +27,7 @@ class ViewTransViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
         name.text = w
-        text.text = m
+        text.text = m?.replacingOccurrences(of: "`", with: ".\n")
     }
     
     func setView(name: String, text: String) {

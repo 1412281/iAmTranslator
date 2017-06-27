@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -185,55 +184,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCR-Mq-kbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-187.5" y="130.98591549295776"/>
-        </scene>
-        <!--View Trans View Controller-->
-        <scene sceneID="y5J-tD-MrO">
-            <objects>
-                <viewController storyboardIdentifier="ViewTransVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1mS-Cq-XCE" customClass="ViewTransViewController" customModule="Translator" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ulb-SR-foL"/>
-                        <viewControllerLayoutGuide type="bottom" id="Als-xm-szD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NLO-9Q-npt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HGS-9K-Clk">
-                                <rect key="frame" x="0.0" y="77" width="320" height="491"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJn-MA-Qe1">
-                                <rect key="frame" x="21" y="30" width="278" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="BUQ-aa-spM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="RJn-MA-Qe1" secondAttribute="trailing" constant="5" id="AEb-X3-iBk"/>
-                            <constraint firstItem="RJn-MA-Qe1" firstAttribute="leading" secondItem="NLO-9Q-npt" secondAttribute="leadingMargin" constant="5" id="Aph-Si-30w"/>
-                            <constraint firstAttribute="trailing" secondItem="HGS-9K-Clk" secondAttribute="trailing" id="QgA-dl-rfM"/>
-                            <constraint firstItem="HGS-9K-Clk" firstAttribute="top" secondItem="RJn-MA-Qe1" secondAttribute="bottom" constant="5" id="aAF-kl-DVC"/>
-                            <constraint firstItem="RJn-MA-Qe1" firstAttribute="top" secondItem="ulb-SR-foL" secondAttribute="bottom" constant="10" id="jLY-La-Ixa"/>
-                            <constraint firstItem="HGS-9K-Clk" firstAttribute="leading" secondItem="NLO-9Q-npt" secondAttribute="leading" id="kfD-iX-XDz"/>
-                            <constraint firstItem="Als-xm-szD" firstAttribute="top" secondItem="HGS-9K-Clk" secondAttribute="bottom" id="u6R-lQ-cIe"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="name" destination="RJn-MA-Qe1" id="6iE-RR-Dhd"/>
-                        <outlet property="text" destination="HGS-9K-Clk" id="73i-HF-vHh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XXk-UK-Ekb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="566.25" y="130.98591549295776"/>
         </scene>
     </scenes>
     <resources>

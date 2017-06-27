@@ -161,6 +161,7 @@
 				E02A5DD21EF8C54600B921B8 /* PlayViewController.swift */,
 				E02A5DD31EF8C54600B921B8 /* VideoPlayTableViewCell.swift */,
 				E02A5DD41EF8C54600B921B8 /* TextPlayTableViewCell.swift */,
+				E04B2D0C1F0213F1003BE051 /* ViewTransViewController.swift */,
 				E02A5DDC1EF8C57700B921B8 /* Video */,
 				E02A5DDB1EF8C57200B921B8 /* Text */,
 			);
@@ -173,7 +174,6 @@
 				E02A5DE61EF8C59700B921B8 /* Text.storyboard */,
 				E02A5DE71EF8C59700B921B8 /* TextViewController.swift */,
 				E07D15561EFCBD9900DDCC81 /* WordCollectionViewCell.swift */,
-				E04B2D0C1F0213F1003BE051 /* ViewTransViewController.swift */,
 			);
 			name = Text;
 			sourceTree = "<group>";
