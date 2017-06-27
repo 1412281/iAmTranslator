@@ -269,20 +269,26 @@ class VideoViewController: UIViewController {
     }
     
 
+    let temp:CGFloat = 50
+    var less:CGFloat?
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let sizeC = transView.frame.height + videoViewYT.frame.height
-            let less = keyboardSize.height - (view.frame.height - sizeC)
-                videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y, width: videoViewYT.frame.width, height: videoViewYT.frame.height - less - 40)
-                transView.frame.origin.y -= less + 40
-            
+            less = keyboardSize.height - (view.frame.height - sizeC)
+            if less! > CGFloat(0) {
+                videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y, width: videoViewYT.frame.width, height: videoViewYT.frame.height - less! - temp)
+                transView.frame.origin.y -= less! + temp
+            }
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0{
-                self.transView.frame.origin.y += (keyboardSize.height - 40)
+            if less! > CGFloat(0) {
+                videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y, width: videoViewYT.frame.width, height: videoViewYT.frame.height + less! + temp)
+                transView.frame.origin.y += less! + temp
+                
+                less = 0
             }
         }
     }

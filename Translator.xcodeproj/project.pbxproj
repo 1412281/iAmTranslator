@@ -30,6 +30,7 @@
 		E02A5DE11EF8C58700B921B8 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DDF1EF8C58700B921B8 /* VideoViewController.swift */; };
 		E02A5DE81EF8C59700B921B8 /* Text.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E02A5DE61EF8C59700B921B8 /* Text.storyboard */; };
 		E02A5DE91EF8C59700B921B8 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5DE71EF8C59700B921B8 /* TextViewController.swift */; };
+		E04B2D0D1F0213F1003BE051 /* ViewTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04B2D0C1F0213F1003BE051 /* ViewTransViewController.swift */; };
 		E07D15571EFCBD9900DDCC81 /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07D15561EFCBD9900DDCC81 /* WordCollectionViewCell.swift */; };
 		E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F2361ECB581500F574A0 /* AppDelegate.swift */; };
 		E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F23A1ECB581500F574A0 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		E02A5DDF1EF8C58700B921B8 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		E02A5DE61EF8C59700B921B8 /* Text.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Text.storyboard; sourceTree = "<group>"; };
 		E02A5DE71EF8C59700B921B8 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		E04B2D0C1F0213F1003BE051 /* ViewTransViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewTransViewController.swift; path = ViewController/ViewTransViewController.swift; sourceTree = "<group>"; };
 		E07D15561EFCBD9900DDCC81 /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordCollectionViewCell.swift; path = ViewController/WordCollectionViewCell.swift; sourceTree = "<group>"; };
 		E098F2331ECB581500F574A0 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E098F2361ECB581500F574A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				E02A5DE61EF8C59700B921B8 /* Text.storyboard */,
 				E02A5DE71EF8C59700B921B8 /* TextViewController.swift */,
 				E07D15561EFCBD9900DDCC81 /* WordCollectionViewCell.swift */,
+				E04B2D0C1F0213F1003BE051 /* ViewTransViewController.swift */,
 			);
 			name = Text;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				E0E398731EFE486800EFC8D9 /* Text+CoreDataProperties.swift in Sources */,
 				E02A5DD01EF8C52300B921B8 /* WordDictViewController.swift in Sources */,
 				E0E3986F1EFE486800EFC8D9 /* FavoriteWord+CoreDataProperties.swift in Sources */,
+				E04B2D0D1F0213F1003BE051 /* ViewTransViewController.swift in Sources */,
 				E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */,
 				E02A5DD91EF8C54600B921B8 /* TextPlayTableViewCell.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,

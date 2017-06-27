@@ -74,6 +74,9 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let back = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backNavi))
         navigationItem.leftBarButtonItem = back
         
+        let viewBtn = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(viewTrans))
+        navigationItem.rightBarButtonItem = viewBtn
+        
         navigationController?.setNavigationBarHidden(false, animated: false)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -93,21 +96,36 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         initCurrentSentence(index: Int(obj!.indexCurrent))
         
         
-        
     }
     
-    func backNavi() {
+    override func viewWillAppear(_ animated: Bool) {
+        dismissKeyboard()
+    }
+    func viewTrans() {
+        saveTrans()
+        
+        let storyB = UIStoryboard.init(name: "Text", bundle: nil)
+        let vc = storyB.instantiateViewController(withIdentifier: "ViewTransVC") as! ViewTransViewController
+        vc.setView(name: obj!.name!, text: obj!.translated!)
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func saveTrans() {
         saveCurrentTrans(index: indexView)
         var tempText: String = ""
         for i in 0..<listTrans.count - 1
         {
-            tempText +=  listTrans[i] + "."
+            tempText +=  listTrans[i] + "`"
         }
         print(tempText)
         obj?.translated? = tempText
         
-    
         DB.save()
+    }
+    
+    func backNavi() {
+        saveTrans()
         navigationController?.popViewController(animated: true)
         
     }
@@ -115,7 +133,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 //MARK: *** Process functions
     func loadText() {
-        listSentences = (obj!.text?.components(separatedBy: ". "))!
+        listSentences = (obj!.text?.components(separatedBy: "."))!
         if obj!.translated != "" {
             listTrans = (obj!.translated?.components(separatedBy: "`"))!
         }
@@ -249,12 +267,13 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
 //MARK: *** Keyboard show
+    let temp:CGFloat = 50
+    
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= (keyboardSize.height - 40)
-
-                textDict.frame = CGRect(x: textDict.frame.origin.x, y: textDict.frame.origin.y + keyboardSize.height - 40, width: textDict.frame.width, height: textDict.frame.height - keyboardSize.height + 40)
+                self.view.frame.origin.y -= (keyboardSize.height - temp)
+                textDict.frame = CGRect(x: textDict.frame.origin.x, y: textDict.frame.origin.y + keyboardSize.height - temp, width: textDict.frame.width, height: textDict.frame.height - keyboardSize.height + temp)
             }
         }
     }
@@ -262,8 +281,8 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0{
-                self.view.frame.origin.y += (keyboardSize.height - 40)
-                 textDict.frame = CGRect(x: textDict.frame.origin.x, y: textDict.frame.origin.y - keyboardSize.height + 40, width: textDict.frame.width, height: textDict.frame.height + keyboardSize.height - 40)
+                self.view.frame.origin.y = 0
+                 textDict.frame = CGRect(x: textDict.frame.origin.x, y: textDict.frame.origin.y - keyboardSize.height + temp, width: textDict.frame.width, height: textDict.frame.height + keyboardSize.height - temp)
             }
         }
     }

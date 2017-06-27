@@ -17,7 +17,6 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: *** Local variables
     
     enum `Type` {
-        case recent
         case text
         case video
     }
@@ -46,10 +45,6 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
-    @IBAction func allButton(_ sender: Any) {
-        currentChoice = Type.recent
-        reloadView()
-    }
     @IBAction func textButton(_ sender: Any) {
         currentChoice = Type.text
         reloadView()
@@ -79,11 +74,28 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Dictionary.init()
         super.viewDidLoad()
 
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showEditting(_:)))
+        longPress.minimumPressDuration = 0.5
+        tableView.addGestureRecognizer(longPress)
+        
+        let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneEditting(_:)))
+        navigationItem.rightBarButtonItem = doneBtn
+        
         Text.deleteAllRecords()
         Video.deleteAllRecords()
 
-        //initData()
+        initData()
         
+    }
+    
+    func doneEditting(_: Any?) {
+        self.tableView.setEditing(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    func showEditting(_: Any?){
+        self.tableView.setEditing(true, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func hiddenAdd() {
@@ -154,7 +166,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch currentChoice {
-        case .text, .recent:
+        case .text:
             let storyB = UIStoryboard(name: "Text", bundle: nil)
             let vc = storyB.instantiateViewController(withIdentifier: "TextView") as! TextViewController
             
@@ -174,6 +186,28 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            switch currentChoice {
+            case .text:
+                Text.delete(obj: listText[indexPath.row])
+                listText = Text.all() as! [Text]
+            default:
+                Video.delete(obj: listVideo[indexPath.row])
+                listVideo = Video.all() as! [Video]
+            }
+            self.tableView.reloadData()
+            // Delete the row from the data source
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+
+    }
     
     //MARK: *** Help function
     func changeButton(){
