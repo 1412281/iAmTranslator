@@ -11,9 +11,7 @@ import youtube_ios_player_helper
 class VideoViewController: UIViewController {
 
     // MARK: *** Data model
-    var link: String = "-nnWBhKZeg0"
-    var trans: String = ""
-    var speed: Int = 1
+    var obj:Video?
     // MARK: *** UI Elements
     
     @IBOutlet weak var transView: UIView!
@@ -22,8 +20,23 @@ class VideoViewController: UIViewController {
     
     @IBOutlet weak var videoViewYT: YTPlayerView!
     
+    @IBOutlet weak var sentence: UITextView!
+    
+    @IBOutlet weak var status: UILabel!
+    
+    @IBOutlet weak var backText: UIButton!
+    
+    @IBOutlet weak var nextText: UIButton!
+    
+    @IBOutlet weak var backbackText: UIButton!
+    
+    @IBOutlet weak var nextnextText: UIButton!
+    
+    var sentences=[String]()
     var timeLoop:Float32=0
     var currentTime:Float32=0
+    var indexCurrent:Int32=0
+    var indexBack:Int32=0
     
     // MARK: *** UI events
     
@@ -41,16 +54,115 @@ class VideoViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         
-        timeLoop=Float32(secondLoop.text!)!
-        videoViewYT.setPlaybackRate(2000)
-        videoViewYT.load(withVideoId: link, playerVars: ["playsinline": 1 as AnyObject])
+        timeLoop=Float32((obj?.timeLoop)!)
+        currentTime=Float32((obj?.timePlaying)!)
+        
+        videoViewYT.load(withVideoId: (obj?.link!)!, playerVars: ["playsinline": 1 as AnyObject])
+        videoViewYT.seek(toSeconds: currentTime, allowSeekAhead: true)
+        
+        
         var timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
+        
+        
+        
+        sentences=(obj?.translated?.components(separatedBy: ["`"]))!
+        sentences.popLast()
+        indexCurrent=Int32(sentences.count)
+        indexBack=indexCurrent
+       
+        if sentences.count != 0{
+            sentence.text=sentences[sentences.count-1]
+        }
+        else{
+            indexCurrent+=1
+            indexBack+=1
+            sentence.text=""
+        }
+         status.text=String(indexBack)+"/"+String(indexCurrent)
+        if indexBack==1 {
+            backText.isEnabled=false
+            backbackText.isEnabled=false
+        }
+
+    }
+    
+    
+    func screenCurrent(){
+        
+        if indexBack==indexCurrent && Int(indexBack) == sentences.count{
+            sentence.text=sentences[Int(indexBack)-1]
+        }
+        else if indexBack==indexCurrent && Int(indexBack) != sentences.count{
+            sentence.text=""
+        }
+        else {
+            sentence.text=sentences[Int(indexBack)-1]
+        }
+        if indexBack > 1 {
+            backText.isEnabled=true
+            backbackText.isEnabled=true
+        }
+        status.text=String(indexBack)+"/"+String(indexCurrent)
+    }
+    func addNew(){
+        sentences.append(sentence.text)
+    }
+    func setEdit(){
+        sentences[Int(indexBack)-1]=sentence.text!
+    }
+    @IBAction func nextSecond(_ sender: Any) {
+        
+        if sentence.text=="" {
+            return
+        }
+        
+        if indexBack==indexCurrent && Int(indexBack) != sentences.count{
+          
+            indexBack+=1
+            indexCurrent+=1
+            addNew()
+        }
+        else if indexBack==indexCurrent && Int(indexBack) == sentences.count{
+            setEdit()
+            indexBack+=1
+            indexCurrent+=1
+        }
+        else {
+            setEdit()
+            indexBack+=1
+        }
+        
+        screenCurrent()
+        
         
     }
     
-    @IBAction func playCurrent(_ sender: Any) {
-        videoViewYT.seek(toSeconds: currentTime, allowSeekAhead: true)
-        videoViewYT.playVideo()
+    
+    @IBAction func backSecond(_ sender: Any) {
+        if sentence.text=="" && indexBack != indexCurrent{
+            return
+        }
+        if indexBack==indexCurrent && Int(indexBack) != sentences.count{
+            indexBack-=1
+            addNew()
+        }
+        else {
+            setEdit()
+            indexBack-=1
+        }
+        screenCurrent()
+        if indexBack==1 {
+            backText.isEnabled=false
+            backbackText.isEnabled=false
+        }
+    }
+    
+    @IBAction func sentenceCurrent(_ sender: Any) {
+        indexBack=indexCurrent
+        if Int(indexCurrent) > sentences.count {
+            addNew()
+        }
+        screenCurrent()
     }
     
     @IBAction func increaseSecond(_ sender: Any) {
@@ -81,10 +193,15 @@ class VideoViewController: UIViewController {
     }
     
     
-    @IBAction func timereStart(_ sender: Any) {
-        currentTime=videoViewYT.currentTime()
-        videoViewYT.seek(toSeconds: 0, allowSeekAhead: true)
-        videoViewYT.playVideo()
+    @IBAction func sentenceStart(_ sender: Any) {
+        indexBack=1
+        backText.isEnabled=false
+        backbackText.isEnabled=false
+        
+        if Int(indexCurrent) > sentences.count {
+            addNew()
+        }
+       screenCurrent()
     }
     
     
@@ -120,11 +237,35 @@ class VideoViewController: UIViewController {
 
     
     
+    override func viewWillDisappear(_ animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        if Int(indexCurrent) != sentences.count {
+            addNew()
+        }
+        
+        var tempText: String = ""
+        for i in 0..<sentences.count {
+            tempText +=  sentences[i]+"`"
+        }
+        obj?.translated? = tempText
+        obj?.timeLoop=Int32(timeLoop)
+        obj?.timePlaying=Int32(currentTime)
+        obj?.speed=1
+        DB.save()
+    }
     
+    func updateDataVideo(){
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func update(){
+        
     }
     
 
