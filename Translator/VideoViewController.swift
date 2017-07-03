@@ -41,9 +41,7 @@ class VideoViewController: UIViewController {
     // MARK: *** UI events
     
     // MARK: *** Local variables
-    let temp:CGFloat = 50
-    var less:CGFloat?
-
+   
     // MARK: *** UIViewController
 
     
@@ -98,7 +96,7 @@ class VideoViewController: UIViewController {
         let storyB = UIStoryboard.init(name: "Play", bundle: nil)
         let vc = storyB.instantiateViewController(withIdentifier: "ViewTransVC") as! ViewTransViewController
         vc.setView(name: obj!.name!, text: obj!.translated!)
-        
+        view.endEditing(true)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -169,7 +167,7 @@ class VideoViewController: UIViewController {
         
         screenCurrent()
         
-        view.endEditing(true)
+        //view.endEditing(true)
     }
     
 
@@ -192,7 +190,7 @@ class VideoViewController: UIViewController {
             backbackText.isEnabled=false
         }
         
-        view.endEditing(true)
+        //view.endEditing(true)
 
     }
     
@@ -296,24 +294,25 @@ class VideoViewController: UIViewController {
     }
     
 
+    let temp:CGFloat =  170
+    let less: CGFloat = 100
+        
     func keyboardWillShow(notification: NSNotification) {
-    if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-        let sizeC = transView.frame.height + videoViewYT.frame.height
-        less = keyboardSize.height - (view.frame.height - sizeC)
-        if less! > CGFloat(0) {
-            videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y, width: videoViewYT.frame.width, height: videoViewYT.frame.height - less! - temp)
-            transView.frame.origin.y -= less! + temp
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= (keyboardSize.height - temp)
+                videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y + keyboardSize.height - temp, width: videoViewYT.frame.width, height: videoViewYT.frame.height - keyboardSize.height + temp)
+                //navigationController?.setNavigationBarHidden(true, animated: true)
+            }
         }
     }
-}
-    
+
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if less! > CGFloat(0) {
-                videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y, width: videoViewYT.frame.width, height: videoViewYT.frame.height + less! + temp)
-                transView.frame.origin.y += less! + temp
-                
-                less = 0
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y = 0
+                videoViewYT.frame = CGRect(x: videoViewYT.frame.origin.x, y: videoViewYT.frame.origin.y - keyboardSize.height + temp, width: videoViewYT.frame.width, height: videoViewYT.frame.height + keyboardSize.height - temp)
+                //navigationController?.setNavigationBarHidden(false, animated: true)
             }
         }
     }

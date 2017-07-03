@@ -157,6 +157,13 @@
                                     <constraint firstItem="HXV-x5-XmV" firstAttribute="centerX" secondItem="1iy-8M-Z8D" secondAttribute="centerX" id="jZD-Tz-j7p"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNx-aQ-1Np">
+                                <rect key="frame" x="139" y="273" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.59570013590000004" green="0.65966245109999999" blue="0.7355286593" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -176,6 +183,7 @@
                         <outlet property="currentButton" destination="zOT-j4-Dh7" id="eef-0M-E81"/>
                         <outlet property="nextButton" destination="xH8-rY-tUn" id="hkz-dS-pkC"/>
                         <outlet property="skipButton" destination="b2t-zC-biV" id="dWH-pQ-juL"/>
+                        <outlet property="tempLabel" destination="ZNx-aQ-1Np" id="Nmh-3W-fgN"/>
                         <outlet property="textDict" destination="xn2-uV-IrR" id="qMq-nJ-chT"/>
                         <outlet property="transText" destination="HXV-x5-XmV" id="HU5-Kw-t7w"/>
                         <outlet property="workView" destination="1iy-8M-Z8D" id="lL4-jm-jlm"/>

@@ -23,6 +23,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="IZc-Y7-PEF" kind="relationship" relationship="viewControllers" id="lLs-Uy-Wmc"/>
+                        <segue destination="XKK-fF-Sny" kind="relationship" relationship="viewControllers" id="9r3-Xt-br1"/>
                         <segue destination="Dn7-cy-tRb" kind="relationship" relationship="viewControllers" id="XyE-b9-oC4"/>
                         <segue destination="kfJ-9B-cvV" kind="relationship" relationship="viewControllers" id="POm-Xn-Xx0"/>
                     </connections>
@@ -35,17 +36,27 @@
         <scene sceneID="DT6-9c-hp3">
             <objects>
                 <viewControllerPlaceholder storyboardName="Play" id="IZc-Y7-PEF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="45L-tt-Oce"/>
+                    <tabBarItem key="tabBarItem" title="Write" image="play" id="45L-tt-Oce"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvf-OR-mXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1931.25" y="-76.25"/>
+            <point key="canvasLocation" x="1943" y="-170"/>
+        </scene>
+        <!--Read-->
+        <scene sceneID="qkY-oS-Keq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Read" id="XKK-fF-Sny" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Read" image="read" id="WM0-1t-UJo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zwa-6j-7ps" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="-64"/>
         </scene>
         <!--Dictionary-->
         <scene sceneID="t5a-jk-KXH">
             <objects>
                 <viewControllerPlaceholder storyboardName="Dictionary" id="Dn7-cy-tRb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="3Y6-kS-6UR"/>
+                    <tabBarItem key="tabBarItem" title="Dictionary" image="dic" id="3Y6-kS-6UR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br4-Qz-DHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,7 +66,7 @@
         <scene sceneID="min-9y-P05">
             <objects>
                 <viewControllerPlaceholder storyboardName="Setting" id="kfJ-9B-cvV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="tLX-xb-pxP"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting" id="tLX-xb-pxP"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgK-8j-Yov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -436,7 +447,11 @@
     </scenes>
     <resources>
         <image name="blurBg" width="375" height="672"/>
+        <image name="dic" width="25" height="25"/>
         <image name="email1" width="25" height="25"/>
         <image name="pass1" width="25" height="25"/>
+        <image name="play" width="25" height="25"/>
+        <image name="read" width="25" height="25"/>
+        <image name="setting" width="25" height="25"/>
     </resources>
 </document>

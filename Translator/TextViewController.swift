@@ -24,6 +24,7 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var currentButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
     
+    @IBOutlet weak var tempLabel: UILabel!
     
 // MARK: *** UI events
     @IBAction func skipTop(_ sender: Any) {
@@ -208,8 +209,8 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func setLayoutCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 6
-        layout.minimumInteritemSpacing = 2
+        layout.minimumLineSpacing = 4
+        layout.minimumInteritemSpacing = 1
         collectionView.collectionViewLayout = layout
         
     }
@@ -228,17 +229,22 @@ class TextViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let word = aSentence[indexPath.row]
         cell.word.text = word
         cell.word.sizeToFit()
-        cell.word.frame.size.height = 18
+        //cell.word.frame.size.height = 18
 
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CGFloat(aSentence[indexPath.row].characters.count * 10), height: CGFloat(18))
+        
+        let word = aSentence[indexPath.row]
+        
+        tempLabel.text = word
+        tempLabel.sizeToFit()
+                return CGSize(width: tempLabel.frame.width, height: tempLabel.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let word = aSentence[indexPath.row].replacingOccurrences(of: ",", with: "").lowercased()
+        //let word = aSentence[indexPath.row].replacingOccurrences(of: ",", with: "").lowercased()
         var mean = Dictionary.getMean(word: word)
         
         if mean != "" {
