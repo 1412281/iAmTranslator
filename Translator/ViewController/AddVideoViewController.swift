@@ -18,9 +18,10 @@ class AddVideoViewController: UIViewController {
     
     @IBAction func play(_ sender: Any) {
         let resultLink = link.text!.components(separatedBy: ["/"])
-        
+        view.endEditing(true)
         videoAddTest.load(withVideoId: resultLink[resultLink.count-1], playerVars: ["playsinline": 1 as AnyObject])
-        videoAddTest.playVideo()
+        //videoAddTest.playVideo()
+        
         
     }
     
@@ -78,12 +79,10 @@ class AddVideoViewController: UIViewController {
     func loop(){
         
         videoAddTest.playVideo()
+        videoAddTest.pauseVideo()
         if videoAddTest.currentTime() != 0 {
             addVideo()
-            let storyboard=UIStoryboard(name:"Main", bundle: nil)
-            let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
-            
-            self.navigationController?.pushViewController(vc, animated: true)
+            navigationController?.popViewController(animated: true)
             timer.invalidate()
             timer=nil
         }

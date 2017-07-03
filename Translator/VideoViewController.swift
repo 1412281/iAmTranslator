@@ -41,7 +41,7 @@ class VideoViewController: UIViewController {
     // MARK: *** UI events
     
     // MARK: *** Local variables
-   
+    var timer: Timer?
     // MARK: *** UIViewController
 
     
@@ -64,7 +64,7 @@ class VideoViewController: UIViewController {
         videoViewYT.load(withVideoId: (obj?.link!)!, playerVars: ["playsinline": 1 as AnyObject])
         videoViewYT.seek(toSeconds: currentTime, allowSeekAhead: true)
         
-        var timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
         
         
         sentences=(obj?.translated?.components(separatedBy: ["`"]))!
@@ -276,7 +276,8 @@ class VideoViewController: UIViewController {
     
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
-        
+        timer?.invalidate()
+        timer=nil
         saveTrans()
     }
     
