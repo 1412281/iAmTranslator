@@ -64,9 +64,7 @@ class VideoViewController: UIViewController {
         videoViewYT.load(withVideoId: (obj?.link!)!, playerVars: ["playsinline": 1 as AnyObject])
         videoViewYT.seek(toSeconds: currentTime, allowSeekAhead: true)
         
-        
         var timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
-        
         
         
         sentences=(obj?.translated?.components(separatedBy: ["`"]))!
@@ -257,8 +255,10 @@ class VideoViewController: UIViewController {
         videoViewYT.seek(toSeconds: timeBack, allowSeekAhead: true)
         videoViewYT.playVideo()
         
+        
     }
     func loop(){
+        print(videoViewYT.duration())
         var second=Float32(secondLoop.text!)!
         if second == 0 {
             return

@@ -29,6 +29,14 @@
                                     <action selector="Logout:" destination="SkW-tL-7gi" eventType="touchUpInside" id="Lek-1L-xyh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-FT-aOw">
+                                <rect key="frame" x="146" y="373" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sync"/>
+                                <connections>
+                                    <action selector="syncToFirebase:" destination="SkW-tL-7gi" eventType="touchUpInside" id="JQz-NR-QpU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

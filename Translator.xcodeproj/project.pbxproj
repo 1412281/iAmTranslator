@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		563EFFEA1F0A3E91005D908D /* Video+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563EFFE91F0A3E91005D908D /* Video+CoreDataProperties.swift */; };
 		56612E061EF63DB300815664 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56612E051EF63DB300815664 /* Login.storyboard */; };
 		56958D591EF6F5F30062CE1A /* CustomLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56958D571EF6F5F30062CE1A /* CustomLoginButton.swift */; };
 		56958D5A1EF6F5F30062CE1A /* CustomLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56958D581EF6F5F30062CE1A /* CustomLoginTextField.swift */; };
@@ -53,12 +54,12 @@
 		E0E398721EFE486800EFC8D9 /* Text+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986A1EFE486800EFC8D9 /* Text+CoreDataClass.swift */; };
 		E0E398731EFE486800EFC8D9 /* Text+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986B1EFE486800EFC8D9 /* Text+CoreDataProperties.swift */; };
 		E0E398741EFE486800EFC8D9 /* Video+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986C1EFE486800EFC8D9 /* Video+CoreDataClass.swift */; };
-		E0E398751EFE486800EFC8D9 /* Video+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986D1EFE486800EFC8D9 /* Video+CoreDataProperties.swift */; };
 		E0E398791EFE492B00EFC8D9 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E398781EFE492B00EFC8D9 /* DB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EAC0031923C17D7A3E98C54 /* Pods-Translator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Translator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Translator/Pods-Translator.release.xcconfig"; sourceTree = "<group>"; };
+		563EFFE91F0A3E91005D908D /* Video+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Video+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		56612E051EF63DB300815664 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		56958D571EF6F5F30062CE1A /* CustomLoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoginButton.swift; sourceTree = "<group>"; };
 		56958D581EF6F5F30062CE1A /* CustomLoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoginTextField.swift; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		E0E3986A1EFE486800EFC8D9 /* Text+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E0E3986B1EFE486800EFC8D9 /* Text+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E0E3986C1EFE486800EFC8D9 /* Video+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Video+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E0E3986D1EFE486800EFC8D9 /* Video+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Video+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E0E398781EFE492B00EFC8D9 /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,9 +315,9 @@
 		E0E398761EFE48B300EFC8D9 /* Properties */ = {
 			isa = PBXGroup;
 			children = (
+				563EFFE91F0A3E91005D908D /* Video+CoreDataProperties.swift */,
 				E0E398671EFE486800EFC8D9 /* FavoriteWord+CoreDataProperties.swift */,
 				E0E398691EFE486800EFC8D9 /* HistoryDict+CoreDataProperties.swift */,
-				E0E3986D1EFE486800EFC8D9 /* Video+CoreDataProperties.swift */,
 				E0E3986B1EFE486800EFC8D9 /* Text+CoreDataProperties.swift */,
 			);
 			name = Properties;
@@ -500,8 +500,8 @@
 				E0E398741EFE486800EFC8D9 /* Video+CoreDataClass.swift in Sources */,
 				E01C50471F0A3F9C00AF39F9 /* ReadTableViewCell.swift in Sources */,
 				56958D5A1EF6F5F30062CE1A /* CustomLoginTextField.swift in Sources */,
+				563EFFEA1F0A3E91005D908D /* Video+CoreDataProperties.swift in Sources */,
 				E02A5DD81EF8C54600B921B8 /* VideoPlayTableViewCell.swift in Sources */,
-				E0E398751EFE486800EFC8D9 /* Video+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,15 @@ class AddVideoViewController: UIViewController {
     @IBOutlet weak var link: UITextField!
     
     @IBOutlet weak var name: UITextField!
+    var timer:Timer!
+    
+    @IBAction func play(_ sender: Any) {
+        let resultLink = link.text!.components(separatedBy: ["/"])
+        
+        videoAddTest.load(withVideoId: resultLink[resultLink.count-1], playerVars: ["playsinline": 1 as AnyObject])
+        videoAddTest.playVideo()
+        
+    }
     
     @IBOutlet weak var videoAddTest: YTPlayerView!
     override func viewDidLoad() {
@@ -27,8 +36,12 @@ class AddVideoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func saveButton(sender: UIBarButtonItem) {
-        addVideo()
-        AlertSuccess()
+        let resultLink = link.text!.components(separatedBy: ["/"])
+         videoAddTest.load(withVideoId: resultLink[resultLink.count-1], playerVars: ["playsinline": 1 as AnyObject])
+         timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
+        
+      
+        
        
     }
     func AlertSuccess(){
@@ -53,9 +66,27 @@ class AddVideoViewController: UIViewController {
         newV.timeLoop = 10
         newV.timePlaying = 0
         newV.speed = 1
+        
+ 
+        var duration = videoAddTest.duration()
+        newV.length=duration
+        
         DB.save()
         
-        videoAddTest.load(withVideoId: resultLink[resultLink.count-1], playerVars: ["playsinline": 1 as AnyObject])
+    }
+    
+    func loop(){
+        
+        videoAddTest.playVideo()
+        if videoAddTest.currentTime() != 0 {
+            addVideo()
+            let storyboard=UIStoryboard(name:"Main", bundle: nil)
+            let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            timer.invalidate()
+            timer=nil
+        }
     }
 
 }

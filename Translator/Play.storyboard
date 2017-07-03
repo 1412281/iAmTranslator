@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="57B-It-THs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="57B-It-THs">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,6 +23,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rhw-uu-OVn" customClass="YTPlayerView">
+                                <rect key="frame" x="52" y="220" width="216" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-uo-jm5" userLabel="select add view">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-p2-0dB">
+                                        <rect key="frame" x="252" y="75" width="50" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.06950727541403523" blue="0.0" alpha="0.77544564255633797" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Ciw-oZ-Sj1"/>
+                                            <constraint firstAttribute="width" constant="50" id="nL5-Vc-g6m"/>
+                                        </constraints>
+                                        <state key="normal" image="video"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addVideo:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="q6q-O6-VaV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX9-rK-Lqe">
+                                        <rect key="frame" x="200" y="25" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.0023957495987999566" green="1" blue="0.92590427753614202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jrf-hK-KWb"/>
+                                            <constraint firstAttribute="width" constant="50" id="yq3-LY-HE1"/>
+                                        </constraints>
+                                        <state key="normal" image="text"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addText:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="MDE-IK-xRK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.52390469448554078" green="0.52390469448554078" blue="0.52390469448554078" alpha="0.41023877640845069" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Hcr-p2-0dB" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="top" constant="75" id="6fL-az-w3w"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hcr-p2-0dB" secondAttribute="trailing" constant="18" id="alc-kd-nMe"/>
+                                    <constraint firstItem="vX9-rK-Lqe" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="top" constant="25" id="igm-2B-mGA"/>
+                                    <constraint firstAttribute="trailing" secondItem="vX9-rK-Lqe" secondAttribute="trailing" constant="70" id="qkk-cy-t8P"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kyT-Px-48V">
                                 <rect key="frame" x="0.0" y="109" width="320" height="410"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,7 +84,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oPO-Qq-7Dm" id="0jK-le-ocU">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text name Text name Text name Text name Text name Text name " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAU-R4-FDl">
@@ -71,7 +124,7 @@
                                         <rect key="frame" x="0.0" y="128" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gwa-LC-quZ" id="QZd-zI-DKO">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video nameVideo nameVideo nameVideo nameVideo name" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxK-MD-bJD">
@@ -203,54 +256,6 @@
                                     <constraint firstAttribute="bottom" secondItem="wET-62-5V5" secondAttribute="bottom" constant="5" id="yyN-za-fB0"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-uo-jm5" userLabel="select add view">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-p2-0dB">
-                                        <rect key="frame" x="252" y="75" width="50" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.06950727541403523" blue="0.0" alpha="0.77544564255633797" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Ciw-oZ-Sj1"/>
-                                            <constraint firstAttribute="width" constant="50" id="nL5-Vc-g6m"/>
-                                        </constraints>
-                                        <state key="normal" image="video"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="addVideo:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="q6q-O6-VaV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX9-rK-Lqe">
-                                        <rect key="frame" x="200" y="25" width="50" height="50"/>
-                                        <color key="backgroundColor" red="0.0023957495987999566" green="1" blue="0.92590427753614202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="jrf-hK-KWb"/>
-                                            <constraint firstAttribute="width" constant="50" id="yq3-LY-HE1"/>
-                                        </constraints>
-                                        <state key="normal" image="text"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="addText:" destination="lGG-Xv-RCL" eventType="touchUpInside" id="MDE-IK-xRK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.52390469448554078" green="0.52390469448554078" blue="0.52390469448554078" alpha="0.41023877640845069" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Hcr-p2-0dB" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="top" constant="75" id="6fL-az-w3w"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hcr-p2-0dB" secondAttribute="trailing" constant="18" id="alc-kd-nMe"/>
-                                    <constraint firstItem="vX9-rK-Lqe" firstAttribute="top" secondItem="Mm1-uo-jm5" secondAttribute="top" constant="25" id="igm-2B-mGA"/>
-                                    <constraint firstAttribute="trailing" secondItem="vX9-rK-Lqe" secondAttribute="trailing" constant="70" id="qkk-cy-t8P"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -278,6 +283,7 @@
                         <outlet property="menuButton" destination="Bi1-tP-stA" id="jQC-O6-lSe"/>
                         <outlet property="selectAddView" destination="Mm1-uo-jm5" id="Ign-YL-3I6"/>
                         <outlet property="tableView" destination="kyT-Px-48V" id="Kbh-qv-b1b"/>
+                        <outlet property="tempYT" destination="rhw-uu-OVn" id="WNP-J5-bAn"/>
                         <outlet property="textButton" destination="wET-62-5V5" id="MKN-QW-aQj"/>
                         <outlet property="videoButton" destination="yhx-SD-ggn" id="qJx-Tr-eCb"/>
                     </connections>

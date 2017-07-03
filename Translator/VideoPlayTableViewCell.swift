@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import youtube_ios_player_helper
 class VideoPlayTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var img: UIImageView!
+    
     
     @IBOutlet weak var des: UILabel!
     @IBOutlet weak var length: UILabel!
@@ -23,8 +24,7 @@ class VideoPlayTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+      // Configure the view for the selected state
     }
 
 }

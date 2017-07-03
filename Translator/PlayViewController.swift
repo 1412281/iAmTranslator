@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Foundation
 import youtube_ios_player_helper
 
 class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -15,6 +16,10 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var listText = [Text]()
     var listVideo = [Video]()
     // MARK: *** Local variables
+    
+    
+    @IBOutlet weak var tempYT: YTPlayerView!
+    
     
     enum `Type` {
         case text
@@ -40,8 +45,11 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.selectAddView.isHidden = false
         let touchToHiddenSelectAdd = UITapGestureRecognizer(target: self, action: #selector(PlayViewController.hiddenAdd))
         self.selectAddView.addGestureRecognizer(touchToHiddenSelectAdd)
+        
+        view.bringSubview(toFront: selectAddView)
         view.bringSubview(toFront: addText)
         view.bringSubview(toFront: addVideo)
+        
         
     }
     
@@ -81,10 +89,10 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneEditting(_:)))
         navigationItem.rightBarButtonItem = doneBtn
         
-        Text.deleteAllRecords()
-        Video.deleteAllRecords()
+        //Text.deleteAllRecords()
+        //Video.deleteAllRecords()
 
-        initData()
+       // initData()
         
     }
     
@@ -138,6 +146,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return 100
         }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch currentChoice {
@@ -157,7 +166,16 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.img.image = UIImage(data: data)
             }
             
-            cell.length.text = "15:10"
+            tempYT.load(withVideoId: listVideo[indexPath.row].link!)
+            
+            var time=listVideo[indexPath.row].length
+            
+            var hour = Int32((time)/3600)
+            var min = Int32((Int32(time)  - Int32(hour*3600) )/60)
+            var sec = Int32((Int32(time) - hour*3600 - min*60 ))
+            
+            cell.length.text = String(String(hour)+":"+String(min)+":"+String(sec))
+            //print(tempYT.duration());
             return cell
         }
         

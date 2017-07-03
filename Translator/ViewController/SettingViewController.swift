@@ -37,7 +37,19 @@ class SettingViewController: UIViewController {
         
         self.present(vc, animated: true, completion: nil)        
     }
-
+    
+    
+    @IBAction func syncToFirebase(_ sender: Any) {
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

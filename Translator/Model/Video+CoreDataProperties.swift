@@ -2,7 +2,7 @@
 //  Video+CoreDataProperties.swift
 //  
 //
-//  Created by LamTran on 6/24/17.
+//  Created by Tran Hoang Lam on 7/3/17.
 //
 //
 
@@ -22,5 +22,6 @@ extension Video {
     @NSManaged public var timeLoop: Int32
     @NSManaged public var timePlaying: Int32
     @NSManaged public var translated: String?
+    @NSManaged public var length: Double
 
 }
