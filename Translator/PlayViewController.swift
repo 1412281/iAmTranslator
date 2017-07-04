@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Foundation
 import youtube_ios_player_helper
+import Firebase
 
 class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: *** Data model
@@ -17,6 +18,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var listVideo = [Video]()
     // MARK: *** Local variables
     
+    
+    var ref: DatabaseReference!
     
     @IBOutlet weak var tempYT: YTPlayerView!
     
@@ -82,6 +85,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         Dictionary.init()
         super.viewDidLoad()
 
+         ref = Database.database().reference()
+        
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showEditting(_:)))
         longPress.minimumPressDuration = 0.5
         tableView.addGestureRecognizer(longPress)
@@ -94,8 +99,11 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
        // initData()
         
+        
+        
     }
-    
+   
+
     func doneEditting(_: Any?) {
         self.tableView.setEditing(false, animated: true)
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -111,7 +119,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //view.bringSubview(toFront: menuButton)
         //view.bringSubview(toFront: tableView)
     }
-    
+    var timer:Timer?
     override func viewWillAppear(_ animated: Bool) {
         self.selectAddView.isHidden = true
 
@@ -123,6 +131,8 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
 
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
 
     }
 
@@ -138,6 +148,19 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return listVideo.count
         }
     }
+    
+    func loop(){
+        listText = Text.all() as! [Text]
+        listVideo = Video.all() as! [Video]
+        tableView.reloadData()
+        
+        if listText.count != 0 && listVideo.count != 0 {
+            timer?.invalidate()
+            timer=nil
+        }
+    }
+
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch currentChoice {
         case .text:
@@ -212,9 +235,15 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if editingStyle == .delete {
             switch currentChoice {
             case .text:
+                let resultLink = nameUser!.components(separatedBy: ["@"])
+                let link = "/" + resultLink[0] + "/text/text1"
+                ref.child(link).removeValue()
                 Text.delete(obj: listText[indexPath.row])
                 listText = Text.all() as! [Text]
             default:
+                let resultLink = nameUser!.components(separatedBy: ["@"])
+                let link = "/" + resultLink[0] + "/video/video1"
+                ref.child(link).removeValue()
                 Video.delete(obj: listVideo[indexPath.row])
                 listVideo = Video.all() as! [Video]
             }

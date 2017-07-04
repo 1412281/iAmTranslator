@@ -24,11 +24,17 @@ class SettingViewController: UIViewController {
     
     @IBAction func Logout(_ sender: Any) {
         UserDefaults.standard.setValue(false, forKey: "isLogin")
-
+        
+        UserDefaults.standard.setValue(nameUser, forKey: "user")
+        Text.deleteAllRecords()
+        Video.deleteAllRecords()
         if FBSDKAccessToken.current() != nil {
+            
             let loginManager = FBSDKLoginManager()
             loginManager.logOut()
         }
+        
+        
         
         try! Auth.auth().signOut()
         

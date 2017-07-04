@@ -9,7 +9,10 @@
 import UIKit
 import Foundation
 import youtube_ios_player_helper
+import Firebase
 class AddVideoViewController: UIViewController {
+  
+    var ref: DatabaseReference!
     
     @IBOutlet weak var link: UITextField!
     
@@ -23,6 +26,22 @@ class AddVideoViewController: UIViewController {
         //videoAddTest.playVideo()
         
         
+    }
+    
+    func AddDatabase(link:String!,data:Video){
+        ref = Database.database().reference()
+        
+        print(nameUser)
+        let resultLink = nameUser!.components(separatedBy: ["@"])
+        let link = "/" + resultLink[0] + "/video/video1"
+        
+        ref.child(link+"/name").setValue(data.name)
+        ref.child(link+"/length").setValue(data.length)
+        ref.child(link+"/speed").setValue(data.speed)
+        ref.child(link+"/timeLoop").setValue(data.timeLoop)
+        ref.child(link+"/timePlaying").setValue(data.timePlaying)
+        ref.child(link+"/translated").setValue(data.translated)
+        ref.child(link+"/link").setValue(data.link)
     }
     
     @IBOutlet weak var videoAddTest: YTPlayerView!
@@ -58,6 +77,9 @@ class AddVideoViewController: UIViewController {
     
     
     func addVideo() {
+        
+        
+        
         let resultLink = link.text!.components(separatedBy: ["/"])
         
         let newV = Video.create() as! Video
@@ -71,6 +93,8 @@ class AddVideoViewController: UIViewController {
  
         var duration = videoAddTest.duration()
         newV.length=duration
+        
+        AddDatabase(link: "/1", data: newV)
         
         DB.save()
         

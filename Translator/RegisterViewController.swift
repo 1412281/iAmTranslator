@@ -77,6 +77,7 @@ class RegisterViewController: UIViewController {
                         return
                     }
                     else {
+                        nameUser=self.email.text!
                         UserDefaults.standard.setValue(true, forKey: "isLogin")
                         let storyboard=UIStoryboard(name:"Main", bundle: nil)
                         let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController

@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
+import Firebase
 class AddTextViewController: UIViewController {
-
+ var ref: DatabaseReference!
     // MARK: *** Data model
     
     // MARK: *** UI Elements
@@ -32,6 +32,21 @@ class AddTextViewController: UIViewController {
         navigationController?.title = "Add Text"
         // Do any additional setup after loading the view.
     }
+    
+    func AddDatabase(data:Text){
+        ref = Database.database().reference()
+        
+        print(nameUser)
+        let resultLink = nameUser!.components(separatedBy: ["@"])
+        let link = "/" + resultLink[0] + "/text/text1"
+        
+        ref.child(link+"/name").setValue(data.name)
+        ref.child(link+"/text").setValue(data.text)
+        ref.child(link+"/translated").setValue(data.translated)
+        ref.child(link+"/indexCurrent").setValue(data.indexCurrent)
+    }
+    
+
 
     func saveButton(sender: UIBarButtonItem) {
         
@@ -43,6 +58,7 @@ class AddTextViewController: UIViewController {
         newText.indexCurrent = 0
         
         DB.save()
+        AddDatabase( data: newText)
         print("save")
         navigationController?.popViewController(animated: true)
     }
