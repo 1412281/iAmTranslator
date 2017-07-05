@@ -19,7 +19,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="vol-2H-A7S">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="IZc-Y7-PEF" kind="relationship" relationship="viewControllers" id="lLs-Uy-Wmc"/>
@@ -219,6 +219,10 @@
                                     <action selector="createAccount:" destination="hJ3-9J-Sch" eventType="touchUpInside" id="1Tv-ZD-4zY"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6To-CJ-mw8">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -228,10 +232,14 @@
                             <constraint firstAttribute="trailing" secondItem="OH5-A0-P5q" secondAttribute="trailing" id="7wY-Ve-pRE"/>
                             <constraint firstItem="Ub5-Fc-qwt" firstAttribute="top" secondItem="OH5-A0-P5q" secondAttribute="bottom" id="CLC-1v-EBl"/>
                             <constraint firstItem="OH5-A0-P5q" firstAttribute="leading" secondItem="o13-hy-PB6" secondAttribute="leading" id="Cb8-m7-BIR"/>
+                            <constraint firstItem="Ub5-Fc-qwt" firstAttribute="top" secondItem="6To-CJ-mw8" secondAttribute="bottom" id="RWh-Ih-yaC"/>
+                            <constraint firstItem="6To-CJ-mw8" firstAttribute="top" secondItem="hbb-0g-vPP" secondAttribute="bottom" id="XBJ-SG-tDp"/>
+                            <constraint firstItem="6To-CJ-mw8" firstAttribute="leading" secondItem="o13-hy-PB6" secondAttribute="leading" id="bD9-U0-Xmu"/>
                             <constraint firstItem="cDD-7W-ljh" firstAttribute="top" secondItem="hbb-0g-vPP" secondAttribute="bottom" id="eMe-98-OGp"/>
                             <constraint firstItem="OH5-A0-P5q" firstAttribute="leading" secondItem="o13-hy-PB6" secondAttribute="leading" id="eey-uA-oev"/>
                             <constraint firstAttribute="trailing" secondItem="cDD-7W-ljh" secondAttribute="trailing" id="eqK-xU-39O"/>
                             <constraint firstItem="kUm-eN-HOR" firstAttribute="trailing" secondItem="o13-hy-PB6" secondAttribute="trailingMargin" id="fr5-kb-TA0"/>
+                            <constraint firstAttribute="trailing" secondItem="6To-CJ-mw8" secondAttribute="trailing" id="kQy-Y3-EvG"/>
                             <constraint firstItem="OH5-A0-P5q" firstAttribute="top" secondItem="o13-hy-PB6" secondAttribute="top" id="lZx-TP-jb4"/>
                             <constraint firstItem="Ub5-Fc-qwt" firstAttribute="top" secondItem="SdD-Zl-PjM" secondAttribute="bottom" constant="15" id="q8e-Kn-vb8"/>
                             <constraint firstItem="Ub5-Fc-qwt" firstAttribute="top" secondItem="kUm-eN-HOR" secondAttribute="bottom" constant="15" id="tpm-xy-1MV"/>
@@ -245,6 +253,7 @@
                         <outlet property="error" destination="45c-m9-WdH" id="V9e-2L-J6u"/>
                         <outlet property="loginFacebook" destination="DjE-mo-AYN" id="TFk-Br-Anl"/>
                         <outlet property="pass" destination="OJb-dA-tYd" id="qQ4-gO-s45"/>
+                        <outlet property="viewloading" destination="6To-CJ-mw8" id="YMT-mc-KIH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGb-Sa-y1G" userLabel="First Responder" sceneMemberID="firstResponder"/>

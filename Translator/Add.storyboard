@@ -53,21 +53,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nAJ-hz-8kY">
-                                <rect key="frame" x="5" y="127" width="310" height="441"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="5" y="127" width="310" height="411"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="0.56362371575342463" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bx7-At-YLD" firstAttribute="top" secondItem="nAJ-hz-8kY" secondAttribute="bottom" id="55Y-Yj-28U"/>
                             <constraint firstItem="8EC-wV-R4B" firstAttribute="leading" secondItem="G5g-ox-h02" secondAttribute="leading" constant="5" id="BLY-39-12K"/>
                             <constraint firstItem="c7A-3g-ZSU" firstAttribute="trailing" secondItem="G5g-ox-h02" secondAttribute="trailingMargin" constant="5" id="E1Y-pI-fQw"/>
                             <constraint firstItem="yuB-qs-red" firstAttribute="leading" secondItem="G5g-ox-h02" secondAttribute="leading" constant="5" id="EIv-tb-epW"/>
                             <constraint firstItem="nAJ-hz-8kY" firstAttribute="top" secondItem="yuB-qs-red" secondAttribute="bottom" constant="5" id="OFh-LH-yOc"/>
                             <constraint firstItem="c7A-3g-ZSU" firstAttribute="top" secondItem="8EC-wV-R4B" secondAttribute="bottom" constant="5" id="QLa-Kf-yGb"/>
                             <constraint firstItem="yuB-qs-red" firstAttribute="top" secondItem="c7A-3g-ZSU" secondAttribute="bottom" constant="15" id="Vss-fi-vGA"/>
+                            <constraint firstItem="bx7-At-YLD" firstAttribute="top" secondItem="nAJ-hz-8kY" secondAttribute="bottom" constant="30" id="WR4-zg-4da"/>
                             <constraint firstItem="nAJ-hz-8kY" firstAttribute="leading" secondItem="G5g-ox-h02" secondAttribute="leading" constant="5" id="ZjX-4y-VAf"/>
                             <constraint firstItem="c7A-3g-ZSU" firstAttribute="leading" secondItem="G5g-ox-h02" secondAttribute="leadingMargin" constant="5" id="jGF-YK-86F"/>
                             <constraint firstAttribute="trailing" secondItem="nAJ-hz-8kY" secondAttribute="trailing" constant="5" id="pQv-xW-EJO"/>
@@ -95,6 +95,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aU-Uf-xsy">
+                                <rect key="frame" x="0.0" y="30" width="320" height="538"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a13-Gh-0Xq">
                                 <rect key="frame" x="10" y="146" width="255" height="31"/>
                                 <constraints>
@@ -106,7 +110,7 @@
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzA-60-LJ9" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="199" width="320" height="180"/>
-                                <color key="backgroundColor" red="0.3703044041450777" green="0.3703044041450777" blue="0.3703044041450777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WzA-60-LJ9" secondAttribute="height" multiplier="16:9" id="kBW-q0-k2L"/>
                                 </constraints>
@@ -152,14 +156,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5aU-Uf-xsy" firstAttribute="top" secondItem="0Jy-bj-5zT" secondAttribute="bottom" constant="10" id="4rg-mn-aBs"/>
                             <constraint firstItem="4nz-ph-jQQ" firstAttribute="leading" secondItem="Xgx-XJ-7RE" secondAttribute="leading" constant="10" id="7wP-IT-Ua6"/>
                             <constraint firstItem="eGU-VI-21M" firstAttribute="leading" secondItem="Xgx-XJ-7RE" secondAttribute="leading" constant="10" id="8Lc-Ja-5N1"/>
+                            <constraint firstAttribute="trailing" secondItem="5aU-Uf-xsy" secondAttribute="trailing" id="ASU-9k-L7Y"/>
+                            <constraint firstItem="2Hj-Td-8tl" firstAttribute="top" secondItem="5aU-Uf-xsy" secondAttribute="bottom" id="Gg3-AZ-ZsT"/>
                             <constraint firstAttribute="trailing" secondItem="4nz-ph-jQQ" secondAttribute="trailing" constant="10" id="HoW-8E-u6v"/>
                             <constraint firstItem="aoj-jJ-wZJ" firstAttribute="leading" secondItem="Xgx-XJ-7RE" secondAttribute="leading" constant="10" id="JKG-dD-GUP"/>
                             <constraint firstItem="1Qv-47-l12" firstAttribute="top" secondItem="eGU-VI-21M" secondAttribute="bottom" constant="3" id="OUN-zc-FsY"/>
                             <constraint firstItem="aoj-jJ-wZJ" firstAttribute="top" secondItem="4nz-ph-jQQ" secondAttribute="bottom" constant="5" id="T9J-Mx-dM1"/>
                             <constraint firstAttribute="trailing" secondItem="WzA-60-LJ9" secondAttribute="trailing" id="W0n-Sk-YF2"/>
                             <constraint firstItem="WzA-60-LJ9" firstAttribute="top" secondItem="1Qv-47-l12" secondAttribute="bottom" constant="20" id="Y65-Mq-xZP"/>
+                            <constraint firstItem="5aU-Uf-xsy" firstAttribute="leading" secondItem="Xgx-XJ-7RE" secondAttribute="leading" id="dQq-Rz-kew"/>
                             <constraint firstItem="1Qv-47-l12" firstAttribute="leading" secondItem="a13-Gh-0Xq" secondAttribute="trailing" constant="10" id="eba-f1-Jdc"/>
                             <constraint firstItem="a13-Gh-0Xq" firstAttribute="top" secondItem="eGU-VI-21M" secondAttribute="bottom" constant="5" id="g2G-5a-gq5"/>
                             <constraint firstAttribute="trailing" secondItem="1Qv-47-l12" secondAttribute="trailing" constant="10" id="gej-Da-gDh"/>
@@ -175,6 +183,7 @@
                         <outlet property="link" destination="a13-Gh-0Xq" id="lTY-Mm-Muz"/>
                         <outlet property="name" destination="aoj-jJ-wZJ" id="PKS-OW-tgX"/>
                         <outlet property="videoAddTest" destination="WzA-60-LJ9" id="BuT-jZ-aKo"/>
+                        <outlet property="viewLoad" destination="5aU-Uf-xsy" id="Cah-2l-pNW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIF-MW-FoC" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -31,6 +31,7 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
       // MARK: *** UI Elements
     
+    @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var menuButton: UIView!
@@ -115,24 +116,25 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.selectAddView.isHidden = true
         view.bringSubview(toFront: menuButton)
         view.bringSubview(toFront: tableView)
+        view.bringSubview(toFront: addBtn)
     }
     
     var timer:Timer?
-    
+    var start = true
     override func viewWillAppear(_ animated: Bool) {
         self.selectAddView.isHidden = true
 
-        //listText = (Text.all() as! [Text]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
-        //listVideo = (Video.all() as! [Video]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
+        listText = (Text.all() as! [Text]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
+        listVideo = (Video.all() as! [Video]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
       
         reloadView()
         
-        tableView.reloadData()
-
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        timer=Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(loop), userInfo: nil, repeats: true)
-
+        if start {
+            timer=Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loop), userInfo: nil, repeats: true)
+            start = false
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -147,17 +149,19 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return listVideo.count
         }
     }
-    
+    var countTimer = 0
     func loop(){
+        try UserDefaults.standard.value(forKey: "isLogin")! as! Bool
         listText = (Text.all() as! [Text]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
         listVideo = (Video.all() as! [Video]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
         tableView.reloadData()
         
-        if listText.count != 0 || listVideo.count != 0 {
+        if listText.count != 0 || listVideo.count != 0 || countTimer == 5 {
             timer?.invalidate()
             timer = nil
         }
         print("timerrrrr")
+        countTimer += 1
     }
 
     
@@ -182,7 +186,6 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "VideoPlayCell") as! VideoPlayTableViewCell
             cell.name.text = listVideo[indexPath.row].name
-            cell.des.text = listVideo[indexPath.row].link
     
             let url = URL(string: "https://img.youtube.com/vi/" + listVideo[indexPath.row].link! + "/mqdefault.jpg")
             if let data = try? Data(contentsOf: url!) {

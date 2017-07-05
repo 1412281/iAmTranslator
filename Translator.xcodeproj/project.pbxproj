@@ -41,6 +41,7 @@
 		E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F2361ECB581500F574A0 /* AppDelegate.swift */; };
 		E098F23C1ECB581500F574A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F23A1ECB581500F574A0 /* Main.storyboard */; };
 		E098F2441ECB581500F574A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F2421ECB581500F574A0 /* LaunchScreen.storyboard */; };
+		E0A47DC31F0D0091002879D5 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0A47DC21F0D0091002879D5 /* loading.gif */; };
 		E0B186E51EFB952800BDB2DF /* index.txt in Resources */ = {isa = PBXBuildFile; fileRef = E0B186E41EFB952800BDB2DF /* index.txt */; };
 		E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C1C2641EDEBBCB0063B88A /* Setting.storyboard */; };
 		E0C1C2701EDECF3B0063B88A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C1C26F1EDECF3B0063B88A /* SettingViewController.swift */; };
@@ -55,6 +56,7 @@
 		E0E398731EFE486800EFC8D9 /* Text+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986B1EFE486800EFC8D9 /* Text+CoreDataProperties.swift */; };
 		E0E398741EFE486800EFC8D9 /* Video+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E3986C1EFE486800EFC8D9 /* Video+CoreDataClass.swift */; };
 		E0E398791EFE492B00EFC8D9 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E398781EFE492B00EFC8D9 /* DB.swift */; };
+		E0F054C41F0D0C6A004389D8 /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F054C31F0D0C6A004389D8 /* iOSDevCenters+GIF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,7 @@
 		E098F23B1ECB581500F574A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E098F2431ECB581500F574A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E098F2451ECB581500F574A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0A47DC21F0D0091002879D5 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = loading.gif; path = Translator/loading.gif; sourceTree = SOURCE_ROOT; };
 		E0B186E41EFB952800BDB2DF /* index.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = index.txt; path = Translator/index.txt; sourceTree = SOURCE_ROOT; };
 		E0C1C2641EDEBBCB0063B88A /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		E0C1C26F1EDECF3B0063B88A /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ViewController/SettingViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		E0E3986B1EFE486800EFC8D9 /* Text+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Text+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E0E3986C1EFE486800EFC8D9 /* Video+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Video+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E0E398781EFE492B00EFC8D9 /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		E0F054C31F0D0C6A004389D8 /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "iOSDevCenters+GIF.swift"; path = "Translator/iOSDevCenters+GIF.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				E01875351EFAC88400ABF12F /* Dictionary.swift */,
+				E0F054C31F0D0C6A004389D8 /* iOSDevCenters+GIF.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 		E0C1C25D1EDEBB320063B88A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E0A47DC21F0D0091002879D5 /* loading.gif */,
 				E018753C1EFAE5B200ABF12F /* anhviet109K.txt */,
 				E0B186E41EFB952800BDB2DF /* index.txt */,
 				E020D0711EF628670039E5CB /* Assets.xcassets */,
@@ -407,6 +413,7 @@
 				56612E061EF63DB300815664 /* Login.storyboard in Resources */,
 				E0C1C2651EDEBBCB0063B88A /* Setting.storyboard in Resources */,
 				E02A5DE81EF8C59700B921B8 /* Text.storyboard in Resources */,
+				E0A47DC31F0D0091002879D5 /* loading.gif in Resources */,
 				E02A5DCD1EF8C52300B921B8 /* Dictionary.storyboard in Resources */,
 				E0DC79321EF96C06007AEF1A /* Add.storyboard in Resources */,
 				E02A5DE01EF8C58700B921B8 /* Video.storyboard in Resources */,
@@ -490,6 +497,7 @@
 				E04B2D0D1F0213F1003BE051 /* ViewTransViewController.swift in Sources */,
 				E0DC79341EF97800007AEF1A /* AddTextViewController.swift in Sources */,
 				E01C504B1F0A470A00AF39F9 /* WordReadCollectionViewCell.swift in Sources */,
+				E0F054C41F0D0C6A004389D8 /* iOSDevCenters+GIF.swift in Sources */,
 				E02A5DD91EF8C54600B921B8 /* TextPlayTableViewCell.swift in Sources */,
 				E098F2371ECB581500F574A0 /* AppDelegate.swift in Sources */,
 				E07D15571EFCBD9900DDCC81 /* WordCollectionViewCell.swift in Sources */,

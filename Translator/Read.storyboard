@@ -113,19 +113,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" editable="NO" text="Quick Auto Dictionary" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3h-gQ-Bls">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.70744091956100164" alpha="0.40560787671232879" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.94110881979695427" blue="0.67413937362059928" alpha="0.40560787671232879" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="Qtw-vW-L2M"/>
+                                    <constraint firstAttribute="height" constant="200" id="Qtw-vW-L2M"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7e-YX-ahb" userLabel="workView">
-                                <rect key="frame" x="0.0" y="175" width="375" height="492"/>
+                                <rect key="frame" x="0.0" y="205" width="375" height="462"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pEh-U1-mbS">
-                                        <rect key="frame" x="5" y="0.0" width="365" height="492"/>
+                                        <rect key="frame" x="5" y="0.0" width="365" height="462"/>
                                         <color key="backgroundColor" red="1" green="0.99217389171016312" blue="0.99195443869484756" alpha="0.26284246575342468" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mf5-7X-h1w">
                                             <size key="itemSize" width="44" height="13"/>

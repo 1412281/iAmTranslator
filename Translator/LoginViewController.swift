@@ -13,6 +13,7 @@ import Firebase
 var nameUser:String?
 class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     
+    @IBOutlet weak var viewloading: UIView!
     
     @IBOutlet weak var email: CustomLoginTextField!
     @IBOutlet weak var pass: CustomLoginTextField!
@@ -50,11 +51,17 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         loginFacebook.readPermissions = ["public_profile","email","user_friends"]
          print("--------------------------------Logout");
         
+        
+        
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        showLoading()
+        
         if CheckLogined(){
             return
         }
-        
-        if FBSDKAccessToken.current() != nil{
+        else if FBSDKAccessToken.current() != nil{
             
             ReadDataBase()
             
@@ -63,9 +70,11 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
             
             self.navigationController?.pushViewController(vc, animated: true)
             return
+        } else {
+            viewloading.isHidden = true
         }
-        
-        
+
+
     }
     
     func ReadText(){
@@ -173,6 +182,7 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         }
         if isLogin {
             
+            
             //ReadDataBase()
             
             UserDefaults.standard.setValue(true, forKey: "isLogin")
@@ -182,6 +192,7 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
              self.present(vc, animated: true, completion: nil)
             return true
         }
+        
         return false
     }
     
@@ -190,6 +201,7 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
         
         FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
             if (error == nil){
+                self.showLoading()
                 let fbDetails = result as! NSDictionary
                 nameUser = fbDetails["id"] as! String
                 UserDefaults.standard.setValue(nameUser, forKey: "user")
@@ -259,6 +271,15 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
 
     }
     
+    func showLoading() {
+        let gif = UIImage.gifImageWithName("loading")
+        let loadImg = UIImageView(image: gif)
+        loadImg.layer.cornerRadius = 80
+        loadImg.layer.masksToBounds = true
+        loadImg.frame = CGRect(x: 50.0, y: 120.0, width: self.view.frame.size.width - 100, height: 200.0)
+        viewloading.addSubview(loadImg)
+        viewloading.isHidden = false
+    }
     
     
 }

@@ -12,6 +12,8 @@ import youtube_ios_player_helper
 import Firebase
 class AddVideoViewController: UIViewController {
   
+    @IBOutlet weak var viewLoad: UIView!
+    
     var ref: DatabaseReference!
     
     @IBOutlet weak var link: UITextField!
@@ -41,9 +43,26 @@ class AddVideoViewController: UIViewController {
         let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButton(sender:)))
         navigationItem.rightBarButtonItem = saveButton
 
+        
+        
         // Do any additional setup after loading the view.
     }
     func saveButton(sender: UIBarButtonItem) {
+        
+        if (link.text == "" || name.text == "") {
+            return
+        }
+        
+        
+        let gif = UIImage.gifImageWithName("loading")
+        let loadImg = UIImageView(image: gif)
+        loadImg.layer.cornerRadius = 80
+        loadImg.layer.masksToBounds = true
+        loadImg.frame = CGRect(x: 50.0, y: 70.0, width: self.view.frame.size.width - 100, height: 200.0)
+        viewLoad.addSubview(loadImg)
+        viewLoad.isHidden = false
+        view.bringSubview(toFront: viewLoad)
+        
         let fixlink = link.text!.replacingOccurrences(of: "watch?v=", with: "")
         print(fixlink)
 
@@ -51,7 +70,7 @@ class AddVideoViewController: UIViewController {
          videoAddTest.load(withVideoId: resultLink[resultLink.count-1], playerVars: ["playsinline": 1 as AnyObject])
          timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
         
-      
+        
         
        
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SkW-tL-7gi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SkW-tL-7gi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,31 +21,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hs1-YH-lrb">
-                                <rect key="frame" x="139" y="249" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YtT-SD-ES8">
+                                <rect key="frame" x="163.5" y="568" width="50" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fiU-OZ-ROn">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ctj-Ko-elJ"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hs1-YH-lrb">
+                                <rect key="frame" x="0.0" y="557" width="375" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="pVe-s4-pj2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <state key="normal" title="Sign out"/>
                                 <connections>
                                     <action selector="Logout:" destination="SkW-tL-7gi" eventType="touchUpInside" id="Lek-1L-xyh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-FT-aOw">
-                                <rect key="frame" x="146" y="373" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sync"/>
-                                <connections>
-                                    <action selector="syncToFirebase:" destination="SkW-tL-7gi" eventType="touchUpInside" id="JQz-NR-QpU"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Hs1-YH-lrb" secondAttribute="trailing" id="H1G-Mp-ITj"/>
+                            <constraint firstItem="WNW-L0-DhO" firstAttribute="top" secondItem="YtT-SD-ES8" secondAttribute="bottom" constant="20" id="hb9-ke-W6Z"/>
+                            <constraint firstItem="YtT-SD-ES8" firstAttribute="centerX" secondItem="Ats-Dj-LYz" secondAttribute="centerX" id="iCj-52-pm5"/>
+                            <constraint firstItem="Hs1-YH-lrb" firstAttribute="centerX" secondItem="Ats-Dj-LYz" secondAttribute="centerX" id="iyF-Jm-Frg"/>
+                            <constraint firstItem="WNW-L0-DhO" firstAttribute="top" secondItem="Hs1-YH-lrb" secondAttribute="bottom" constant="20" id="jfL-JA-vqI"/>
+                            <constraint firstItem="Hs1-YH-lrb" firstAttribute="leading" secondItem="Ats-Dj-LYz" secondAttribute="leading" id="ySo-Cf-d82"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="setting" id="gnF-Kn-crZ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mE-dX-BXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-153" y="72"/>
+            <point key="canvasLocation" x="-154.40000000000001" y="71.514242878560722"/>
         </scene>
     </scenes>
     <resources>

@@ -50,12 +50,16 @@ class AddTextViewController: UIViewController {
 
 
     func saveButton(sender: UIBarButtonItem) {
-       
+        if (nameText.text == "" || textOrigin.text == "") {
+            return
+        }
+        
         let newText = Text.create() as! Text
         newText.date = NSDate()
         //print(newText.date.toString())
-        newText.name = nameText.text
+        newText.name = nameText.text?.replacingOccurrences(of: "\n", with: "")
         newText.text = textOrigin.text
+        
         
         newText.translated = ""
         newText.indexCurrent = 0
