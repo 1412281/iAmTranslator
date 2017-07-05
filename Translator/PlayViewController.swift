@@ -21,8 +21,6 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var ref: DatabaseReference!
     
-    @IBOutlet weak var tempYT: YTPlayerView!
-    
     
     enum `Type` {
         case text
@@ -48,7 +46,6 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.selectAddView.isHidden = false
         let touchToHiddenSelectAdd = UITapGestureRecognizer(target: self, action: #selector(PlayViewController.hiddenAdd))
         self.selectAddView.addGestureRecognizer(touchToHiddenSelectAdd)
-        
         view.bringSubview(toFront: selectAddView)
         view.bringSubview(toFront: addText)
         view.bringSubview(toFront: addVideo)
@@ -84,11 +81,11 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         Dictionary.init()
         super.viewDidLoad()
-
+        
          ref = Database.database().reference()
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showEditting(_:)))
-        longPress.minimumPressDuration = 0.5
+        longPress.minimumPressDuration = 0.7
         tableView.addGestureRecognizer(longPress)
         
         let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneEditting(_:)))
@@ -116,23 +113,25 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func hiddenAdd() {
         self.selectAddView.isHidden = true
-        //view.bringSubview(toFront: menuButton)
-        //view.bringSubview(toFront: tableView)
+        view.bringSubview(toFront: menuButton)
+        view.bringSubview(toFront: tableView)
     }
+    
     var timer:Timer?
+    
     override func viewWillAppear(_ animated: Bool) {
         self.selectAddView.isHidden = true
 
-        listText = Text.all() as! [Text]
-        listVideo = Video.all() as! [Video]
-        
+        //listText = (Text.all() as! [Text]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
+        //listVideo = (Video.all() as! [Video]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
+      
         reloadView()
         
         tableView.reloadData()
 
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(loop), userInfo: nil, repeats: true)
 
     }
 
@@ -150,14 +149,15 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func loop(){
-        listText = Text.all() as! [Text]
-        listVideo = Video.all() as! [Video]
+        listText = (Text.all() as! [Text]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
+        listVideo = (Video.all() as! [Video]).sorted(by:  {$0.date.timeIntervalSince1970 > $1.date.timeIntervalSince1970 })
         tableView.reloadData()
         
-        if listText.count != 0 && listVideo.count != 0 {
+        if listText.count != 0 || listVideo.count != 0 {
             timer?.invalidate()
-            timer=nil
+            timer = nil
         }
+        print("timerrrrr")
     }
 
     
@@ -189,16 +189,26 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.img.image = UIImage(data: data)
             }
             
-            tempYT.load(withVideoId: listVideo[indexPath.row].link!)
+            //tempYT.load(withVideoId: listVideo[indexPath.row].link!)
             
-            var time=listVideo[indexPath.row].length
+            let time=listVideo[indexPath.row].length
             
-            var hour = Int32((time)/3600)
-            var min = Int32((Int32(time)  - Int32(hour*3600) )/60)
-            var sec = Int32((Int32(time) - hour*3600 - min*60 ))
-            
-            cell.length.text = String(String(hour)+":"+String(min)+":"+String(sec))
-            //print(tempYT.duration());
+            let hour = Int32((time)/3600)
+            let min = Int32((Int32(time)  - Int32(hour*3600) )/60)
+            let sec = Int32((Int32(time) - hour*3600 - min*60 ))
+            var stTime: String = ""
+            var stSec: String = String(sec)
+            if (hour > 0) {
+                stTime += String(hour)+":"
+            }
+            if (min > 0) {
+                stTime += String(min)+":"
+            }
+            if (sec < 10) {
+                stSec = "0" + stSec
+            }
+            stTime += stSec
+            cell.length.text = String(stTime)
             return cell
         }
         
@@ -236,13 +246,13 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
             switch currentChoice {
             case .text:
                 let resultLink = nameUser!.components(separatedBy: ["@"])
-                let link = "/" + resultLink[0] + "/text/text1"
+                let link = "/" + resultLink[0] + "/text/" + listText[indexPath.row].date.toString()
                 ref.child(link).removeValue()
                 Text.delete(obj: listText[indexPath.row])
                 listText = Text.all() as! [Text]
             default:
                 let resultLink = nameUser!.components(separatedBy: ["@"])
-                let link = "/" + resultLink[0] + "/video/video1"
+                let link = "/" + resultLink[0] + "/video/" + listVideo[indexPath.row].date.toString()
                 ref.child(link).removeValue()
                 Video.delete(obj: listVideo[indexPath.row])
                 listVideo = Video.all() as! [Video]
@@ -295,5 +305,33 @@ class PlayViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         DB.save()
+    }
+}
+
+extension NSDate {
+    func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isGreater = false
+        
+        //Compare Values
+        if self.compare(dateToCompare as Date) == ComparisonResult.orderedDescending {
+            isGreater = true
+        }
+        
+        //Return Result
+        return isGreater
+    }
+    
+    func isLessThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isLess = false
+        
+        //Compare Values
+        if self.compare(dateToCompare as Date) == ComparisonResult.orderedAscending {
+            isLess = true
+        }
+        
+        //Return Result
+        return isLess
     }
 }

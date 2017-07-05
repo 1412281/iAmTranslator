@@ -38,8 +38,9 @@ class AddTextViewController: UIViewController {
         
         print(nameUser)
         let resultLink = nameUser!.components(separatedBy: ["@"])
-        let link = "/" + resultLink[0] + "/text/text1"
+        let link = "/" + resultLink[0] + "/text/" + data.date.toString()
         
+        ref.child(link+"/date").setValue(data.date.toString())
         ref.child(link+"/name").setValue(data.name)
         ref.child(link+"/text").setValue(data.text)
         ref.child(link+"/translated").setValue(data.translated)
@@ -49,8 +50,10 @@ class AddTextViewController: UIViewController {
 
 
     func saveButton(sender: UIBarButtonItem) {
-        
+       
         let newText = Text.create() as! Text
+        newText.date = NSDate()
+        //print(newText.date.toString())
         newText.name = nameText.text
         newText.text = textOrigin.text
         
@@ -58,6 +61,8 @@ class AddTextViewController: UIViewController {
         newText.indexCurrent = 0
         
         DB.save()
+        
+        
         AddDatabase( data: newText)
         print("save")
         navigationController?.popViewController(animated: true)
@@ -79,4 +84,27 @@ class AddTextViewController: UIViewController {
     }
     */
 
+}
+
+extension NSDate
+{
+    func toString() -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return dateFormatter.string(from: self as Date)
+    }
+    
+}
+
+extension String
+{
+    func toDate() -> NSDate
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return dateFormatter.date(from: self) as! NSDate
+    }
 }

@@ -69,7 +69,7 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
     }
     
     func ReadText(){
-        var listText = Video.all() as! [Text]
+        var listText = Text.all() as! [Text]
         if listText.count != 0
         {
             return
@@ -87,13 +87,15 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 
                 let newT = Text.create() as! Text
                 
-                print("Property: \"\(value as! NSDictionary)\"")
-                var attrVideo = value as! NSDictionary
-                newT.name = attrVideo["name"] as? String
-                newT.text=attrVideo["text"] as! String
-                newT.translated=attrVideo["translated"] as! String
-                newT.indexCurrent=attrVideo["indexCurrent"]  as! Int32
+                //print("Property: \"\(value as! NSDictionary)\"")
+                var attrText = value as! NSDictionary
                 
+                newT.name = attrText["name"] as? String
+                newT.text=attrText["text"] as! String
+                newT.translated=attrText["translated"] as! String
+                newT.indexCurrent=attrText["indexCurrent"]  as! Int32
+                newT.date =  (attrText["date"] as! String).toDate()
+
                 DB.save()
             }
             
@@ -129,7 +131,7 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 
                 let newV = Video.create() as! Video
                 
-                print("Property: \"\(value as! NSDictionary)\"")
+                //print("Property: \"\(value as! NSDictionary)\"")
                 var attrVideo = value as! NSDictionary
                 newV.name = attrVideo["name"] as? String
                 newV.length=attrVideo["length"] as! Double
@@ -138,6 +140,8 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 newV.timeLoop=attrVideo["timeLoop"] as! Int32
                 newV.timePlaying=attrVideo["timePlaying"] as! Int32
                 newV.translated=attrVideo["translated"] as! String
+                newV.date =  (attrVideo["date"] as! String).toDate()
+
                 DB.save()
             }
             

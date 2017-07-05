@@ -20,7 +20,10 @@ class AddVideoViewController: UIViewController {
     var timer:Timer!
     
     @IBAction func play(_ sender: Any) {
-        let resultLink = link.text!.components(separatedBy: ["/"])
+        let fixlink = link.text!.replacingOccurrences(of: "watch?v=", with: "")
+        print(fixlink)
+
+        let resultLink = fixlink.components(separatedBy: ["/"])
         view.endEditing(true)
         videoAddTest.load(withVideoId: resultLink[resultLink.count-1], playerVars: ["playsinline": 1 as AnyObject])
         //videoAddTest.playVideo()
@@ -28,21 +31,6 @@ class AddVideoViewController: UIViewController {
         
     }
     
-    func AddDatabase(link:String!,data:Video){
-        ref = Database.database().reference()
-        
-        print(nameUser)
-        let resultLink = nameUser!.components(separatedBy: ["@"])
-        let link = "/" + resultLink[0] + "/video/video1"
-        
-        ref.child(link+"/name").setValue(data.name)
-        ref.child(link+"/length").setValue(data.length)
-        ref.child(link+"/speed").setValue(data.speed)
-        ref.child(link+"/timeLoop").setValue(data.timeLoop)
-        ref.child(link+"/timePlaying").setValue(data.timePlaying)
-        ref.child(link+"/translated").setValue(data.translated)
-        ref.child(link+"/link").setValue(data.link)
-    }
     
     @IBOutlet weak var videoAddTest: YTPlayerView!
     override func viewDidLoad() {
@@ -56,7 +44,10 @@ class AddVideoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func saveButton(sender: UIBarButtonItem) {
-        let resultLink = link.text!.components(separatedBy: ["/"])
+        let fixlink = link.text!.replacingOccurrences(of: "watch?v=", with: "")
+        print(fixlink)
+
+        let resultLink = fixlink.components(separatedBy: ["/"])
          videoAddTest.load(withVideoId: resultLink[resultLink.count-1], playerVars: ["playsinline": 1 as AnyObject])
          timer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector("loop"), userInfo: nil, repeats: true)
         
@@ -78,9 +69,9 @@ class AddVideoViewController: UIViewController {
     
     func addVideo() {
         
-        
-        
-        let resultLink = link.text!.components(separatedBy: ["/"])
+        let fixlink = link.text!.replacingOccurrences(of: "watch?v=", with: "")
+        print(fixlink)
+        let resultLink = fixlink.components(separatedBy: ["/"])
         
         let newV = Video.create() as! Video
         newV.name = name.text!
@@ -89,16 +80,35 @@ class AddVideoViewController: UIViewController {
         newV.timeLoop = 10
         newV.timePlaying = 0
         newV.speed = 1
-        
+        newV.date = NSDate()
  
         var duration = videoAddTest.duration()
         newV.length=duration
         
-        AddDatabase(link: "/1", data: newV)
+        AddDatabase(data: newV)
         
         DB.save()
         
     }
+    
+    func AddDatabase(data:Video){
+        ref = Database.database().reference()
+        
+        print(nameUser)
+        let resultLink = nameUser!.components(separatedBy: ["@"])
+        let link = "/" + resultLink[0] + "/video/" + data.date.toString()
+        
+        ref.child(link+"/name").setValue(data.name)
+        ref.child(link+"/length").setValue(data.length)
+        ref.child(link+"/speed").setValue(data.speed)
+        ref.child(link+"/timeLoop").setValue(data.timeLoop)
+        ref.child(link+"/timePlaying").setValue(data.timePlaying)
+        ref.child(link+"/translated").setValue(data.translated)
+        ref.child(link+"/link").setValue(data.link)
+        ref.child(link+"/date").setValue(data.date.toString())
+
+    }
+
     
     func loop(){
         
