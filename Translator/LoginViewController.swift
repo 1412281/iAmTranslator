@@ -194,19 +194,23 @@ class LoginViewController: UIViewController,FBSDKLoginButtonDelegate {
                 nameUser = fbDetails["id"] as! String
                 UserDefaults.standard.setValue(nameUser, forKey: "user")
                 print(nameUser)
+                
+                self.ReadDataBase()
+                
+                let storyboard=UIStoryboard(name:"Main", bundle: nil)
+                let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
+                
+                self.present(vc, animated: true, completion: nil)
+
+                
+                
             }else{
                 print(error?.localizedDescription ?? "Not found")
             }
         })
         
         
-        ReadDataBase()
         
-            let storyboard=UIStoryboard(name:"Main", bundle: nil)
-            let vc=storyboard.instantiateViewController(withIdentifier: "tabMain") as UIViewController
-            
-           self.present(vc, animated: true, completion: nil)
-            
         
         
        

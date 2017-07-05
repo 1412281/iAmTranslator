@@ -25,7 +25,7 @@ class SettingViewController: UIViewController {
     @IBAction func Logout(_ sender: Any) {
         UserDefaults.standard.setValue(false, forKey: "isLogin")
         
-        UserDefaults.standard.setValue(nameUser, forKey: "user")
+        UserDefaults.standard.setValue("not", forKey: "user")
         Text.deleteAllRecords()
         Video.deleteAllRecords()
         if FBSDKAccessToken.current() != nil {

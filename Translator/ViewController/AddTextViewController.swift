@@ -45,7 +45,7 @@ class AddTextViewController: UIViewController {
         ref.child(link+"/text").setValue(data.text)
         ref.child(link+"/translated").setValue(data.translated)
         ref.child(link+"/indexCurrent").setValue(data.indexCurrent)
-    }
+    }   
     
 
 
